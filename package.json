@@ -1,0 +1,28 @@
+{
+  "name": "sito",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "db": "json-server db.json"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.2.17",
+    "@iconify/tailwind4": "^1.0.6",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@codingspook/vanilla-routing": "^1.0.5",
+    "@tailwindcss/vite": "^4.1.4",
+    "css-vendor": "^2.0.8",
+    "flyonui": "^2.1.0",
+    "json-server": "^1.0.0-beta.3",
+    "just-dom": "^1.0.9",
+    "raty-js": "^4.3.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4"
+  }
+}

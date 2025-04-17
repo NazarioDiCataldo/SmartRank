@@ -1,0 +1,258 @@
+@import "tailwindcss";
+@plugin "@iconify/tailwind4";
+@plugin "flyonui";
+@import "flyonui/src/vendor/raty.css";
+@plugin "flyonui/theme" {
+  name: "smartrank";
+  default: true; 
+  prefersdark: false; 
+  color-scheme: light; 
+
+  --color-base-100: oklch(0.28 0.0483 276.13);
+  --color-base-200: oklch(0.23 0.0524 273.74);
+  --color-base-300: oklch(0.18 0.0586 272.02);
+  --color-base-content: oklch(0.98 0.0045 258.32);
+  --color-primary: oklch(0.18 0.0586 272.02);
+  --color-primary-content: oklch(93% 0.034 272.788);
+  --color-secondary: oklch(0.81 0.1798 158.82);
+  --color-secondary-content: oklch(0.18 0.0586 272.02);
+  --color-accent: oklch(0.81 0.1798 158.82);
+  --color-accent-content: oklch(0.18 0.0586 272.02);
+  --color-neutral: oklch(0.54 0.0251 277.12);
+  --color-neutral-content: oklch(0.98 0.0045 258.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(71% 0.194 13.428);
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  /* Custom breakpoint */
+  --breakpoint-xs: 376px;
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1440px;
+}
+
+:root {
+  --breakpoint-xs: 376px;
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1440px;
+  --shadow-neon-accent: 0 0 9px rgba(40, 228, 150, 40);
+  --gradient-primary: linear-gradient(145deg, rgba(255,255,255,4%), rgba(255,255,255,6%));
+}
+
+html { font-size: 16px }
+
+body {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+/* * {
+  
+
+  &:focus-visible,
+  &:focus {
+    border: 0;
+  }
+} */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.list-navbar {
+  a {
+    @apply hover:text-secondary/50 transition-all duration-300;
+
+    &:is(.current-page) {
+      @apply text-accent font-medium;
+
+    }
+  }
+}
+
+/* Mi creo delle proprietà colore, per permettere effetti di hover sul gradiente */
+@property --myColor1 {
+  syntax: '<color>';
+  initial-value: #28E496;
+  inherits: false;
+}
+
+@property --myColor2 {
+  syntax: '<color>';
+  initial-value: #20A978;
+  inherits: false;
+}
+
+.btn-accent {
+  background: linear-gradient(145deg, #28E496, #2ef0ab);
+  box-shadow: var(--shadow-neon-accent);
+
+  &:hover {
+    /* transform: translateY(-2px) scale(1.02); */
+  box-shadow:
+    0 0 14px rgba(40, 228, 150, 0.6),
+    0 0 27px rgba(40, 228, 150, 0.3);
+  }
+
+  &:focus {
+    box-shadow:
+    0 0 0 3px rgba(40, 228, 150, 0.3),
+    0 0 8px rgba(40, 228, 150, 0.6);
+  }
+
+  &:active {
+    box-shadow: 0 0 6px rgba(40, 228, 150, 0.3);
+  }
+}
+
+.hamburger-btn {
+  background: var(--gradient-primary);
+  @apply border-1 border-white/5;
+}
+
+.fs-1 {
+  font-size: clamp(1.66rem, 1.4827rem + 0.8866vw, 2.280625rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  @apply font-medium;
+}
+
+.fs-2 {
+  font-size: clamp(1.555625rem, 1.4208rem + 0.6741vw, 2.0275rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  @apply font-medium;
+}
+
+.fs-3 {
+  font-size: clamp(1.458125rem, 1.3599rem + 0.4911vw, 1.801875rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  @apply font-medium;
+}
+
+.fs-4 {
+  font-size: clamp(1.366875rem, 1.2997rem + 0.3357vw, 1.601875rem);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  @apply font-medium;
+}
+
+.fs-5 {
+  font-size: clamp(1.280625rem, 1.2397rem + 0.2045vw, 1.42375rem);
+  line-height: 1.5;
+  letter-spacing: normal;
+  @apply font-medium;
+}
+
+.fs-6 {
+  font-size: clamp(1.200625rem, 1.1821rem + 0.0929vw, 1.265625rem);
+  line-height: 1.5;
+  letter-spacing: normal;
+  @apply font-medium;
+}
+
+.body-lg {
+  font-size: clamp(1.125rem, 1.1034rem + 0.108vw, 1.200625rem);
+  line-height: 1.5;
+}
+
+.body-md {
+  font-size: clamp(1.054375rem, 1.0342rem + 0.1009vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.body-sm {
+  font-size: clamp(0.988125rem, 0.9692rem + 0.0946vw, 1.054375rem);
+  line-height: 1.5;
+}
+
+.body-xs {
+  font-size: clamp(0.778rem, 0.063vw + 0.767rem, 0.833rem);
+  line-height: 1.5;
+}
+
+.bodyt-xxs {
+  font-size: clamp(0.667rem, 0.125vw + 0.644rem, 0.778rem);
+  line-height: 1.5;
+}
+
+.offcanvas-gradient {
+  background: linear-gradient(145deg, rgba(26,43,92,100%), rgba(10,15,44,100%));
+}
+
+input:not([type='checkbox']) {
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.08);
+
+  &:focus {
+    box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.08); /* conserva il glow bianco */
+  }
+  
+}
+
+#hero-search {
+  box-shadow: 0 0 12px 0px rgba(176, 230, 255, 0.25);
+
+  &:focus {
+    box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.25),
+    0 0 18px rgba(40, 228, 150, 0.45)
+  }
+}
+
+.bento-box {
+  background-image: var(--gradient-primary);
+}
