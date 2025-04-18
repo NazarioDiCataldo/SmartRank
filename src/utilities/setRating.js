@@ -1,0 +1,61 @@
+//Avremo 10 diverse combinazioni
+function getRatingIndex(score) {
+    // Ogni stella ha due "mezze": quindi 5 * 2 = 10 livelli
+    // Moltiplichiamo per 2 per ottenere l’indice corretto (da 1 a 10)
+    return Math.round(score * 2);
+}
+
+function calculateColor(average) {
+    if (average >= 4.5) {
+        return 'green-500'; // Verde
+      } else if (average >= 3.5) {
+        return 'lime-500'; // Verde chiaro
+      } else if (average >= 2.5) {
+        return 'yellow-500'; // Giallo
+      } else if (average >= 1.5) {
+        return 'orange-500'; // Arancio
+      } else if (average >= 0.5) {
+        return 'red-500'; // Rosso
+      } else {
+        return 'gray-500'; // Neutro
+      }
+}
+
+//Mi calcolo la media delle recensioni
+function averageCalculator(reviews) {
+    const sum = reviews.reduce((acc, currVal) => acc + currVal, 0);
+    const av = sum / reviews.length;
+    return av.toFixed(1);
+}
+
+const setRating = (reviews, ratingRef, averageRef) => {
+    const av = averageCalculator(reviews);
+    //#00b67a verde  4.5 - 5 stelle
+    //#73cf11 verde-chiaro 2 4 stelle
+    //#ffce00 giallo 3 - 3.5 stelle
+    //#ff8622 arancio 2 - 2.5 stelle
+    //#ff3722 rosso 1 - 1.5 stelle 
+    const bgColor = calculateColor(av);
+    averageRef.current.textContent = av;
+    averageRef.current.classList = `font-medium text-${bgColor}`;
+    //La media diventa indice dell'array, per cui sarà moltiplicata per 2
+    const index = getRatingIndex(av);
+    
+    const stars = ratingRef.current.querySelectorAll('input[type=radio]');
+    //Tolgo il checked, in caso il valore delle recensioni venisse aggiornato
+    stars.forEach((element, i) => {
+        const maskHalf = i % 2 === 0 ? 'mask-half-1' : 'mask-half-2'; 
+        element.removeAttribute('checked')
+        element.classList = 'mask mask-star-2 ' + maskHalf;
+    });
+
+    // Applica il checked giusto
+    for(let i = 1; i <= index; i++) {
+        stars[i - 1].classList.add(`bg-${bgColor}`);
+        if(i === index) {
+            stars[i - 1].setAttribute('checked', 'checked')
+        }
+    }
+}
+
+export default setRating;

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 @plugin "flyonui";
+@plugin "daisyui";
 @import "flyonui/src/vendor/raty.css";
 @plugin "flyonui/theme" {
   name: "smartrank";

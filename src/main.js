@@ -34,8 +34,3 @@ const routes = [
 
 DOM.createRoot("app", App());
 BrowserRoute(routes)
-
-function ciao() {
-  console.log(document.querySelector(`#rating-ciao`))
-}
-ciao()
