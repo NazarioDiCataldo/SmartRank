@@ -1,66 +1,45 @@
 import DOM, { createRef } from 'just-dom';
 import { twMerge } from 'tailwind-merge';
 
-const Rating = ({id, className = '', ref}) => {
-
-    return DOM.div({ref, className: "rating rating-sm rating-half" }, [
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+const Rating = ({idReviews, className = '', ref}) => {
+    return DOM.div({id: idReviews, ref, className: twMerge("rating rating-sm rating-half gap-0", className) }, [
+        DOM.div({
           className: "mask mask-star-2 mask-half-1",
           ariaLabel: "0.5 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-2 ",
           ariaLabel: "1 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-1 ",
           ariaLabel: "1.5 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-2 ",
           ariaLabel: "2 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-1 ",
           ariaLabel: "2.5 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-2 ",
           ariaLabel: "3 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-1 ",
           ariaLabel: "3.5 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-2 ",
           ariaLabel: "4 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-1 ",
           ariaLabel: "4.5 star",
         }),
-        DOM.input({
-          type: "radio",
-          name: "rating-11",
+        DOM.div({
           className: "mask mask-star-2 mask-half-2 ",
           ariaLabel: "5 star",
         }),

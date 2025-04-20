@@ -7,17 +7,17 @@ function getRatingIndex(score) {
 
 function calculateColor(average) {
     if (average >= 4.5) {
-        return 'green-500'; // Verde
+        return '#00b67a'; // Verde
       } else if (average >= 3.5) {
-        return 'lime-500'; // Verde chiaro
+        return '#73cf11'; // Verde chiaro
       } else if (average >= 2.5) {
-        return 'yellow-500'; // Giallo
+        return '#ffce00'; // Giallo
       } else if (average >= 1.5) {
-        return 'orange-500'; // Arancio
+        return '#ff8622'; // Arancio
       } else if (average >= 0.5) {
-        return 'red-500'; // Rosso
+        return '#ff3722'; // Rosso
       } else {
-        return 'gray-500'; // Neutro
+        return '#999'; // Neutro
       }
 }
 
@@ -29,21 +29,20 @@ function averageCalculator(reviews) {
 }
 
 const setRating = (reviews, ratingRef, averageRef) => {
-    const av = averageCalculator(reviews);
-    //#00b67a verde  4.5 - 5 stelle
-    //#73cf11 verde-chiaro 2 4 stelle
-    //#ffce00 giallo 3 - 3.5 stelle
-    //#ff8622 arancio 2 - 2.5 stelle
-    //#ff3722 rosso 1 - 1.5 stelle 
-    const bgColor = calculateColor(av);
-    averageRef.current.textContent = av;
-    averageRef.current.classList = `font-medium text-${bgColor}`;
+  const av = averageCalculator(reviews);
+  //#00b67a verde  4.5 - 5 stelle
+  //#73cf11 verde-chiaro 2 4 stelle
+  //#ffce00 giallo 3 - 3.5 stelle
+  //#ff8622 arancio 2 - 2.5 stelle
+  //#ff3722 rosso 1 - 1.5 stelle 
+  const bgColor = calculateColor(av);
     //La media diventa indice dell'array, per cui sarà moltiplicata per 2
     const index = getRatingIndex(av);
     
-    const stars = ratingRef.current.querySelectorAll('input[type=radio]');
+    const stars = ratingRef.current.querySelectorAll(`.mask`);
     //Tolgo il checked, in caso il valore delle recensioni venisse aggiornato
     stars.forEach((element, i) => {
+        stars[i].style.opacity = '0.2';
         const maskHalf = i % 2 === 0 ? 'mask-half-1' : 'mask-half-2'; 
         element.removeAttribute('checked')
         element.classList = 'mask mask-star-2 ' + maskHalf;
@@ -51,11 +50,16 @@ const setRating = (reviews, ratingRef, averageRef) => {
 
     // Applica il checked giusto
     for(let i = 1; i <= index; i++) {
-        stars[i - 1].classList.add(`bg-${bgColor}`);
-        if(i === index) {
-            stars[i - 1].setAttribute('checked', 'checked')
+      stars[i - 1].style.opacity = '1';
+      stars[i - 1].classList.add(`bg-[${bgColor}]`);
+      if(i === index) {
+          stars[i - 1].setAttribute('checked', 'checked')
         }
     }
+
+    averageRef.current.textContent = av;
+    averageRef.current.style.color = bgColor;
+    averageRef.current.classList = `font-medium`;
 }
 
 export default setRating;
