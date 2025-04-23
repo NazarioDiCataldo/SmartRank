@@ -3,11 +3,22 @@ import setActive from '../setActive';
 import Searchbar from '../components/Searchbar';
 import Bentobox from '../components/Bentobox';
 import HorizontalCard from '../components/ui/HorizontalCard';
+import Link from '../components/ui/Link';
 import Carousel from '../components/Carousel';
+import Review from '../components/Review';
+import Modal from '../components/ui/Modal';
 
 
 const Homepage = () => {
-    const navigationWrapperRef = createRef();
+    //Mi creo le ref
+    const navigationWrapperRef = createRef(); //Ref per il titolo della bento 2, per appendere la navigazione al titolo della sezione
+    const reviewsWrapperRef = createRef(); //Ref per il titolo della bento 5, per appendere la navigazione al titolo della sezione
+    const buttonWrapperRef = createRef(); //Ref per il div che contiene la cta, contiene la paginazione dello slider
+    const modalRef = createRef();
+
+    //Mi creo la modal
+    const modal = Modal(modalRef);
+
     const bentoListFragments = [
         //box 1: Cos'è SmartRank
         {
@@ -45,7 +56,7 @@ const Homepage = () => {
                 DOM.div({ref: navigationWrapperRef, className: 'flex justify-between items-center'}, [
                     DOM.h3({className: 'fs-3 mb-8'}, [`Prodotti più recensiti`]),
                 ]),
-                Carousel({navigationWrapperRef}, [
+                Carousel(navigationWrapperRef, {classSlider: '', classCard: '!w-max'}, 'auto', 16, true, [
                     HorizontalCard({
                         id: 'ciao',
                         href: '#',
@@ -116,27 +127,27 @@ const Homepage = () => {
             className: 'col-span-6 lg:col-span-3',
             value: DOM.fragment([
                 DOM.h3({className: 'fs-3 mb-8'}, [`Perchè scegliere SmartRank?`]),
-                DOM.ul({className: 'flex flex-col md:flex-row gap-8 w-[100%] items-center'}, [
+                DOM.ul({className: 'flex flex-col md:flex-row gap-8 w-[100%] items-start'}, [
                     DOM.li({className: 'flex flex-col items-center w-[100%] md:w-1/3 text-center'}, [
                         DOM.createElFromHTMLString(
                             `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="#F5F7FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-messages-square-icon lucide-messages-square w-[3.5rem] lg:w-[4rem]"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>`
                         ),
-                        DOM.h5({className: 'font-medium mt-4 md:mt-6'}, ['Confrontati con altri utenti']),
-                        DOM.p({className: 'text-sm mt-2'},['Recensioni scritte da chi usa la tecnologia.'])
+                        DOM.h5({className: 'text-lg font-semibold mt-4 md:mt-6'}, ['Confrontati con altri utenti']),
+                        DOM.p({className: 'mt-2'},['Recensioni scritte da chi usa la tecnologia.'])
                     ]),
                     DOM.li({className: 'flex flex-col items-center w-[100%] md:w-1/3 text-center'}, [
                         DOM.createElFromHTMLString(
                             `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="#F5F7FA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet w-[3.5rem] lg:w-[4rem]"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>`
                         ),
-                        DOM.h5({className: 'font-medium mt-4 md:mt-6'}, ['Miglior prezzo garantito']),
-                    DOM.p({className: 'text-sm mt-2'},['Mostriamo solo store certificati.'])
+                        DOM.h5({className: 'text-lg font-semibold mt-4 md:mt-6'}, ['Miglior prezzo garantito']),
+                    DOM.p({className: 'mt-2'},['Mostriamo solo store certificati.'])
                     ]),
                     DOM.li({className: 'flex flex-col items-center w-[100%] md:w-1/3 text-center'}, [
                         DOM.createElFromHTMLString(
                             `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="#F5F7FA" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check-icon lucide-badge-check w-[3.5rem] lg:w-[4rem]"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>`
                         ),
-                        DOM.h5({className: 'font-medium mt-4 md:mt-6'}, ['Oltre l’opinione personale']),
-                        DOM.p({className: 'text-sm mt-2'}, ['Valutazioni verificate su ogni dettaglio.'])
+                        DOM.h5({className: 'text-lg font-semibold mt-4 md:mt-6'}, ['Oltre l’opinione personale']),
+                        DOM.p({className: 'mt-2'}, ['Valutazioni verificate su ogni dettaglio.'])
                     ]),
                 ])
             ])
@@ -146,79 +157,81 @@ const Homepage = () => {
             id: 'bento-4',
             className: 'col-span-6 lg:col-span-3',
             value: DOM.fragment([
-                DOM.h3({className: 'fs-3 mb-4'}, [`Le nostre categorie`]),
+                DOM.h3({className: 'fs-3 mb-8'}, [`Le nostre categorie`]),
                 DOM.ul({className: 'grid grid-cols-3 grid-rows-2 gap-8 w-[100%] items-center'}, [
                     //Creazione con la lista di categorie
                     //Smartphone
                     DOM.li({className: 'flex flex-col items-center w-[100%] text-center'}, [
                         DOM.a({href: `/catalogo?categoria=smartphone`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
                             DOM.createElFromHTMLString(
-                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone w-[3rem] lg:w-[3.5rem] h-[3rem] lg:h-[3.5rem]"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`
+                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-icon lucide-smartphone w-[2.5rem] lg:w-[3rem] h-[2.5rem] lg:h-[3rem]"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`
                             ),
                             DOM.span({className:'sr-only'}, ['Smartphone'])
                         ]),
-                        DOM.a({className: 'font-medium mt-4 text-accent', href: `/catalogo?category=smartphone`, dataVanillaRouteLink:'spa'}, ['Smartphone']),
+                        Link({className: 'font-medium mt-4 no-underline', href: `/catalogo?categoria=smartphone`}, ['Smartphone'])
                     ]),
                     //Laptop
                     DOM.li({className: 'flex flex-col items-center w-[100%] text-center'}, [
-                        DOM.a({href: `/catalogo?category=laptop`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
+                        DOM.a({href: `/catalogo?categoria=laptop`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
                             DOM.createElFromHTMLString(
-                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop-icon lucide-laptop w-[3rem] lg:w-[3.5rem] h-[3rem] lg:h-[3.5rem]"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`
+                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop-icon lucide-laptop w-[2.5rem] lg:w-[3rem] h-[2.5rem] lg:h-[3rem]"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`
                             ),
                             DOM.span({className:'sr-only'}, ['Laptop'])
                         ]),
-                        DOM.a({className: 'font-medium mt-4 text-accent', href: `/catalogo?categoria=smartphone`, dataVanillaRouteLink:'spa'}, ['Laptop']),                    
-                    ]),
+                        Link({className: 'font-medium mt-4 no-underline', href: `/catalogo?categoria=laptop`, status: 'ghost'}, ['Laptop'])                    ]),
                     //Cuffie
                     DOM.li({className: 'flex flex-col items-center w-[100%] text-center'}, [
-                        DOM.a({href: `/catalogo?category=cuffie`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
+                        DOM.a({href: `/catalogo?categoria=cuffie`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
                             DOM.createElFromHTMLString(
-                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones-icon lucide-headphones w-[3rem] lg:w-[3.5rem] h-[3rem] lg:h-[3.5rem]"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>`
+                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones-icon lucide-headphones w-[2.5rem] lg:w-[3rem] h-[2.5rem] lg:h-[3rem]"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>`
                             ),
                             DOM.span({className:'sr-only'}, ['Cuffie'])
                         ]),
-                        DOM.a({className: 'font-medium mt-4 text-accent', href: `/catalogo?categoria=cuffie`, dataVanillaRouteLink:'spa'}, ['Cuffie']),                  
-
+                        Link({className: 'font-medium mt-4 no-underline', href: `/catalogo?categoria=cuffie`}, ['Cuffie'])
                     ]),
                     //Smartwatch
                     DOM.li({className: 'flex flex-col items-center w-[100%] text-center'}, [
-                        DOM.a({href: `/catalogo?category=smartwatch`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
+                        DOM.a({href: `/catalogo?categoria=smartwatch`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
                             DOM.createElFromHTMLString(
-                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-watch-square-icon lucide-watch-square w-[3rem] lg:w-[3.5rem] h-[3rem] lg:h-[3.5rem]"><path d="m15.8 6-.5-2.4c-.2-1-1-1.6-2-1.6h-2.7a2 2 0 0 0-2 1.6L8.2 6"/><rect width="12" height="12" x="6" y="6" rx="2"/><path d="m8.2 18 .5 2.4c.2 1 1 1.6 2 1.6h2.7a2 2 0 0 0 2-1.6l.5-2.4"/><path d="M12 10v2l1 1"/></svg>`
+                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-watch-square-icon lucide-watch-square w-[2.5rem] lg:w-[3rem] h-[2.5rem] lg:h-[3rem]"><path d="m15.8 6-.5-2.4c-.2-1-1-1.6-2-1.6h-2.7a2 2 0 0 0-2 1.6L8.2 6"/><rect width="12" height="12" x="6" y="6" rx="2"/><path d="m8.2 18 .5 2.4c.2 1 1 1.6 2 1.6h2.7a2 2 0 0 0 2-1.6l.5-2.4"/><path d="M12 10v2l1 1"/></svg>`
                             ),
                             DOM.span({className:'sr-only'}, ['Smartwatch'])
                         ]),
-                        DOM.a({className: 'font-medium mt-4 text-accent', href: `/catalogo?categoria=smartwatch`, dataVanillaRouteLink:'spa'}, ['Smartwatch']),                  
-                    ]),
+                        Link({className: 'font-medium mt-4 no-underline', href: `/catalogo?categoria=smartwatch`, status: 'ghost'}, ['Smartwatch'])                    ]),
                     //Powerbank
                     DOM.li({className: 'flex flex-col items-center w-[100%] text-center'}, [
-                        DOM.a({href: `/catalogo?category=smartwatch`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
+                        DOM.a({href: `/catalogo?categoria=powerbank`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
                             DOM.createElFromHTMLString(
-                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-charging-icon lucide-smartphone-charging w-[3rem] lg:w-[3.5rem] h-[3rem] lg:h-[3.5rem]"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12.667 8 10 12h4l-2.667 4"/></svg>`
+                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone-charging-icon lucide-smartphone-charging w-[2.5rem] lg:w-[3rem] h-[2.5rem] lg:h-[3rem]"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12.667 8 10 12h4l-2.667 4"/></svg>`
                             ),
                             DOM.span({className:'sr-only'}, ['Powerbank'])
                         ]),
-                        DOM.a({className: 'font-medium mt-4 text-accent', href:`/catalogo?categoria=powerbank`, dataVanillaRouteLink:'spa'}, ['Powerbank']),                  
-                    ]),
+                        Link({className: 'font-medium mt-4 no-underline', href: `/catalogo?categoria=powerbank`}, ['Powerbank'])                    ]),
                     //Tablet
                     DOM.li({className: 'flex flex-col items-center w-[100%] text-center'}, [
-                        DOM.a({href: `/catalogo?category=smartwatch`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
+                        DOM.a({href: `/catalogo?categoria=tablet`, className: 'btn btn-accent btn-circle block w-max h-max p-2', dataVanillaRouteLink:'spa'}, [
                             DOM.createElFromHTMLString(
-                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tablet-icon lucide-tablet w-[3rem] lg:w-[3.5rem] h-[3rem] lg:h-[3.5rem]"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`
+                                `<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#0A0F2C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tablet-icon lucide-tablet w-[2.5rem] lg:w-[3rem] h-[2.5rem] lg:h-[3rem]"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`
                             ),
                             DOM.span({className:'sr-only'}, ['Tablet'])
                         ]),
-                        DOM.a({className: 'font-medium mt-4 text-accent', href:`/catalogo?categoria=tablet`, dataVanillaRouteLink:'spa'}, ['Tablet']),                  
+                        Link({className: 'font-medium mt-4 no-underline', href: `/catalogo?categoria=tablet`}, ['Tablet'])                 
                     ]),
                 ])
             ])
         },
-        //box 5: Dicono di noi
+        //box 5: Ultime recensioni
         {
             id: 'bento-5',
             className: 'col-span-6 lg:col-span-2',
             value: DOM.fragment([
-                DOM.h3({className: 'fs-3 mb-4'}, [`Dicono di noi`]),
+                DOM.div({className: 'flex justify-between items-center', ref: reviewsWrapperRef}, [
+                    DOM.h3({className: 'fs-3 mb-4'}, [`Ultime recenzioni`]),
+                ]),
+                Carousel(reviewsWrapperRef, {classSlider: '!overflow-hidden', classCard: ''}, 1, 0, true, [
+                    Review(modalRef, [4]),
+                    Review(modalRef, [4.3]),
+                ])
             ])
         },
         //box 6: Come funziona SmartRank?
@@ -226,7 +239,20 @@ const Homepage = () => {
             id: 'bento-6',
             className: 'col-span-6 lg:col-span-4',
             value: DOM.fragment([
-                DOM.h3({className: 'fs-3 mb-4'}, [`Come funziona SmartRank?`]),
+                DOM.h3({className: 'fs-3 mb-4'}, [`Come funziona SmartRank?`]),  
+                DOM.div({className: 'grid grid-cols-1 md:grid-cols-6 gap-8 md:h-[265px]'}, [
+                    DOM.div({className: 'col-span-1 md:col-span-2 h-max order-2 md:order-1', ref: buttonWrapperRef}, [
+                        DOM.ol({className: 'ml-5 flex flex-col list-decimal gap-3 mb-4'}, [
+                            DOM.li({className: ''}, ['Cerca il tuo prodotto']),
+                            DOM.li({className: ''}, ['Confronta i prezzi']),
+                            DOM.li({className: ''}, ['Leggi le recensioni']),
+                        ]),
+                        Link({href: '/catalogo', status: 'solid'}, ['Esplora il catalogo'])
+                    ]),
+                    DOM.div({className: 'col-span-1 md:col-span-4 order-1 md:order-2'}, [
+                        DOM.img({src: './placeholder.jpg', className: 'object-cover rounded-2xl w-[100%] md:h-[265px]'}, ['']),
+                    ])
+                ])
             ])
         }
     ]
@@ -247,7 +273,7 @@ const Homepage = () => {
                 return Bentobox({id, className}, value)
             })
         ),
-        
+        modal,
     ])
 }
 

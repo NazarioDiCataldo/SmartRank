@@ -1,4 +1,5 @@
 import DOM, { createRef } from 'just-dom';
+import { twMerge } from 'tailwind-merge';
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -6,9 +7,15 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import SwiperPagination from './ui/SwiperPagination';
 
 
-const Carousel = ({navigationWrapperRef}, children) => {
+//Slider per view = auto quando vogliamo in una viewport/sezione entri più di una slide
+//Slider per view = 1 quando ogni sezione/viewport è occupata da una sola slide
+//offsetAfter = 16 si abbina ad auto, e permette di mostrare per intero l'ultima card, forzando lo slider ad aggiungere un margine destro
+//offsetAfter = 0 elimina il margine destro
+const Carousel = (ref, {classSlider, classCard}, slidePerView = 'auto', offsetAfter = 0, showNavigation = true, children) => {
+
     //Voglio mettere i bttoni della navigazione affianco al titolo h3
     const leftButtonRef = createRef();
     const rightButtonRef = createRef();
@@ -22,39 +29,43 @@ const Carousel = ({navigationWrapperRef}, children) => {
             DOM.span({className:'sr-only'}, ['Naviga alla slide successiva'])
         ]),
     ])
-    navigationWrapperRef.current.append(navigationWrapper)
-
     
-    const paginationRef = createRef();
+    if(showNavigation) {
+        ref.current.append(navigationWrapper)
+    }
+
+
+    //Mi chiamo il DOM Element SwiperPagination
+    const pagination = SwiperPagination({})
 
     //Mi creo la variabile contenente il DOM element dello slider
-    const swiperSlider = DOM.div({className: 'swiper !overflow-visible'}, [
+    const swiperSlider = DOM.div({className: twMerge('swiper !overflow-visible', classSlider)}, [
         DOM.div({className: "swiper-wrapper !w-max !pb-4"},[
             ...children.map(elem => {
-                return DOM.div({className: 'swiper-slide !w-max  !flex-shrink-0'}, [
+                return DOM.div({className: twMerge('swiper-slide !flex-shrink-0', classCard)}, [
                     elem
                 ])
             })
         ]),
-        DOM.div({ref: paginationRef, className: "swiper-pagination !static *:!bg-accent *:!w-[0.5rem] *:!h-[0.5rem] "}),
+        pagination
     ]);
 
     // init Swiper:
     new Swiper(swiperSlider, {
         // configure Swiper to use modules
         modules: [Navigation, Pagination],
-        slidesPerView: 'auto',
+        slidesPerView: slidePerView,
         spaceBetween: 32,
         centeredSlides: false,
         watchOverflow: true,
         grabCursor: true,
         centerInsufficientSlides: false,
-        slidesOffsetAfter: 16,
+        slidesOffsetAfter: offsetAfter,
         // Optional parameters
 
         // If we need pagination
         pagination: {
-            el: paginationRef.current,
+            el: pagination,
             clickable: true,
         },
 

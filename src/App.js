@@ -8,7 +8,7 @@ const App = () => {
         Header(),
         Offcanvas({id:'offcanvasNavbar'}),
         DOM.div({dataVanillaRouteEle: 'router-wrap'}),
-        Footer()
+        Footer(),
     ])
 
 };

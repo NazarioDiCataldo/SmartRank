@@ -6,19 +6,34 @@ function getRatingIndex(score) {
 }
 
 function calculateColor(average) {
-    if (average >= 4.5) {
-        return '#00b67a'; // Verde
-      } else if (average >= 3.5) {
-        return '#73cf11'; // Verde chiaro
-      } else if (average >= 2.5) {
-        return '#ffce00'; // Giallo
-      } else if (average >= 1.5) {
-        return '#ff8622'; // Arancio
-      } else if (average >= 0.5) {
-        return '#ff3722'; // Rosso
-      } else {
-        return '#999'; // Neutro
+  if (average >= 4.5) {
+      return {
+          background: 'bg-green-500',
+          text: 'text-green-500', // Verde
       }
+    } else if (average >= 3.5) {
+      return {
+          background: 'bg-lime-500', // Verde chiaro
+          text: 'text-lime-500',
+      }
+    } else if (average >= 2.5) {
+      return {
+          background: 'bg-yellow-500', // Giallo
+          text: 'text-yellow-500',
+      }
+    } else if (average >= 1.5) {
+      return {
+          background: 'bg-orange-500',
+          text: 'text-orange-500' // Arancio
+      }
+    } else if (average >= 0.5) {
+      return {
+          background: 'bg-red-500',
+          text: 'text-red-500' // Rosso
+      }
+    } else {
+      return '#999'; // Neutro
+    }
 }
 
 //Mi calcolo la media delle recensioni
@@ -35,7 +50,7 @@ const setRating = (reviews, ratingRef, averageRef) => {
   //#ffce00 giallo 3 - 3.5 stelle
   //#ff8622 arancio 2 - 2.5 stelle
   //#ff3722 rosso 1 - 1.5 stelle 
-  const bgColor = calculateColor(av);
+  const color = calculateColor(av);
     //La media diventa indice dell'array, per cui sarà moltiplicata per 2
     const index = getRatingIndex(av);
     
@@ -51,15 +66,14 @@ const setRating = (reviews, ratingRef, averageRef) => {
     // Applica il checked giusto
     for(let i = 1; i <= index; i++) {
       stars[i - 1].style.opacity = '1';
-      stars[i - 1].classList.add(`bg-[${bgColor}]`);
+      stars[i - 1].classList.add(color.background);
       if(i === index) {
           stars[i - 1].setAttribute('checked', 'checked')
         }
     }
 
     averageRef.current.textContent = av;
-    averageRef.current.style.color = bgColor;
-    averageRef.current.classList = `font-medium`;
+    averageRef.current.classList = color.text;
 }
 
 export default setRating;

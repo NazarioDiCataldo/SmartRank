@@ -1,12 +1,11 @@
-import DOM from 'just-dom'
-import { twMerge } from "tailwind-merge";
+import DOM from 'just-dom';
+import { twMerge } from 'tailwind-merge';
 
-const Button = ({type, className = '', status = 'solid', ...options}, children) => {
-    const button = DOM.button({ type, ...options}, children);
-
+const Link = ({href = '', className, status = 'ghost', ...options}, children) => {
+    const link = DOM.a({href, dataVanillaRouteLink:'spa', ...options}, children)
     let classes = '';
-    //in base allo status deciso che tipo di pulsante sarà
-    switch(status) {    
+
+    switch(status) {
         case 'solid':
             classes = twMerge(`btn btn-accent rounded-[10px] border-0 px-[12px] py-[16px] transition-all duration-300 w-[100%] 
                 md:w-max 
@@ -30,12 +29,16 @@ const Button = ({type, className = '', status = 'solid', ...options}, children) 
                 disabled:opacity-50 disabled:cursor-not-allowed`, className)
             break;
         default: 
-            classes = twMerge("btn btn-accent rounded-[10px] border-0 px-[12px] py-[16px] transition-all duration-300 w-[100%] md:w-max hover:brightness-[1.1] focus:outline-0 active:scale[0.98]", className)
-            break; 
+            classes = twMerge(`btn px-[12px] py-[16px] rounded-xl border border-[#28E496] bg-transparent 
+                text-primary font-semibold transition-all duration-200 w-[100%] 
+                md:w-max
+                hover:bg-[#28E496]/10 hover:shadow-[0_0_10px_#28E496]
+                focus:outline-none focus:ring-2 focus:ring-[#28E496]/40
+                disabled:opacity-50 disabled:cursor-not-allowed`, className)
     }
 
-    button.classList = classes
-    return button; 
-};
+    link.classList = classes
+    return link; 
+}
 
-export default Button;
+export default Link;

@@ -15,7 +15,7 @@ const Searchbar = ({label, className = '', placeholder, name }) => {
                 ariaLabel: label, 
                 placeholder, 
                 className: twMerge("input bg-[#F5F7FA] w-[100%] text-primary rounded-3xl px-10 py-7 border border-neutral placeholder:text-neutral focus:outline-neutral/60 focus:border-neutral/60 transition flex-1 transition-all duration-300 z-0", className)}),
-                Button({type: 'submit', className: 'btn-accent rounded-4xl absolute right-3 top-[50%] translate-y-[-50%] z-[1]'}, ['Cerca'])
+                Button({type: 'submit', className: 'btn-accent rounded-4xl absolute right-3 top-[50%] translate-y-[-50%] z-[1] active:!translate-y-[-50%]'}, ['Cerca'])
         ])
     ]) 
 }
