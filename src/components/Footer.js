@@ -19,6 +19,7 @@ const social = [
     },
 ];
 
+//Trasformo il div in un bottone
 const AAsButton = ({link, src, label}) => {
     return DOM.a({href: link, className: 'btn bg-white/60 rounded-[10px] border-0 px-[10px] py-[12px] transition-all duration-300 hover:brightness-[1.1] focus:outline-0 active:scale[0.98]'}, [
         DOM.img({src, ariaHidden:'true'}),

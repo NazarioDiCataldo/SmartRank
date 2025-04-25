@@ -4,7 +4,7 @@ import { routeLocation } from "@codingspook/vanilla-routing";
 
 const Dettaglio = () => {
     setActive(routeLocation())
-    document.title = 'Dettaglio';
+    document.title = 'dettaglio';
     return DOM.div({}, ['ciao'])
 }
 

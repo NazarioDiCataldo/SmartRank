@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 const App = () => {
     return DOM.fragment([
         Header(),
-        Offcanvas({id:'offcanvasNavbar'}),
         DOM.div({dataVanillaRouteEle: 'router-wrap'}),
         Footer(),
     ])

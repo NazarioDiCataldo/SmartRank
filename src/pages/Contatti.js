@@ -3,7 +3,7 @@ import setActive from '../setActive';
 import { routeLocation } from "@codingspook/vanilla-routing";
 
 const Contatti = () => {
-    setActive('Contatti')
+    setActive('contatti')
     document.title = 'Contatti';
     return DOM.div({}, ['ciao'])
 }

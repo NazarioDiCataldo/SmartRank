@@ -16,7 +16,7 @@ const Button = ({type, className = '', status = 'solid', ...options}, children) 
             break;
         case 'outline':
             classes = twMerge(`btn px-[12px] py-[16px] rounded-xl border border-[#28E496] bg-transparent 
-                text-primary font-semibold transition-all duration-200 w-[100%] 
+                text-accent transition-all duration-300 w-[100%] 
                 md:w-max
                 hover:bg-[#28E496]/10 hover:shadow-[0_0_10px_#28E496]
                 focus:outline-none focus:ring-2 focus:ring-[#28E496]/40

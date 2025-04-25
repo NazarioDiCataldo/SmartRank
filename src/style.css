@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
-@plugin "daisyui";
 @plugin "flyonui";
+@plugin "daisyui";
 @plugin "flyonui/theme" {
   name: "smartrank";
   default: true; 
@@ -133,40 +133,11 @@ body {
   inherits: false;
 }
 
-.btn-accent {
-  background: linear-gradient(145deg, #28E496, #2ef0ab);
-  box-shadow: var(--shadow-neon-accent);
 
-  &:hover {
-    /* transform: translateY(-2px) scale(1.02); */
-  box-shadow:
-    0 0 14px rgba(40, 228, 150, 0.6),
-    0 0 27px rgba(40, 228, 150, 0.3);
-  }
-
-  &:focus {
-    box-shadow:
-    0 0 0 3px rgba(40, 228, 150, 0.3),
-    0 0 8px rgba(40, 228, 150, 0.6);
-  }
-
-  &:active {
-    box-shadow: 0 0 6px rgba(40, 228, 150, 0.3);
-    
-  }
-
-  &:disabled {
-    background: rgba(40, 228, 150, 0.2) !important; /* verde sbiadito */
-    color: rgba(10, 15, 44, 0.5) !important;         /* testo spento */
-    cursor: not-allowed !important;
-    opacity: 0.5 !important;
-    box-shadow: none !important;
-    border: 1px solid rgba(40, 228, 150, 0.2) !important; /* bordo appena visibile */
-  }
-}
 
 .hamburger-btn {
   background: var(--gradient-primary);
+  box-shadow: 0 0 4px 0px rgba(176, 230, 255, 0.25);
   @apply border-1 border-white/5;
 }
 
@@ -246,11 +217,21 @@ input:not([type='checkbox']) {
 
   &:focus {
     box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.4),
-    0 0 20px rgba(255, 255, 255, 0.2),
-    0 0 10px rgba(255, 255, 255, 0.08); /* conserva il glow bianco */
+    0 0 10px rgba(255, 255, 255, 0.2),
+    0 0 10px rgba(255, 255, 255, 0.1),
+    0 0 8px rgba(255, 255, 255, 0.08); /* conserva il glow bianco */
   }
   
+}
+
+[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.25rem;
+  width: 1.25rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-x-icon lucide-x'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='m6 6 12 12'/%3E%3C/svg%3E");
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
 }
 
 #hero-search {

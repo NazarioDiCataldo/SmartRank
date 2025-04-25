@@ -10,6 +10,7 @@ import Modal from '../components/ui/Modal';
 
 
 const Homepage = () => {
+
     //Mi creo le ref
     const navigationWrapperRef = createRef(); //Ref per il titolo della bento 2, per appendere la navigazione al titolo della sezione
     const reviewsWrapperRef = createRef(); //Ref per il titolo della bento 5, per appendere la navigazione al titolo della sezione
@@ -110,15 +111,6 @@ const Homepage = () => {
                         }
                     }),
                 ])
-                
-                
-                /* initializeRating({
-                    id: `rating-ciao`,
-                    totalReviews: 4,
-                    reviews: [5, 4.5, 3, 3.2],
-                    halfShow: true,
-                    readOnly: true
-                }), */
             ])
         },
         //box 3: Perchè scegliere SmartRank?
@@ -257,11 +249,11 @@ const Homepage = () => {
         }
     ]
     
-    setActive('Home')
+    setActive('home')
     document.title = 'Homepage';
     return DOM.main({}, [
         //Hero Section
-        DOM.section({ className: 'container text-center my-8 lg:my-17 flex flex-col items-center'}, [
+        DOM.section({ className: 'container text-center my-8 lg:my-14 flex flex-col items-center'}, [
             DOM.h1({className: 'fs-1 mb-4'},['Cerca. Confronta. Fidati di chi ne capisce.']),
             DOM.h2({className: 'body-lg mb-6'}, ['Leggi cosa ne pensano gli altri, confronta i prezzi e compra dai migliori rivenditori.']),
             //Mi posiziono la searchbar

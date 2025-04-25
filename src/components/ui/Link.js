@@ -7,11 +7,12 @@ const Link = ({href = '', className, status = 'ghost', ...options}, children) =>
 
     switch(status) {
         case 'solid':
-            classes = twMerge(`btn btn-accent rounded-[10px] border-0 px-[12px] py-[16px] transition-all duration-300 w-[100%] 
+            classes = twMerge(`btn text-primary btn-accent rounded-[10px] border-0 px-[12px] py-[16px] transition-all duration-300 w-[100%] 
                 md:w-max 
                 hover:brightness-[1.1] 
                 focus:outline-0 
-                active:scale[0.98]`, className)
+                active:scale[0.98]
+                disabled:opacity-50 disabled:cursor-not-allowed `, className)
             break;
         case 'outline':
             classes = twMerge(`btn px-[12px] py-[16px] rounded-xl border border-[#28E496] bg-transparent 
@@ -34,7 +35,7 @@ const Link = ({href = '', className, status = 'ghost', ...options}, children) =>
                 md:w-max
                 hover:bg-[#28E496]/10 hover:shadow-[0_0_10px_#28E496]
                 focus:outline-none focus:ring-2 focus:ring-[#28E496]/40
-                disabled:opacity-50 disabled:cursor-not-allowed`, className)
+                disabled:opacity-50 disabled:cursor-not-allowed `, className)
     }
 
     link.classList = classes
