@@ -168,7 +168,7 @@ const Catalogo = () => {
                             className: 'w-full', 
                             label: 'Cerca un prodotto', 
                             placeholder: 'Cerca un prodotto',
-                            onBlur: filterInput,
+                            onChange: filterInput,
                         }),
                         DOM.div({className: 'flex gap-4 w-full lg:w-1/3 '}, [
                             Button({

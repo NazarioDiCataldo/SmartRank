@@ -4,7 +4,7 @@ export const validateField = (required = false, types, name, value) => {
         if (required) {
             return {
                 status: "error",
-                message: `Field ${name} is required`,
+                message: `Il campo ${name} è obbligatorio`,
             };
         } else {
             return {
@@ -24,13 +24,13 @@ export const validateField = (required = false, types, name, value) => {
         // Estrae il numero dal tipo di validazione se presente (es. "min:4" -> 4)
         const [validationType, value_] = type.split(":");
         const numericValue = value_ ? parseInt(value_) : null;
-
+        
         switch (validationType) {
             case "min":
                 if (value.length < numericValue) {
                     return {
                         status: "error",
-                        message: `Field ${name} must be at least ${numericValue} characters`,
+                        message: `Il campo ${name} deve essere almeno di ${numericValue} caratteri`,
                     };
                 }
                 break;
@@ -38,7 +38,7 @@ export const validateField = (required = false, types, name, value) => {
                 if (value.length > numericValue) {
                     return {
                         status: "error",
-                        message: `Field ${name} must be at most ${numericValue} characters`,
+                        message: `Il campo ${name} deve essere almeno di ${numericValue} caratteri`,
                     };
                 }
                 break;
@@ -46,10 +46,34 @@ export const validateField = (required = false, types, name, value) => {
                 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
                     return {
                         status: "error",
-                        message: `Field ${name} must be a valid email`,
+                        message: `Il campo ${name} deve contenere un'email valida`,
                     };
                 }
                 break;
+            case "nome":
+                if (!/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(value)) {
+                    return {
+                        status: "error",
+                        message: `Il campo ${name} contiene caratteri non validi`,
+                    };
+                }
+                break;
+            case "select":
+                if (value === '---') {
+                    return {
+                        status: "error",
+                        message: `Il campo ${name} è obbligatorio`,
+                    };
+                }
+                break;
+            case "checkbox":
+                if (value !== true) {
+                        return {
+                            status: "error",
+                            message: `Il campo ${name} è obbligatorio`,
+                        };
+                    }
+                    break;
             default:
                 break;
         }

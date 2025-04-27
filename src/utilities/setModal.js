@@ -1,5 +1,4 @@
 const setModal = (modalRef, modalTitle = '', children) => {
-    console.log(children)
     const modalBody = modalRef.current.querySelector('.modal-body')
     const modalHead = modalRef.current.querySelector('.modal-head')
     const modalH3 = modalHead.querySelector('.modal-head h3')

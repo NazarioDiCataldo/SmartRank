@@ -27,8 +27,8 @@ const AAsButton = ({link, src, label}) => {
     ])
 }
 
-const Footer = () => {
-    return DOM.footer({className: 'py-8 lg:pt-18'}, [
+const Footer = () => {            //py-8 lg:pt-18
+    return DOM.footer({className: 'pb-8'}, [
         DOM.div({className: 'container text-center mx-auto'},[
             DOM.h3({className: 'fs-3 mb-4'}, ['Iscrivi alla nostra newsletter']),
             DOM.p({className: 'text-white/60 mb-4'}, ['Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus amet dui quam vitae quis leo.']),

@@ -11,7 +11,7 @@ const Modal = ({className = ''}, modalRef) => {
             DOM.h3({ className: "text-lg font-bold" }, ['']),
           ]),
           //Modal body
-          DOM.div({className: "p-0 modal-body" }, []),
+          DOM.div({className: "p-0 modal-body text-left" }, []),
           //Modal footer
           DOM.div({ className: "modal-action" }, [
               Button({type:'button', className: '', status: 'solid', onclick: () => {modalRef.current.close()}}, ['Chiudi'])
