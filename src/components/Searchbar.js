@@ -10,7 +10,7 @@ const Searchbar = ({label, className = '', placeholder, name }) => {
     function handleInput(inputEl, buttonRef) {
         if(inputEl.value.trim() != '') {
             buttonRef.current.removeAttribute('disabled');
-            buttonRef.current.href= `/catalogo/${inputRef.current.value}`
+            buttonRef.current.href= `/catalogo?ricerca=${inputRef.current.value}`
         } else {
             buttonRef.current.setAttribute('disabled', true);
             buttonRef.current.href= `/catalogo`
@@ -31,6 +31,7 @@ const Searchbar = ({label, className = '', placeholder, name }) => {
             DOM.input({
                 ref: inputRef,
                 id: name, 
+                autocomplete: 'off',
                 ariaLabel: label, 
                 placeholder, 
                 oninput: (e) => handleInput(e.target, buttonRef),

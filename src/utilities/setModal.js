@@ -1,6 +1,16 @@
 const setModal = (modalRef, modalTitle = '', children) => {
+    console.log(children)
     const modalBody = modalRef.current.querySelector('.modal-body')
-    modalRef.current.querySelector('.modal-head h3').textContent = modalTitle;
+    const modalHead = modalRef.current.querySelector('.modal-head')
+    const modalH3 = modalHead.querySelector('.modal-head h3')
+
+    modalH3.textContent = modalTitle;
+    if(modalTitle !== '') {
+        modalH3.classList.add('mb-5')
+    } else {
+        modalH3.classList.remove('mb-5')
+    }
+
     modalBody.innerHTML = '';
     modalBody.append(children)
 }

@@ -37,7 +37,7 @@ function calculateColor(average) {
 }
 
 //Mi calcolo la media delle recensioni
-function averageCalculator(reviews) {
+export function averageCalculator(reviews) {
     const sum = reviews.reduce((acc, currVal) => acc + currVal, 0);
     const av = sum / reviews.length;
     return av.toFixed(1);

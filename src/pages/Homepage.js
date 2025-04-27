@@ -18,7 +18,7 @@ const Homepage = () => {
     const modalRef = createRef();
 
     //Mi creo la modal
-    const modal = Modal(modalRef);
+    const modal = Modal({}, modalRef);
 
     const bentoListFragments = [
         //box 1: Cos'è SmartRank

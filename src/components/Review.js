@@ -26,7 +26,7 @@ const Review = (modalRef, value,  showRedmore = true, idReviews = 'ciaociao') =>
 
     //Mi creo il dom element del bottone
     const button = Button({type: 'button', className: '', status: 'ghost', onclick: () => { 
-        setModal(modalRef, Review(modalRef, value, showRedmore = false))
+        setModal(modalRef, '', Review(modalRef, value, showRedmore = false))
         modalRef.current.showModal();
     }}, ['Leggi di più']);
 

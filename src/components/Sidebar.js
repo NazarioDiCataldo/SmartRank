@@ -1,51 +1,185 @@
-import DOM from 'just-dom';
+import DOM, { createRef } from 'just-dom';
 import { twMerge } from 'tailwind-merge';
 import Filter from './ui/Filter';
 import Range from './ui/Range';
 import Button from './ui/Button';
+import { getProducts } from '../pages/Catalogo';
 
-const Sidebar = ({className = '', ref}) => {
+//Flag globali 
+//Dovranno essere esportati su catalogo, per coordinare i filtri divisi tra le varie pagine
+export const flagFiltri = {
+    valutazione: null,
+    categoria: null,
+    nome: null,
+}
+
+const Sidebar = ({className = '', ref, gridRef}) => {
+    
+    //Variabile con classi comuni dei filtri sulla valutazione
+    const classNameFilterVal = 'xl:grow-[1] btn-outline !mx-0 checked:rounded-lg group-has-[input:checked]:grow-0';
+    //Variabile con classi comuni sui filtri sulla categoria
+    const classNameFilterCat = 'btn-soft rounded-full bg-accent/10 m-2';
+
+    //Array di oggetti con tutti i valori dei filtri, che verrà iterato
+    const filterVal = [
+        {
+            type: 'filter',
+            value: '4.5',
+            name: '★ 4.5 +',
+            label: '4.5 stelle',
+            className: classNameFilterVal + ' xl:rounded-r-none',
+            onClick: () => {filtraPer(gridRef)}
+        },
+        {
+            type: 'filter',
+            value: '4',
+            name: '★ 4 +',
+            label: '4 stelle',
+            className: classNameFilterVal + ' xl:rounded-none',
+            onClick: () => {filtraPer(gridRef)}
+        },
+        {
+            type: 'filter',
+            value: '3',
+            name: '★ 3 +',
+            label: '3 stelle',
+            className: classNameFilterVal + ' xl:rounded-l-none',
+            onClick: () => {filtraPer(gridRef)}
+        }
+    ]
+
+    //Array di valori di ogni filtro sulla categoria
+    const filterCategory = [{
+        type: 'filter', 
+        value: 'smartphone', 
+        name: 'Smartphone', 
+        label: 'smartphone', 
+        className: classNameFilterCat,
+        onClick: () => {filtraPer(gridRef)}
+    },
+    {
+        type: 'filter', 
+        value: 'tablet', 
+        name: 'Tablet', 
+        label: 'tablet', 
+        className: classNameFilterCat,
+        onClick: () => {filtraPer(gridRef)}
+    },
+    {
+        type: 'filter', 
+        value: 'laptop', 
+        name: 'Laptop', 
+        label: 'laptop', 
+        className: classNameFilterCat,
+        onClick: () => {filtraPer(gridRef)}
+    },
+    {
+        type: 'filter', 
+        value: 'smartwatch', 
+        name: 'Smartwatch', 
+        label: 'smartwatch', 
+        className: classNameFilterCat,
+        onClick: () => {filtraPer(gridRef)}
+    },
+    {
+        type: 'filter', 
+        value: 'powerbank', 
+        name: 'Powerbank', 
+        label: 'powerbank', 
+        className: classNameFilterCat,
+        onClick: () => {filtraPer(gridRef)}
+    },
+    {
+        type: 'filter', 
+        value: 'cuffie', 
+        name: 'Cuffie', 
+        label: 'cuffie', 
+        className: classNameFilterCat,
+        onClick: () => {filtraPer(gridRef)}
+    }]
+
+    //Resetta i filtri in questione
+    function resetFilter(resetInput, gridRef) {
+
+        //Svuoto la griglia
+        gridRef.current.innerHTML = '';
+
+        //Svuoto la proprietà sul filtro
+        flagFiltri[resetInput.name] = null
+        
+        getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
+    }
+
+    function filtraPer(gridRef) {
+
+        //Mi prendo i valori degli input dei filtri
+        flagFiltri.valutazione = valutazioneRef.current.querySelector('input[type=radio]:checked')?.value; //Input radio valutazione
+        flagFiltri.categoria = categoriaRef.current.querySelector('input[type=radio]:checked')?.value; //Input radio categoria
+        //const prezzoFiltro = prezzoRef.current.querySelector('input[type=radio]:checked'); //Input range prezzo
+
+        //Svuoto la griglia
+        gridRef.current.innerHTML = '';
+
+        getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
+    }
+
+    //Mi creo i ref
+    const valutazioneRef = createRef();
+    const categoriaRef = createRef();
+    //const prezzoRef = createRef();
+
+    //Mi creo in anticipo il DOM element cosi da poter usare il ref della categoria
+    const categoryForm = DOM.form({className: 'filter justify-start flex', ref: categoriaRef},[
+        Filter({type: 'reset', name: 'categoria', label: 'Resetta filtri sulla categoria', className: 'btn-soft rounded-full bg-accent/10 m-2', onClick: (e) => {resetFilter(e.target, gridRef)} }),
+        ...filterCategory.map(({type, name, label, value, className, onClick}) => Filter({type, name, label, value, className, onClick}))
+    ]);
+
+    //Se il filtro proviene direttamente dall'url, il pulsante della categoria in questione viene già 'evidenziato'
+    function syncCategoryFilter() {
+        categoriaRef.current.querySelectorAll('input[type=radio]')
+        .forEach(elem => {
+            if(elem.value === flagFiltri.categoria) {
+                elem.checked = true;
+            }
+        })
+        /* categoriaRef.current.querySelectorAll('input[type=radio]')
+        .find(elem => elem.value === flagFiltri.categoria) */
+    }
+    syncCategoryFilter();
+
     return DOM.aside({className: twMerge('p-5 bento-box rounded-2xl h-max sticky top-[2rem]', className)}, [
         DOM.h4({className: 'fs-5 font-semibold mb-5'}, ['Filtra per']),
-        DOM.form({className: '', method: 'GET', action: '#'}, [
+        DOM.div({className: ''}, [
             //Div con tutti i filtri
             DOM.div({className: 'p-5 bento-box rounded-xl flex flex-col gap-5', ref}, [
                 //Filtri valutazione
                 DOM.div({className: ''}, [
                     DOM.h5({className: 'fs-6 font-semibold mb-2'}, ['Valutazione']),
                     //Form che contiene i bottoni
-                    DOM.div({className: 'flex filter'},[
-                        Filter({type: 'reset'}),
-                        Filter({type: 'filter', name: '5 ★', label: '5 stelle', className: 'btn-outline'}),
-                        Filter({type: 'filter', name: '4.5 ★', label: '4.5 stelle', className: 'btn-outline'}),
-                        Filter({type: 'filter', name: '4 ★', label: '4 stelle', className: 'btn-outline'}),
+                    DOM.form({className: 'justify-start filter gap-2 xl:gap-0 h-max group has-[input:checked]:gap-0', ref: valutazioneRef},[
+                        Filter({type: 'reset', className: 'mr-2', name: 'valutazione', label: 'Resetta filtri sulla valutazione', onClick: (e) => {resetFilter(e.target, gridRef)} }),
+                        ...filterVal.map(({type, name, label, value, className, onClick}) => Filter({type, name, label, value, className, onClick}))
                     ])
                 ]),
                 //Filtri Categoria
                 DOM.div({className: ''}, [
                     DOM.h5({className: 'fs-6 font-semibold mb-2'}, ['Categoria']),
                     //Form che contiene i bottoni
-                    DOM.div({className: 'filter justify-start flex'},[
-                        Filter({type: 'reset', className: 'btn-soft rounded-full bg-accent/10'}),
-                        Filter({type: 'filter', name: 'Smartphone', label: 'smartphone', className: 'btn-soft rounded-full bg-accent/10'}),
-                        Filter({type: 'filter', name: 'Tablet', label: 'tablet', className: 'btn-soft rounded-full bg-accent/10'}),
-                        Filter({type: 'filter', name: 'Laptop', label: 'laptop', className: 'btn-soft rounded-full bg-accent/10'}),
-                        Filter({type: 'filter', name: 'Cuffie', label: 'cuffie', className: 'btn-soft rounded-full bg-accent/10'}),
-                        Filter({type: 'filter', name: 'Smartwatch', label: 'smartwatch', className: 'btn-soft rounded-full bg-accent/10'}),
-                        Filter({type: 'filter', name: 'Powerbank', label: 'powerbank', className: 'btn-soft rounded-full bg-accent/10'}),
-                    ])
+                    categoryForm,
                 ]),
                 //Filtri prezzo
-                DOM.div({className: ''}, [
+                /* DOM.div({className: ''}, [
                     DOM.h5({className: 'fs-6 font-semibold mb-2'}, ['Prezzo']),
-                    Range({min: '0', max: '1500'}),
-                ])
+                    Range({min: '0', max: '1500', ref: prezzoRef}),
+                ]) */
             ]),
             //Div con i bottoni
-            DOM.div({className: 'flex gap-3 mt-4'}, [
+            /* DOM.div({className: 'flex gap-3 mt-4'}, [
+                //Resetta filtri
                 Button({type: 'reset', status: 'outline', className: 'grow-[1]'}, ['Reimposta']),
-                Button({type: 'submit', status: 'solid', className: 'grow-[1]'}, ['Applica']),
-            ])
+                //Applica filtri
+                Button({type: 'button', status: 'solid', className: 'grow-[1]', onclick: () => filtraPer(gridRef)}, ['Applica']),
+            ]) */
         ])
     ]);
 }
