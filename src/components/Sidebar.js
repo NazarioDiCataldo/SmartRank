@@ -4,6 +4,7 @@ import Filter from './ui/Filter';
 import Range from './ui/Range';
 import Button from './ui/Button';
 import { getProducts } from '../pages/Catalogo';
+import {debounce} from 'lodash'
 
 //Flag globali 
 //Dovranno essere esportati su catalogo, per coordinare i filtri divisi tra le varie pagine
@@ -107,7 +108,7 @@ const Sidebar = ({className = '', ref, gridRef}) => {
         //Svuoto la proprietà sul filtro
         flagFiltri[resetInput.name] = null
         
-        getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
+       getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
     }
 
     function filtraPer(gridRef) {

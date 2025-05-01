@@ -4,17 +4,17 @@ import Newsletter from './Newsletter';
 const social = [
     {
         link: '#',
-        src: './facebook.svg',
+        src: '/facebook.svg',
         label: 'Link al profilo Facebook di SmartRank'
     },
     {
         link: '#',
-        src: './instagram.svg',
+        src: '/instagram.svg',
         label: 'Link al profilo Instagram di SmartRank'
     },
     {
         link: '#',
-        src: './youtube.svg',
+        src: '/youtube.svg',
         label: 'Link al profilo YouTube di SmartRank'
     },
 ];
@@ -28,7 +28,7 @@ const AAsButton = ({link, src, label}) => {
 }
 
 const Footer = () => {            //py-8 lg:pt-18
-    return DOM.footer({className: 'pb-8'}, [
+    return DOM.footer({className: 'py-8 lg:pt-18'}, [
         DOM.div({className: 'container text-center mx-auto'},[
             DOM.h3({className: 'fs-3 mb-4'}, ['Iscrivi alla nostra newsletter']),
             DOM.p({className: 'text-white/60 mb-4'}, ['Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus amet dui quam vitae quis leo.']),

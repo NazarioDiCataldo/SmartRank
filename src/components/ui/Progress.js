@@ -32,7 +32,7 @@ function calculateColor(average) {
       }
 }
 
-const Progress = ({value, labelText}) => {
+const Progress = ({value, labelText, className =  ''}) => {
     //Mi calcolo la percentaule della progress bar
     const perc = Math.min((value / 5) * 100, 100)
     //Colore della progress
@@ -40,8 +40,8 @@ const Progress = ({value, labelText}) => {
     const progress = DOM.div({className: `rounded-3xl h-[100%] ${color.background}`}, []);
     progress.style.width = `${perc}%`;
 
-    return DOM.div({className: ' w-[8rem]'}, [
-        DOM.p({className: 'font-medium'}, labelText),
+    return DOM.div({className:twMerge('w-[8rem]', className)}, [
+        DOM.p({className: 'body-sm font-medium'}, labelText),
         DOM.div({className: 'flex items-center gap-2'}, [
             DOM.div({className: `bg-white rounded-3xl w-[100%] h-[0.75rem] `}, [
                 progress,

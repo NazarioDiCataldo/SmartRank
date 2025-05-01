@@ -21,7 +21,7 @@ const Offcanvas = ({id, className = ''}) => {
     }),
     DOM.div({ className: "drawer-content"}, [
       DOM.label({ htmlFor: "offcanvasNav", className: "btn btn-primary lg:hidden hamburger-btn drawer-button", role: 'button'}, [
-          DOM.img({src: './menu.svg', alt: ''}, []),
+          DOM.img({src: '/menu.svg', alt: ''}, []),
           DOM.span({className:'sr-only'}, ['Apri menù'])
         ]),
     ]),
@@ -30,7 +30,7 @@ const Offcanvas = ({id, className = ''}) => {
       //Offcanvas Header
       DOM.div({className: 'flex justify-between w-full p-4'}, [
         DOM.a({ href: '/', dataVanillaRouteLink:'spa'}, [
-          DOM.img({ src: './logo-negativo.svg', width: '128', alt:'Ritorna alla home'})
+          DOM.img({ src: '/logo-negativo.svg', width: '128', alt:'Ritorna alla home'})
         ]),
         DOM.label({ htmlFor: "offcanvasNav", className: "btn btn-primary btn-circle lg:hidden hamburger-btn drawer-button", role: 'button'}, [
             DOM.createElFromHTMLString(`

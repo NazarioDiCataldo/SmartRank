@@ -1,8 +1,15 @@
+import { Router } from '@codingspook/vanilla-routing';
 import DOM from 'just-dom';
 import { twMerge } from 'tailwind-merge';
 
-const Link = ({href = '', className, status = 'ghost', ...options}, children) => {
-    const link = DOM.a({href, dataVanillaRouteLink:'spa', ...options}, children)
+const Link = ({href = ``, className, status = 'ghost', ...options}, children) => {
+    
+    const link = DOM.a({href, onclick: (e) => {
+        e.preventDefault();
+        if (href) {
+            Router.go(href);
+        }
+    }, ...options}, children)
     let classes = '';
 
     switch(status) {

@@ -13,7 +13,8 @@ const Button = ({type, className = '', status = 'solid', ...options}, children) 
                 md:w-max 
                 hover:brightness-[1.1] 
                 focus:outline-0 
-                active:scale[0.98]`, className)
+                active:scale[0.98]
+                disabled:!opacity-50 disabled:cursor-not-allowed disabled:!bg-accent disabled:text-primary`, className)
             break;
         case 'outline':
             classes = twMerge(`btn px-[12px] py-[16px] rounded-xl border border-[#28E496] bg-transparent 

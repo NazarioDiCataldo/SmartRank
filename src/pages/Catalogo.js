@@ -9,19 +9,30 @@ import setModal from '../utilities/setModal';
 import Sidebar, { flagFiltri } from '../components/Sidebar';
 import Card from '../components/ui/Card';
 import { averageCalculator } from '../utilities/setRating';
+import { debounce } from 'lodash';
+import { getReviews } from './Dettaglio';
 
 const divTestualeTitleRef = createRef(); //Ref del div che contiene il testo (sia errore, che ricerca)
 const divTestualeButtonRef = createRef();
+const inputSearchRef = createRef();
 
 //Funzione per la chiamata al js-server
 export const getProducts = async ({nameProduct = flagFiltri.nome, categoryProduct = flagFiltri.categoria, valueProduct = flagFiltri.valutazione /* rangeProduct = null */}, gridRef) => {
-    
+    //Mi chiamo la funzione per prendermi tutte le recensioni
+    const reviews = await getReviews()
+
     try{
         let cont = 0;
         const res = await fetch("http://localhost:3000/products")
         const data = await res.json();
         const products = DOM.fragment( 
             data.filter(p => {
+                const arrayValues = []
+                reviews.forEach(r => {
+                    if(r.idProdotto === p.id) {
+                        arrayValues.push(r.valutazione)
+                    }
+                })
                 
                 // Se nessun filtro è attivo, ritorna tutto
                 if (!nameProduct && !categoryProduct && !valueProduct) {
@@ -54,7 +65,7 @@ export const getProducts = async ({nameProduct = flagFiltri.nome, categoryProduc
                 if (valueProduct) {
                     //Verifica se matches sia ancora true
                     //Mi calcolo la media delle recensioni, attraverso una funzione e verifico se questa è maggiore o uguale a quella chiesta dall'utente
-                    matches = matches && averageCalculator([3,4,5,3,3,3,3]) >= valueProduct;
+                    matches = matches && averageCalculator(arrayValues) >= valueProduct;
                 }
 
                 //Alla fine di tutto ritorno matches
@@ -63,9 +74,16 @@ export const getProducts = async ({nameProduct = flagFiltri.nome, categoryProduc
                 return matches;
             })
             .map(p => {
+                const arrayValues = []
+                reviews.forEach(r => {
+                    if(r.idProdotto === p.id) {
+                        arrayValues.push(r.valutazione)
+                    }
+                })
+                
                 cont++;
                 const {id, url, nome, marca, categoria, immagine, prezzi} = p;
-                return Card({id, url, cardOptions: {nome, marca, categoria, immagine, prezzi}, reviewObj: {idReview: 1, reviews: [3,4,5,3,3,3,3]} })
+                return Card({id, url, cardOptions: {nome, marca, categoria, immagine, prezzi}, reviewObj: {reviews: arrayValues} })
             }),
         )
         
@@ -113,6 +131,17 @@ const Catalogo = () => {
     //Mi creo la modal
     const modal = Modal({className: 'rounded-3xl'}, modalRef);
 
+    //Mi creo l'input per la ricerca
+    const input = Input({
+        name: 'searchbar-catalogo-mobile', 
+        type: 'search', 
+        ref: inputSearchRef,
+        className: 'w-full', 
+        label: 'Cerca un prodotto', 
+        placeholder: 'Cerca un prodotto',
+        onChange: filterInput,
+    });
+
     //Mi creo il div che contiene il testo
     const divTestuale = DOM.div({className: 'text-left w-full flex flex-col lg:flex-row gap-3 lg:justify-between'}, [
         DOM.h6({className: '', ref: divTestualeTitleRef, ariaLive: 'polite'}, ['']),
@@ -123,6 +152,7 @@ const Catalogo = () => {
             ref: divTestualeButtonRef,
             onclick: () => { 
                 flagFiltri.nome = null; 
+                inputSearchRef.current.value = ''
                 getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef);
             }},
             [   'Cancella ricerca',
@@ -141,12 +171,15 @@ const Catalogo = () => {
         //Svuoto la griglia
         gridRef.current.innerHTML = ''
         
+        const debounced = debounce(() => getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef), 1000)
+
         //Richiamo i prodotti, con la stringa da confrontare
-        getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
+        debounced();
     }
 
     //Chiamo la funziona che fa la chiamata e appende alla griglia
     getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef);
+
 
     return DOM.main({}, [
         //Sezione catalogo
@@ -162,14 +195,7 @@ const Catalogo = () => {
                 //Su mobile è 1/1, da desktop 3/4
                 DOM.div({className: 'flex flex-col gap-8 col-span-1 lg:col-span-4'}, [
                     DOM.div({className: 'flex flex-col lg:flex-row gap-4 w-full'}, [
-                        Input({
-                            name: 'searchbar-catalogo-mobile', 
-                            type: 'search', 
-                            className: 'w-full', 
-                            label: 'Cerca un prodotto', 
-                            placeholder: 'Cerca un prodotto',
-                            onChange: filterInput,
-                        }),
+                        input,
                         DOM.div({className: 'flex gap-4 w-full lg:w-1/3 '}, [
                             Button({
                                 type: 'button', 

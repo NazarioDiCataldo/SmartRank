@@ -6,11 +6,13 @@ const Input = ({
     name,
     type,
     label,
+    ref,
     value = "",
     placeholder,
     autocomplete = 'off',
     dataRequired = false,
     dataValidation = '',
+    classNameDiv = '',
     className = "",
     showIcon = true,
     onChange = () => {},
@@ -34,7 +36,7 @@ const Input = ({
             break;        
     }
 
-    return DOM.div({ className: "w-[100%]" }, [
+    return DOM.div({ className: twMerge("w-[100%]", classNameDiv)}, [
         DOM.label({ className: "relative" }, [
             //Div che conterrà l'icona
             DOM.div({className: 'absolute left-3 top-[50%] translate-y-[-40%] z-[2]'}, [ iconSvg ]),
@@ -42,6 +44,7 @@ const Input = ({
                 id,
                 name,
                 type,
+                ref,
                 placeholder,
                 autocomplete,
                 dataRequired,

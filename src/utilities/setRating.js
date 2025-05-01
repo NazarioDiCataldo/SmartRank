@@ -5,42 +5,55 @@ function getRatingIndex(score) {
     return Math.round(score * 2);
 }
 
-function calculateColor(average) {
+export function calculateColor(average) {
   if (average >= 4.5) {
       return {
           background: 'bg-green-500',
           text: 'text-green-500', // Verde
+          content: 'Ottimo',
       }
     } else if (average >= 3.5) {
       return {
           background: 'bg-lime-500', // Verde chiaro
           text: 'text-lime-500',
+          content: 'Buono',
       }
     } else if (average >= 2.5) {
       return {
           background: 'bg-yellow-500', // Giallo
           text: 'text-yellow-500',
+          content: 'Nella media',
       }
     } else if (average >= 1.5) {
       return {
           background: 'bg-orange-500',
+          content: 'Deludente',
           text: 'text-orange-500' // Arancio
       }
     } else if (average >= 0.5) {
       return {
           background: 'bg-red-500',
+          content: 'Pessimo',
           text: 'text-red-500' // Rosso
       }
     } else {
-      return '#999'; // Neutro
+      return {
+        background: 'bg-gray-800', // Neutro
+        text: 'text-white/80',
+        content : 'Nessuna recensione'
+      } 
     }
 }
 
 //Mi calcolo la media delle recensioni
 export function averageCalculator(reviews) {
-    const sum = reviews.reduce((acc, currVal) => acc + currVal, 0);
-    const av = sum / reviews.length;
-    return av.toFixed(1);
+    if(reviews.length > 0) {
+      const sum = reviews.reduce((acc, currVal) => acc + currVal, 0);
+      const av = sum / reviews.length;
+      return av.toFixed(1);
+    } else {
+      return 0
+    }
 }
 
 const setRating = (reviews, ratingRef, averageRef) => {

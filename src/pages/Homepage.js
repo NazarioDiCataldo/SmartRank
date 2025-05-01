@@ -218,7 +218,7 @@ const Homepage = () => {
             className: 'col-span-6 lg:col-span-2',
             value: DOM.fragment([
                 DOM.div({className: 'flex justify-between items-center', ref: reviewsWrapperRef}, [
-                    DOM.h3({className: 'fs-3 mb-4'}, [`Ultime recenzioni`]),
+                    DOM.h3({className: 'fs-3 mb-4'}, [`Ultime recensioni`]),
                 ]),
                 Carousel(reviewsWrapperRef, {classSlider: '!overflow-hidden', classCard: ''}, 1, 0, true, [
                     Review(modalRef, [4]),
@@ -262,7 +262,7 @@ const Homepage = () => {
         //Griglia con bentobox
         DOM.section({className: 'container grid grid-cols-6 gap-6'}, bentoListFragments.map(e => {
                 const {id, value, className} = e
-                return Bentobox({id, className}, value)
+                return Bentobox({id, className}, [value])
             })
         ),
         modal,

@@ -6,7 +6,7 @@
             "url": "iphone-15-pro",
             "marca": "Apple",
             "categoria": "smartphone",
-            "immagine": "./img/iphone-15-pro.webp",
+            "immagine": "/img/iphone-15-pro.webp",
             "prezzi": [
               1149,
               1199,
@@ -18,36 +18,42 @@
               "Unieuro"
             ],
             "rivenditoriLogo": [
-              "/logo/amazon.svg",
-              "/logo/mediaworld.svg",
-              "/logo/unieuro.svg"
+              "/logo/amazon.png",
+              "/logo/mediaworld.png",
+              "/logo/unieuro.png"
             ],
             "caratteristiche": [
               {
                 "label": "Display",
-                "valore": "6.1'' OLED ProMotion"
-              },
-              {
-                "label": "Chip",
-                "valore": "A17 Pro"
-              },
-              {
-                "label": "RAM",
-                "valore": "8 GB"
-              },
-              {
-                "label": "Storage",
-                "valore": "128 GB"
-              },
-              {
-                "label": "Batteria",
-                "valore": "3274 mAh"
+                "valore": "6.1'' OLED",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
               },
               {
                 "label": "Fotocamera",
-                "valore": "48 MP + 12 MP"
+                "valore": "48 MP",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
+              },
+              {
+                "label": "Batteria",
+                "valore": "4200 mAh",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
+              },
+              {
+                "label": "Processore",
+                "valore": "A17 Bionic",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+              },
+              {
+                "label": "Sistema operativo",
+                "valore": "iOS 17",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Memoria interna",
+                "valore": "256 GB",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
               }
-            ],
+            ],            
             "caratteristicheAvanzate": [
               {
                 "label": "Tecnologia display",
@@ -94,7 +100,9 @@
               "L’iPhone 15 Pro è la nuova frontiera degli smartphone premium, costruito in titanio e alimentato dal chip A17 Pro. Con un design elegante e leggero, rappresenta una svolta tecnologica per prestazioni e autonomia.",
               "Offre un’esperienza visiva incredibile grazie al display Super Retina XDR con ProMotion, ideale per gaming, editing e streaming. Il comparto fotografico consente scatti e video di qualità professionale.",
               "Grazie alla nuova porta USB-C, alla lunga durata della batteria e all’integrazione perfetta con l’ecosistema Apple, è il compagno ideale per utenti avanzati, creatori e professionisti del settore tech."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 2,
@@ -109,41 +117,47 @@
               999
             ],
             "rivenditori": [
-              "Samsung Store",
+              "Samsung ",
               "Amazon",
               "Euronics"
             ],
             "rivenditoriLogo": [
-              "/logo/samsung.svg",
-              "/logo/amazon.svg",
-              "/logo/euronics.svg"
+              "/logo/samsung.png",
+              "/logo/amazon.png",
+              "/logo/euronics.png"
             ],
             "caratteristiche": [
               {
                 "label": "Display",
-                "valore": "6.2'' Dynamic AMOLED 2X"
-              },
-              {
-                "label": "Processore",
-                "valore": "Exynos 2400"
-              },
-              {
-                "label": "RAM",
-                "valore": "8 GB"
-              },
-              {
-                "label": "Storage",
-                "valore": "256 GB"
-              },
-              {
-                "label": "Batteria",
-                "valore": "4000 mAh"
+                "valore": "6.1'' OLED",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
               },
               {
                 "label": "Fotocamera",
-                "valore": "50 MP + 12 MP + 10 MP"
+                "valore": "48 MP",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
+              },
+              {
+                "label": "Batteria",
+                "valore": "4200 mAh",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
+              },
+              {
+                "label": "Processore",
+                "valore": "A17 Bionic",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+              },
+              {
+                "label": "Sistema operativo",
+                "valore": "iOS 17",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Memoria interna",
+                "valore": "256 GB",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
               }
-            ],
+            ],            
             "caratteristicheAvanzate": [
               {
                 "label": "Risoluzione",
@@ -179,7 +193,7 @@
               },
               {
                 "label": "Sicurezza",
-                "valore": "Impronta sotto schermo + riconoscimento facciale"
+                "valore": "Impronta + riconoscimento facciale"
               },
               {
                 "label": "Dual SIM",
@@ -190,7 +204,9 @@
               "Il Galaxy S24 è il nuovo smartphone top di gamma di Samsung, con un design compatto e specifiche avanzate. Lo schermo AMOLED ad alta risoluzione con refresh rate dinamico offre immagini fluide e dettagliate.",
               "Grazie al processore Exynos 2400 e al comparto fotografico con intelligenza artificiale, è ideale per multitasking, gaming e fotografia avanzata. La protezione IP68 e la scocca robusta garantiscono durata.",
               "Perfetto per utenti Android esigenti, integra tecnologie recenti come la registrazione 8K, la modalità notte migliorata e connettività 5G ultra veloce. Un equilibrio perfetto tra potenza e portabilità."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 3,
@@ -205,14 +221,14 @@
               799
             ],
             "rivenditori": [
-              "Apple Store",
+              "Apple ",
               "Unieuro",
               "MediaWorld"
             ],
             "rivenditoriLogo": [
-              "/logo/apple.svg",
-              "/logo/unieuro.svg",
-              "/logo/mediaworld.svg"
+              "/logo/apple.png",
+              "/logo/unieuro.png",
+              "/logo/mediaworld.png"
             ],
             "caratteristiche": [
               {
@@ -286,7 +302,9 @@
               "L’iPad Air con chip M1 unisce potenza e leggerezza in un unico prodotto. Il suo design raffinato lo rende perfetto per studenti, designer e chi cerca un tablet versatile ma prestante.",
               "Il chip Apple M1 offre prestazioni da notebook e lo rende perfetto anche per lavori più intensi. Supporta Apple Pencil di seconda generazione e tastiere, trasformandosi in una workstation portatile.",
               "Ottimo anche per chi ama l’intrattenimento: lo schermo è luminoso, i colori fedeli, e il suono stereo di buona qualità. Ideale per Netflix, editing o disegno digitale."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 4,
@@ -296,11 +314,11 @@
             "categoria": "tablet",
             "immagine": "/img/galaxy-tab-s9.webp",
             "prezzi": [899, 949, 999],
-            "rivenditori": ["Amazon", "Samsung Store", "Euronics"],
+            "rivenditori": ["Amazon", "Samsung ", "Euronics"],
             "rivenditoriLogo": [
-              "/logo/amazon.svg",
-              "/logo/samsung.svg",
-              "/logo/euronics.svg"
+              "/logo/amazon.png",
+              "/logo/samsung.png",
+              "/logo/euronics.png"
             ],
             "caratteristiche": [
               { "label": "Display", "valore": "11'' AMOLED 120Hz" },
@@ -326,7 +344,9 @@
               "Il Galaxy Tab S9 è uno dei migliori tablet Android attualmente disponibili, pensato per chi cerca prestazioni elevate e versatilità in mobilità. Con un display AMOLED di altissima qualità e refresh rate a 120Hz, ogni contenuto risulta vivido e fluido.",
               "Lo Snapdragon 8 Gen 2 assicura prestazioni da top di gamma, mentre la S Pen inclusa è ideale per creativi, studenti e professionisti. La resistenza IP68 lo rende adatto anche ad ambienti più impegnativi.",
               "È perfetto per intrattenimento, disegno, multitasking e produttività: grazie all’ecosistema Samsung, si integra perfettamente con smartphone e accessori, offrendo un’esperienza connessa e fluida."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 5,
@@ -336,11 +356,11 @@
             "categoria": "laptop",
             "immagine": "/img/mac-air-m2.webp",
             "prezzi": [1199, 1349, 1499],
-            "rivenditori": ["Apple Store", "Amazon", "Unieuro"],
+            "rivenditori": ["Apple ", "Amazon", "Unieuro"],
             "rivenditoriLogo": [
-              "/logo/apple.svg",
-              "/logo/amazon.svg",
-              "/logo/unieuro.svg"
+              "/logo/apple.png",
+              "/logo/amazon.png",
+              "/logo/unieuro.png"
             ],
             "caratteristiche": [
               { "label": "Display", "valore": "13.6'' Liquid Retina" },
@@ -366,7 +386,9 @@
               "Il MacBook Air M2 è un laptop ultra portatile, elegante e potente, pensato per studenti, professionisti e chi lavora spesso in mobilità. Il suo design fanless lo rende estremamente silenzioso e moderno.",
               "Il chip M2 garantisce prestazioni eccellenti in tutte le attività quotidiane, dalla produttività all'editing leggero. Il display Liquid Retina da 13,6'' offre una resa dei colori realistica e brillante.",
               "Con un’autonomia di oltre 18 ore, una webcam ad alta definizione e un audio sorprendente, è ideale anche per videoconferenze e streaming. Un ottimo investimento per chi cerca stile e affidabilità nel tempo."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 6,
@@ -376,11 +398,11 @@
             "categoria": "laptop",
             "immagine": "/img/asus-zenbook-14.webp",
             "prezzi": [1399, 1499, 1649],
-            "rivenditori": ["Dell Store", "Amazon", "MediaWorld"],
+            "rivenditori": ["Dell ", "Amazon", "MediaWorld"],
             "rivenditoriLogo": [
-              "/logo/dell.svg",
-              "/logo/amazon.svg",
-              "/logo/mediaworld.svg"
+              "/logo/dell.png",
+              "/logo/amazon.png",
+              "/logo/mediaworld.png"
             ],
             "caratteristiche": [
               { "label": "Display", "valore": "13.4'' OLED InfinityEdge" },
@@ -406,7 +428,9 @@
               "Il Dell XPS 13 Plus è un laptop futuristico con linee pulite, schermo OLED spettacolare e prestazioni da top di gamma. È pensato per creativi, developer e utenti business che desiderano estetica e potenza.",
               "L’infinity edge display riduce al minimo le cornici, offrendo un’immersione visiva totale. La tastiera Zero Lattice e il touchpad invisibile conferiscono un look premium e funzionale.",
               "Con audio avanzato, ricarica rapida, costruzione solida e compatibilità totale con l’ecosistema Windows, è un notebook perfetto per chi cerca design minimal ma prestazioni eccellenti sul campo."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 7,
@@ -416,11 +440,11 @@
             "categoria": "cuffie",
             "immagine": "/img/sony-wh1000xm5.webp",
             "prezzi": [379, 399],
-            "rivenditori": ["Amazon", "Sony Store", "MediaWorld"],
+            "rivenditori": ["Amazon", "Sony ", "MediaWorld"],
             "rivenditoriLogo": [
-              "/logo/amazon.svg",
-              "/logo/sony.svg",
-              "/logo/mediaworld.svg"
+              "/logo/amazon.png",
+              "/logo/sony.png",
+              "/logo/mediaworld.png"
             ],
             "caratteristiche": [
               { "label": "Tipo", "valore": "Over-ear" },
@@ -446,7 +470,9 @@
               "Le Sony WH-1000XM5 sono tra le cuffie più apprezzate al mondo per chi cerca un’esperienza di ascolto immersiva e senza distrazioni. Comode e leggere, sono ideali per viaggi, lavoro e relax.",
               "Il sistema avanzato di cancellazione del rumore si adatta in tempo reale all’ambiente circostante, mentre il suono ad alta risoluzione offre profondità e dettaglio in ogni genere musicale.",
               "Grazie alla lunga autonomia, alle funzioni smart e alla qualità costruttiva premium, rappresentano la scelta perfetta per audiofili e utenti professionali che non vogliono compromessi."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 8,
@@ -456,11 +482,11 @@
             "categoria": "cuffie",
             "immagine": "/img/airpods-pro-2.webp",
             "prezzi": [279, 299],
-            "rivenditori": ["Apple Store", "Amazon", "Unieuro"],
+            "rivenditori": ["Apple ", "Amazon", "Unieuro"],
             "rivenditoriLogo": [
-              "/logo/apple.svg",
-              "/logo/amazon.svg",
-              "/logo/unieuro.svg"
+              "/logo/apple.png",
+              "/logo/amazon.png",
+              "/logo/unieuro.png"
             ],
             "caratteristiche": [
               { "label": "Tipo", "valore": "In-ear true wireless" },
@@ -486,7 +512,9 @@
               "Gli AirPods Pro di seconda generazione migliorano tutto ciò che gli utenti hanno amato della prima versione. Leggeri, comodi e incredibilmente intelligenti, si adattano al tuo ambiente in tempo reale.",
               "Con il chip H2, la cancellazione del rumore è più potente, la modalità trasparenza più naturale, e l’autonomia migliorata. L’audio spaziale offre un suono coinvolgente e personalizzato.",
               "Perfetti per chi è nell’ecosistema Apple, ma validi anche su Android. Il case include speaker e chip U1 per trovarli facilmente. Una combinazione di funzionalità, qualità audio e praticità senza rivali."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },          
         {
             "id": 9,
@@ -496,11 +524,11 @@
             "categoria": "smartwatch",
             "immagine": "/img/apple-watch-series-9.webp",
             "prezzi": [449, 499],
-            "rivenditori": ["Apple Store", "Amazon", "Unieuro"],
+            "rivenditori": ["Apple ", "Amazon", "Unieuro"],
             "rivenditoriLogo": [
               "/logo/apple.svg",
-              "/logo/amazon.svg",
-              "/logo/unieuro.svg"
+              "/logo/amazon.png",
+              "/logo/unieuro.png"
             ],
             "caratteristiche": [
               { "label": "Display", "valore": "Always-On Retina 1.9''" },
@@ -526,7 +554,9 @@
               "Apple Watch Series 9 è il compagno ideale per chi vuole restare sempre connesso, monitorare la propria salute e restare attivo. Ha un design elegante e un display sempre acceso più brillante che mai.",
               "Offre funzioni avanzate come ECG, monitoraggio della temperatura e la nuova gesture 'Doppio Tap'. Grazie al chip S9, tutto è più fluido e intelligente. È perfettamente integrato con iPhone e l’ecosistema Apple.",
               "Un alleato perfetto per il fitness e la vita quotidiana, con ricarica rapida, notifiche smart e funzioni di sicurezza. Adatto sia a chi è sportivo che a chi cerca un tocco tech di eleganza al polso."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 10,
@@ -536,11 +566,11 @@
             "categoria": "smartwatch",
             "immagine": "/img/galaxy-watch-6.webp",
             "prezzi": [419, 449],
-            "rivenditori": ["Samsung Store", "Amazon", "MediaWorld"],
+            "rivenditori": ["Samsung ", "Amazon", "MediaWorld"],
             "rivenditoriLogo": [
-              "/logo/samsung.svg",
-              "/logo/amazon.svg",
-              "/logo/mediaworld.svg"
+              "/logo/samsung.png",
+              "/logo/amazon.png",
+              "/logo/mediaworld.png"
             ],
             "caratteristiche": [
               { "label": "Display", "valore": "1.5'' Super AMOLED" },
@@ -566,7 +596,9 @@
               "Galaxy Watch6 Classic riporta la lunetta girevole fisica, amata dagli utenti Samsung, unita ad un design elegante e specifiche da top di gamma. Perfetto per chi cerca produttività e benessere in un solo dispositivo.",
               "Oltre alle classiche funzioni smartwatch, include monitoraggio sonno avanzato, ECG, rilevamento della pressione arteriosa e ben 90 sport tracciabili. Il display AMOLED è luminoso e fluido, anche all’aperto.",
               "Perfettamente integrato con il mondo Android (in particolare Galaxy), è uno strumento completo anche per il lavoro, con Google Assistant, Maps, e possibilità di rispondere ai messaggi direttamente dal polso."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 11,
@@ -576,11 +608,11 @@
             "categoria": "powerbank",
             "immagine": "/img/anker-powercore.webp",
             "prezzi": [35, 45],
-            "rivenditori": ["Amazon", "Anker Store", "Euronics"],
+            "rivenditori": ["Amazon", "Anker ", "Euronics"],
             "rivenditoriLogo": [
-              "/logo/amazon.svg",
-              "/logo/anker.svg",
-              "/logo/euronics.svg"
+              "/logo/amazon.png",
+              "/logo/anker.png",
+              "/logo/euronics.png"
             ],
             "caratteristiche": [
               { "label": "Capacità", "valore": "20000 mAh" },
@@ -606,7 +638,9 @@
               "Il PowerCore 20000mAh di Anker è uno dei powerbank più efficienti sul mercato, grazie alla sua enorme capacità di ricarica e alla compatibilità universale con la maggior parte dei dispositivi.",
               "Con la tecnologia PowerIQ e VoltageBoost, ricarica i tuoi dispositivi fino a 18W in modo rapido e sicuro. Inoltre, la protezione contro sovraccarichi e cortocircuiti garantisce la sicurezza delle tue apparecchiature.",
               "Il design compatto e leggero permette di trasportarlo facilmente, mentre l'indicatore LED ti mostra il livello della batteria residua. Con le sue 2 uscite, puoi ricaricare più dispositivi contemporaneamente."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         },
         {
             "id": 12,
@@ -616,11 +650,11 @@
             "categoria": "powerbank",
             "immagine": "/img/xiaomi-powerbank-3.webp",
             "prezzi": [20, 25],
-            "rivenditori": ["Amazon", "Xiaomi Store", "MediaWorld"],
+            "rivenditori": ["Amazon", "Xiaomi ", "MediaWorld"],
             "rivenditoriLogo": [
-              "/logo/amazon.svg",
-              "/logo/xiaomi.svg",
-              "/logo/mediaworld.svg"
+              "/logo/amazon.png",
+              "/logo/xiaomi.png",
+              "/logo/mediaworld.png"
             ],
             "caratteristiche": [
               { "label": "Capacità", "valore": "10000 mAh" },
@@ -646,10 +680,99 @@
               "Il Mi Power Bank 3 è la soluzione ideale per chi cerca un powerbank potente e compatto. Con una capacità di 10000mAh, è perfetto per ricaricare smartphone e tablet in movimento.",
               "Le sue 2 uscite USB-A e il supporto per la ricarica rapida tramite QC 3.0 assicurano velocità e affidabilità, mentre la protezione contro sovraccarichi e cortocircuiti garantisce sicurezza.",
               "Il design elegante e portatile lo rende facile da trasportare in tasca o borsa, ed è l'accessorio perfetto per chi ha bisogno di energia extra durante la giornata."
-            ]
+            ],
+            "colori": ["Rosso", "Verde", "Blu", "Argento"],
+            "coloriClassi": ["red", "emerald", "blue", "amber"]
         }  
     ],
     "reviews": [
-
+      {
+        "idRecensione": 1,
+        "idProdotto": 1,
+        "autore": "Matteo R.",
+        "data": "2025-05-08",
+        "ora": "14:32",
+        "fotoProfilo": "/profile-picture.jpg",
+        "valutazione": 4.5,
+        "titolo": "Ottimo telefono per chi ama la fotografia",
+        "testo": "Uso questo smartphone da circa un mese e ne sono molto soddisfatto. Le prestazioni sono fluide anche con più app aperte. Ma il vero punto di forza è la fotocamera: in condizioni di buona luce, gli scatti sono impressionanti.",
+        "valutazioniTecniche": [
+          {
+            "etichetta": "Fotocamera",
+            "valore": 4.8
+          },
+          {
+            "etichetta": "Display",
+            "valore": 4.5
+          },
+          {
+            "etichetta": "Batteria",
+            "valore": 4.1
+          },
+          {
+            "etichetta": "Prestazioni",
+            "valore": 4.2
+          }
+        ]
+      },
+      {
+        "idRecensione": 2,
+        "idProdotto": 5,
+        "autore": "Lorenzo M.",
+        "data": "2025-04-28",
+        "ora": "22:45",
+        "fotoProfilo": "/img/profile-picture-3.jpeg",
+        "valutazione": 4.2,
+        "titolo": "Leggero e potente",
+        "testo": "Lo uso per lavoro e università. Ottimo display e tastiera comoda. Il design è elegante e l'autonomia è sufficiente per arrivare a fine giornata. La ventola a volte si fa sentire ma nel complesso è un gran prodotto.",
+        "valutazioniTecniche": [
+          {
+            "etichetta": "CPU",
+            "valore": 4.3
+          },
+          {
+            "etichetta": "Display",
+            "valore": 4.5
+          },
+          {
+            "etichetta": "Batteria",
+            "valore": 4.0
+          },
+          {
+            "etichetta": "Memoria",
+            "valore": 4.2
+          }
+        ]
+      },
+      {
+        "idRecensione": 3,
+        "idProdotto": 7,
+        "autore": "Alice B.",
+        "data": "2025-05-01",
+        "ora": "09:03",
+        "fotoProfilo": "/img/profile-picture-2.jpeg",
+        "valutazione": 4.7,
+        "titolo": "Isolamento e qualità top",
+        "testo": "Avevo già le XM4 e queste sono un bel passo avanti. Noise cancelling migliorato, suono più definito e app completa. Autonomia più che sufficiente. Il case è un po’ più compatto ma non sempre facile da aprire.",
+        "valutazioniTecniche": [
+          {
+            "etichetta": "Autonomia",
+            "valore": 4.5
+          },
+          {
+            "etichetta": "Audio",
+            "valore": 4.9
+          },
+          {
+            "etichetta": "Microfono",
+            "valore": 4.6
+          },
+          {
+            "etichetta": "Connettività",
+            "valore": 4.4
+          }
+        ]
+      }      
+            
     ]
 }
