@@ -3,8 +3,8 @@ import { twMerge } from 'tailwind-merge';
 import Filter from './ui/Filter';
 import Range from './ui/Range';
 import Button from './ui/Button';
-import { getProducts } from '../pages/Catalogo';
 import {debounce} from 'lodash'
+import Catalog from '../classes/catalog';
 
 //Flag globali 
 //Dovranno essere esportati su catalogo, per coordinare i filtri divisi tra le varie pagine
@@ -12,7 +12,12 @@ export const flagFiltri = {
     valutazione: null,
     categoria: null,
     nome: null,
+    ordine: 'Rilevanza'
 }
+
+//Mi creo l'oggetto catalogo
+const catalog = new Catalog();
+await catalog.loadProducts();
 
 const Sidebar = ({className = '', ref, gridRef}) => {
     
@@ -108,7 +113,8 @@ const Sidebar = ({className = '', ref, gridRef}) => {
         //Svuoto la proprietà sul filtro
         flagFiltri[resetInput.name] = null
         
-       getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
+        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        catalog.appendToGrid(gridRef, filteredProducts)
     }
 
     function filtraPer(gridRef) {
@@ -121,7 +127,8 @@ const Sidebar = ({className = '', ref, gridRef}) => {
         //Svuoto la griglia
         gridRef.current.innerHTML = '';
 
-        getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef)
+        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        catalog.appendToGrid(gridRef, filteredProducts)
     }
 
     //Mi creo i ref

@@ -7,15 +7,23 @@ import Link from '../components/ui/Link';
 import Carousel from '../components/Carousel';
 import Review from '../components/Review';
 import Modal from '../components/ui/Modal';
+import Catalog from '../classes/catalog';
+
+//Mi creo l'oggetto catalogo
+const catalog = new Catalog();
+await catalog.loadProducts();
+catalog.higerValutations();
 
 
 const Homepage = () => {
-
     //Mi creo le ref
     const navigationWrapperRef = createRef(); //Ref per il titolo della bento 2, per appendere la navigazione al titolo della sezione
+    const carouselRef = createRef(); //Ref per il carosello, serve per mettere le card orizzontali
+    carouselRef['target'] = 'carousel';
     const reviewsWrapperRef = createRef(); //Ref per il titolo della bento 5, per appendere la navigazione al titolo della sezione
     const buttonWrapperRef = createRef(); //Ref per il div che contiene la cta, contiene la paginazione dello slider
     const modalRef = createRef();
+    
 
     //Mi creo la modal
     const modal = Modal({}, modalRef);
@@ -57,8 +65,13 @@ const Homepage = () => {
                 DOM.div({ref: navigationWrapperRef, className: 'flex justify-between items-center'}, [
                     DOM.h3({className: 'fs-3 mb-8'}, [`Prodotti più recensiti`]),
                 ]),
-                Carousel(navigationWrapperRef, {classSlider: '', classCard: '!w-max'}, 'auto', 16, true, [
-                    HorizontalCard({
+                Carousel(navigationWrapperRef, {classSlider: '!flex flex-col ', classCard: '!w-max', refCarousel: carouselRef}, 'auto', 16, true, [
+                    
+                    ...catalog.products.splice(0, 5).map(p => {
+                        return p.createCard('carousel')
+                    })
+                    //Chiamo la funziona che fa la chiamata e appende alla griglia
+                    /* HorizontalCard({
                         id: 'ciao',
                         href: '#',
                         cardOptions: {
@@ -109,7 +122,7 @@ const Homepage = () => {
                             lowestPrice: 200,
                             alt: 'Immagine Iphone',
                         }
-                    }),
+                    }), */
                 ])
             ])
         },
@@ -221,8 +234,8 @@ const Homepage = () => {
                     DOM.h3({className: 'fs-3 mb-4'}, [`Ultime recensioni`]),
                 ]),
                 Carousel(reviewsWrapperRef, {classSlider: '!overflow-hidden', classCard: ''}, 1, 0, true, [
-                    Review(modalRef, [4]),
-                    Review(modalRef, [4.3]),
+                    /* Review(modalRef, [4]),
+                    Review(modalRef, [4.3]), */
                 ])
             ])
         },
@@ -251,6 +264,9 @@ const Homepage = () => {
     
     setActive('home')
     document.title = 'Homepage';
+
+    //getProducts(navigationWrapperRef)
+
     return DOM.main({}, [
         //Hero Section
         DOM.section({ className: 'container text-center my-8 lg:my-14 flex flex-col items-center'}, [

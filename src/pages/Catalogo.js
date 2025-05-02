@@ -7,107 +7,56 @@ import Select from '../components/ui/Select';
 import Modal from '../components/ui/Modal';
 import setModal from '../utilities/setModal';
 import Sidebar, { flagFiltri } from '../components/Sidebar';
-import Card from '../components/ui/Card';
 import { averageCalculator } from '../utilities/setRating';
 import { debounce } from 'lodash';
 import { getReviews } from './Dettaglio';
+import Catalog from '../classes/catalog';
+import Product from '../classes/product';
 
 const divTestualeTitleRef = createRef(); //Ref del div che contiene il testo (sia errore, che ricerca)
-const divTestualeButtonRef = createRef();
+const gridRef = createRef();
 const inputSearchRef = createRef();
 
+//Mi creo l'oggetto catalogo
+const catalog = new Catalog();
+
 //Funzione per la chiamata al js-server
-export const getProducts = async ({nameProduct = flagFiltri.nome, categoryProduct = flagFiltri.categoria, valueProduct = flagFiltri.valutazione /* rangeProduct = null */}, gridRef) => {
+export const getProducts = async (gridRef) => {
     //Mi chiamo la funzione per prendermi tutte le recensioni
     const reviews = await getReviews()
 
     try{
-        let cont = 0;
         const res = await fetch("http://localhost:3000/products")
         const data = await res.json();
         const products = DOM.fragment( 
-            data.filter(p => {
-                const arrayValues = []
-                reviews.forEach(r => {
-                    if(r.idProdotto === p.id) {
-                        arrayValues.push(r.valutazione)
-                    }
-                })
-                
-                // Se nessun filtro è attivo, ritorna tutto
-                if (!nameProduct && !categoryProduct && !valueProduct) {
-                    
-                    //Quindi vuol dire che il prodotto non sarà scartato
-                    return true;
-                }
-
-                //Se ha superato la prima condizione, vuol dire che ci sono dei filtri
-                //Andiamo a vedere se il prodotto passa le condizioni successive
-                //Impostiamo di default true, quindi partiamo che il prodotto passerà
-                let matches = true;
-
-                //Se attivo il filtro nameProduct, il nome inserito dall'utente, vediamo se combacia
-                if(nameProduct) {
-                    //Matches sarà uguale a un true o false
-                    //Verifichiamo prima che matches sia true, quindi per il momento il prodotto sta soddisfando i filtri precedenti
-                    //Poi verifichiamo se la stringa passata dall'utente, sia inclusa nel nome del prodotto, trascritto tutto in minuscolo
-                    matches = matches && p.nome.toLowerCase().includes(nameProduct.toLowerCase());
-                }
-
-                //Poi verifichiamo se è presente il filtro sulla categoria
-                if(categoryProduct) {
-                    //Prima verifichiamo che matches sia ancora true
-                    //Poi verifichiamo se la categoria del prodotto, corrisponda a quella scelta dall'utente
-                    matches = matches && p.categoria.toLowerCase() === categoryProduct.toLowerCase();
-                }
-
-                //Terza condizione: verificare se la valutazione del prodotto è maggiore o uguale a quella scelta dall'utente
-                if (valueProduct) {
-                    //Verifica se matches sia ancora true
-                    //Mi calcolo la media delle recensioni, attraverso una funzione e verifico se questa è maggiore o uguale a quella chiesta dall'utente
-                    matches = matches && averageCalculator(arrayValues) >= valueProduct;
-                }
-
-                //Alla fine di tutto ritorno matches
-                //Se matches sarà ancora true, il prodotto soddisfa i filtri e sarà passato all'array finale, che verrà mappato
-                //Se matches sarà false, il prodotto sarà scartato dall'array finale
-                return matches;
-            })
+            data
             .map(p => {
-                const arrayValues = []
-                reviews.forEach(r => {
-                    if(r.idProdotto === p.id) {
-                        arrayValues.push(r.valutazione)
-                    }
-                })
-                
-                cont++;
-                const {id, url, nome, marca, categoria, immagine, prezzi} = p;
-                return Card({id, url, cardOptions: {nome, marca, categoria, immagine, prezzi}, reviewObj: {reviews: arrayValues} })
+                //Mi creo l'oggetto prodotto
+                const product = new Product(p.id, p.nome, p.url, p.marca, p.categoria, p.immagine, p.prezzi, p.rivenditori, p.rivenditoriLogo, p.caratteristiche, p.caratteristicheAvanzate)
+                //aggiungo la recensioni al prodotto
+                product.addReview(reviews);
+                //Imposto la valutazione del prodotto
+                product.setValutazion()
+                //aggiungo il prodotto al catalogo
+                catalog.addProduct(product)
             }),
         )
-        
-        if(nameProduct) {
-            divTestualeButtonRef.current.classList.remove('hidden');
-            divTestualeButtonRef.current.classList.add('flex')
-            divTestualeTitleRef.current.textContent = `${cont} risultati trovati per "${nameProduct}"`;
-        } else {
-            divTestualeButtonRef.current.classList.add('hidden');
-            divTestualeButtonRef.current.classList.remove('flex')
-            divTestualeTitleRef.current.textContent = `${cont} risultati trovati`
-        }
 
         //appendo tutte le card, usando la ref
-        gridRef.current.append(products)
+        catalog.appendToGrid(gridRef)
+
+        //Testo per il risultato di ricerca
+        divTestualeTitleRef.current.textContent = flagFiltri.nome ? `${catalog.products.length} risultati trovati per "${flagFiltri.nome}"` : `${catalog.products.length} risultati trovati`;
 
     } catch(err) {
+        console.error(err)
         //Se c'è un errore, ritorna una p con un messaggio di errore
         divTestualeTitleRef.current.textContent = `Errore nel recupero dei prodotti: ${err}`;
     }
 }
 
 const Catalogo = () => {
-
+    
     //Imposto l'active e il titolo della pagina
     setActive('catalogo')
     document.title = 'Catalogo';
@@ -124,7 +73,6 @@ const Catalogo = () => {
 
     //mi creo le ref
     const modalRef = createRef();
-    const gridRef = createRef();
     const mainWrapperRef = createRef(); //Ref del wrapper che contiene sia i filtri che la griglia
     const sidebarRef = createRef(); //Ref della sidebar
 
@@ -142,14 +90,61 @@ const Catalogo = () => {
         onChange: filterInput,
     });
 
-    //Mi creo il div che contiene il testo
+    //Mi creo la griglia
+    const grid = DOM.div({className: 'grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center', ref: gridRef}, [])
+
+    function filterInput(inputEl) {
+        //mi salvo in una variabile l'input dell'utente, togliendo gli spazi
+        flagFiltri.nome = inputEl.value.trim() === '' ? null : inputEl.value.trim();
+
+        //Svuoto la griglia
+        gridRef.current.innerHTML = ''
+        
+        catalog.sortProducts(flagFiltri.ordine);
+  
+        const filteredProducts= catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        
+        catalog.appendToGrid(gridRef, filteredProducts)
+
+        //Testo per il risultato di ricerca
+        divTestualeTitleRef.current.textContent = flagFiltri.nome ? `${filteredProducts.length} risultati trovati per "${flagFiltri.nome}"` : `${filteredProducts.length} risultati trovati`;
+        
+        //Assegno la callback al debounce
+        /* const debounced = debounce(() => {
+            
+        }, 1000)
+
+        //Richiamo i prodotti, con la stringa da confrontare
+        debounced(); */
+    }
+
+    function orderGrid(selectEl = null) {
+        //Svuoto la grida
+        gridRef.current.innerHTML = '';
+
+        //Assegno il valore della select alal variabile globale dei filtri
+        flagFiltri.ordine = selectEl ? selectEl.value : null;
+
+        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        //Mi creo un nuovo oggetto catalogo sul quale farò il sorting
+        //visto che filterCatalog rilascia un array, ma non oggetto catalodo e quindi senza metodi 
+        const filterCatalog = new Catalog();
+
+        filteredProducts.forEach(p => filterCatalog.addProduct(p))
+
+        //Ordino l'array;
+        filterCatalog.sortProducts(flagFiltri.ordine);
+        //Appendo il nuovo array alla griglia
+        filterCatalog.appendToGrid(gridRef);
+    }
+
+    //DOM element del div che contiene messaggi di errori/risultati di ricerca
     const divTestuale = DOM.div({className: 'text-left w-full flex flex-col lg:flex-row gap-3 lg:justify-between'}, [
-        DOM.h6({className: '', ref: divTestualeTitleRef, ariaLive: 'polite'}, ['']),
+        DOM.h6({className: '', ariaLive: 'polite', ref: divTestualeTitleRef}, [``]),
         Button({
             type: 'button', 
             status: 'ghost', 
-            className: 'underline items-center hidden', 
-            ref: divTestualeButtonRef,
+            className: `underline items-center ${flagFiltri.nome ? 'flex' : 'hidden'}` , 
             onclick: () => { 
                 flagFiltri.nome = null; 
                 inputSearchRef.current.value = ''
@@ -161,25 +156,8 @@ const Catalogo = () => {
             ])
     ])
 
-    //Mi creo la griglia
-    const grid = DOM.div({className: 'grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center', ref: gridRef}, [])
-
-    function filterInput(inputEl) {
-        //mi salvo in una variabile l'input dell'utente, togliendo gli spazi
-        flagFiltri.nome = inputEl.value.trim() === '' ? null : inputEl.value.trim();
-
-        //Svuoto la griglia
-        gridRef.current.innerHTML = ''
-        
-        const debounced = debounce(() => getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef), 1000)
-
-        //Richiamo i prodotti, con la stringa da confrontare
-        debounced();
-    }
-
     //Chiamo la funziona che fa la chiamata e appende alla griglia
-    getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef);
-
+    getProducts(gridRef);
 
     return DOM.main({}, [
         //Sezione catalogo
@@ -207,15 +185,16 @@ const Catalogo = () => {
                                 'Filtri',
                                 DOM.createElFromHTMLString(`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal-icon lucide-sliders-horizontal"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>`)
                             ]),
-                            Select({name: 'select-catalogo-mobile', className: 'w-1/2 lg:w-full h-full'}, [
+                            Select({name: 'select-catalogo-mobile', className: 'w-1/2 lg:w-full h-full', onChange: orderGrid}, [
                                 DOM.option({disabled: "true", selected: "true"}, ['Ordina per']),
+                                DOM.option({}, ['Rilevanza']),
                                 DOM.option({}, ['Recensioni più alte']),
                                 DOM.option({}, ['Recensioni più basse']),
                             ])
                         ]),
                     ]),  
-                    //Div testuale
-                    divTestuale,    
+                    //Variabile del div che contiene messaggi di errore / risultati di ricerca
+                    divTestuale,
                     //Griglia
                     grid,
                 ])

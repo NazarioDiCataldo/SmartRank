@@ -233,29 +233,35 @@
             "caratteristiche": [
               {
                 "label": "Display",
-                "valore": "10.9'' Liquid Retina"
+                "valore": "11'' IPS LCD",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-tablet w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
               },
               {
-                "label": "Chip",
-                "valore": "Apple M1"
-              },
-              {
-                "label": "RAM",
-                "valore": "8 GB"
-              },
-              {
-                "label": "Storage",
-                "valore": "64 GB"
+                "label": "Fotocamera",
+                "valore": "12 MP posteriore",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
               },
               {
                 "label": "Batteria",
-                "valore": "10 ore uso misto"
+                "valore": "8000 mAh",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
               },
               {
-                "label": "Peso",
-                "valore": "460 g"
+                "label": "Processore",
+                "valore": "Snapdragon 8 Gen 2",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+              },
+              {
+                "label": "Sistema operativo",
+                "valore": "Android 13",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Memoria interna",
+                "valore": "128 GB",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
               }
-            ],
+            ],            
             "caratteristicheAvanzate": [
               {
                 "label": "Tecnologia display",
@@ -321,13 +327,37 @@
               "/logo/euronics.png"
             ],
             "caratteristiche": [
-              { "label": "Display", "valore": "11'' AMOLED 120Hz" },
-              { "label": "Chip", "valore": "Snapdragon 8 Gen 2" },
-              { "label": "RAM", "valore": "8 GB" },
-              { "label": "Storage", "valore": "128 GB" },
-              { "label": "S Pen", "valore": "Inclusa" },
-              { "label": "Resistenza", "valore": "IP68" }
-            ],
+              {
+                "label": "Display",
+                "valore": "11'' IPS LCD",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-tablet w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Fotocamera",
+                "valore": "12 MP posteriore",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
+              },
+              {
+                "label": "Batteria",
+                "valore": "8000 mAh",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
+              },
+              {
+                "label": "Processore",
+                "valore": "Snapdragon 8 Gen 2",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+              },
+              {
+                "label": "Sistema operativo",
+                "valore": "Android 13",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Memoria interna",
+                "valore": "128 GB",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
+              }
+            ],     
             "caratteristicheAvanzate": [
               { "label": "Risoluzione", "valore": "2560 x 1600 WQXGA+" },
               { "label": "HDR", "valore": "HDR10+" },
@@ -363,13 +393,37 @@
               "/logo/unieuro.png"
             ],
             "caratteristiche": [
-              { "label": "Display", "valore": "13.6'' Liquid Retina" },
-              { "label": "Chip", "valore": "Apple M2" },
-              { "label": "RAM", "valore": "8 GB" },
-              { "label": "Storage", "valore": "256 GB SSD" },
-              { "label": "Peso", "valore": "1.24 kg" },
-              { "label": "Batteria", "valore": "Fino a 18 ore" }
-            ],
+              {
+                "label": "CPU",
+                "valore": "Intel Core i7",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+              },
+              {
+                "label": "GPU",
+                "valore": "Intel Iris Xe",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3a2 2 0 0 0-2 2v4h10V3H6Zm0 6v12h10V9H6ZM16 7h4v14h-4'/><path d='M22 5h-2v2h2V5Z'/></svg>"
+              },
+              {
+                "label": "RAM",
+                "valore": "16 GB",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-database w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14a9 3 0 0 0 18 0V5'/><path d='M3 12a9 3 0 0 0 18 0'/></svg>"
+              },
+              {
+                "label": "Storage",
+                "valore": "512 GB SSD",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-hard-drive w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='12' x2='2' y2='12'/><path d='M5 16h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z'/><circle cx='6.5' cy='16.5' r='0.5'/></svg>"
+              },
+              {
+                "label": "Schermo",
+                "valore": "15.6'' FHD",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-laptop w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
+              },
+              {
+                "label": "Sistema operativo",
+                "valore": "Windows 11",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-terminal w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>"
+              }
+            ],            
             "caratteristicheAvanzate": [
               { "label": "Risoluzione", "valore": "2560 x 1664 pixel" },
               { "label": "Touch ID", "valore": "Integrato nella tastiera" },
@@ -405,12 +459,36 @@
               "/logo/mediaworld.png"
             ],
             "caratteristiche": [
-              { "label": "Display", "valore": "13.4'' OLED InfinityEdge" },
-              { "label": "Processore", "valore": "Intel Core i7 13ª Gen" },
-              { "label": "RAM", "valore": "16 GB LPDDR5" },
-              { "label": "Storage", "valore": "512 GB SSD" },
-              { "label": "Peso", "valore": "1.23 kg" },
-              { "label": "Batteria", "valore": "Fino a 12 ore" }
+              {
+                "label": "CPU",
+                "valore": "Intel Core i7",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+              },
+              {
+                "label": "GPU",
+                "valore": "Intel Iris Xe",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3a2 2 0 0 0-2 2v4h10V3H6Zm0 6v12h10V9H6ZM16 7h4v14h-4'/><path d='M22 5h-2v2h2V5Z'/></svg>"
+              },
+              {
+                "label": "RAM",
+                "valore": "16 GB",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-database w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14a9 3 0 0 0 18 0V5'/><path d='M3 12a9 3 0 0 0 18 0'/></svg>"
+              },
+              {
+                "label": "Storage",
+                "valore": "512 GB SSD",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-hard-drive w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='12' x2='2' y2='12'/><path d='M5 16h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z'/><circle cx='6.5' cy='16.5' r='0.5'/></svg>"
+              },
+              {
+                "label": "Schermo",
+                "valore": "15.6'' FHD",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-laptop w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
+              },
+              {
+                "label": "Sistema operativo",
+                "valore": "Windows 11",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-terminal w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>"
+              }
             ],
             "caratteristicheAvanzate": [
               { "label": "Risoluzione", "valore": "3456 x 2160 (3.5K OLED)" },
@@ -447,13 +525,37 @@
               "/logo/mediaworld.png"
             ],
             "caratteristiche": [
-              { "label": "Tipo", "valore": "Over-ear" },
-              { "label": "Noise Canceling", "valore": "Attivo (ANC evoluto)" },
-              { "label": "Batteria", "valore": "30 ore" },
-              { "label": "Connessione", "valore": "Bluetooth 5.2" },
-              { "label": "Pieghevoli", "valore": "Sì" },
-              { "label": "Assistente vocale", "valore": "Google Assistant, Alexa" }
-            ],
+              {
+                "label": "Tipo",
+                "valore": "In-ear wireless",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-headphones w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 18v-6a9 9 0 0 1 18 0v6'/><path d='M21 18a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2ZM3 18a2 2 0 0 0 2 2h2v-8H5a2 2 0 0 0-2 2Z'/></svg>"
+              },
+              {
+                "label": "Autonomia",
+                "valore": "6h + 24h con case",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+              },
+              {
+                "label": "Connessione",
+                "valore": "Bluetooth 5.3",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-bluetooth w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='m6.5 6.5 11 11-5 5V1l5 5-11 11'/></svg>"
+              },
+              {
+                "label": "Noise cancelling",
+                "valore": "ANC attivo",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-waveform w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h2m2 0h2m2 0h2m2 0h2m2 0h2'/></svg>"
+              },
+              {
+                "label": "Microfono",
+                "valore": "Dual beamforming",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-mic w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='11' rx='3'/><path d='M5 10v2a7 7 0 0 0 14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><line x1='8' y1='22' x2='16' y2='22'/></svg>"
+              },
+              {
+                "label": "Controlli",
+                "valore": "Touch + gesture",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-touchpad w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='12' rx='2'/><line x1='4' y1='14' x2='20' y2='14'/></svg>"
+              }
+            ],            
             "caratteristicheAvanzate": [
               { "label": "Codec audio", "valore": "LDAC, AAC, SBC" },
               { "label": "Driver", "valore": "30 mm con diaframma in carbonio" },
@@ -489,13 +591,37 @@
               "/logo/unieuro.png"
             ],
             "caratteristiche": [
-              { "label": "Tipo", "valore": "In-ear true wireless" },
-              { "label": "Noise Canceling", "valore": "Attivo + modalità Trasparenza" },
-              { "label": "Batteria", "valore": "6h (30h con custodia)" },
-              { "label": "Chip", "valore": "Apple H2" },
-              { "label": "Controlli", "valore": "Touch sugli steli" },
-              { "label": "Ricarica", "valore": "MagSafe + Lightning + USB-C" }
-            ],
+              {
+                "label": "Tipo",
+                "valore": "In-ear wireless",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-headphones w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 18v-6a9 9 0 0 1 18 0v6'/><path d='M21 18a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2ZM3 18a2 2 0 0 0 2 2h2v-8H5a2 2 0 0 0-2 2Z'/></svg>"
+              },
+              {
+                "label": "Autonomia",
+                "valore": "6h + 24h con case",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+              },
+              {
+                "label": "Connessione",
+                "valore": "Bluetooth 5.3",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-bluetooth w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='m6.5 6.5 11 11-5 5V1l5 5-11 11'/></svg>"
+              },
+              {
+                "label": "Noise cancelling",
+                "valore": "ANC attivo",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-waveform w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h2m2 0h2m2 0h2m2 0h2m2 0h2'/></svg>"
+              },
+              {
+                "label": "Microfono",
+                "valore": "Dual beamforming",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-mic w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='11' rx='3'/><path d='M5 10v2a7 7 0 0 0 14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><line x1='8' y1='22' x2='16' y2='22'/></svg>"
+              },
+              {
+                "label": "Controlli",
+                "valore": "Touch + gesture",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-touchpad w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='12' rx='2'/><line x1='4' y1='14' x2='20' y2='14'/></svg>"
+              }
+            ],            
             "caratteristicheAvanzate": [
               { "label": "Audio spaziale", "valore": "Con tracciamento dinamico" },
               { "label": "Adaptive Transparency", "valore": "Riduce suoni forti improvvisi" },
@@ -531,12 +657,36 @@
               "/logo/unieuro.png"
             ],
             "caratteristiche": [
-              { "label": "Display", "valore": "Always-On Retina 1.9''" },
-              { "label": "Chip", "valore": "S9 SiP" },
-              { "label": "Sensori", "valore": "FCG, ECG, SpO2, temperatura" },
-              { "label": "Connettività", "valore": "Wi-Fi, Bluetooth 5.3, GPS" },
-              { "label": "Cassa", "valore": "41 mm o 45 mm" },
-              { "label": "Batteria", "valore": "Fino a 18 ore" }
+              {
+                "label": "Display",
+                "valore": "AMOLED 1.9''",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-watch w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 8h12M6 16h12'/></svg>"
+              },
+              {
+                "label": "Sensori",
+                "valore": "HR, SpO2, stress",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-activity w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
+              },
+              {
+                "label": "Connettività",
+                "valore": "Wi-Fi + BT 5.0",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-wifi w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M5 13a10 10 0 0 1 14 0'/><path d='M8.5 16.5a5 5 0 0 1 7 0'/><line x1='12' y1='20' x2='12.01' y2='20'/></svg>"
+              },
+              {
+                "label": "Batteria",
+                "valore": "Fino a 2 giorni",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+              },
+              {
+                "label": "Compatibilità",
+                "valore": "Android / iOS",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Tracciamento sport",
+                "valore": "Oltre 100 attività",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-heart-pulse w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3l3 8 4-16 3 8h4'/></svg>"
+              }
             ],
             "caratteristicheAvanzate": [
               { "label": "Doppio tap", "valore": "Nuovo gesto con sensori di movimento" },
@@ -573,12 +723,36 @@
               "/logo/mediaworld.png"
             ],
             "caratteristiche": [
-              { "label": "Display", "valore": "1.5'' Super AMOLED" },
-              { "label": "Sistema operativo", "valore": "Wear OS by Samsung" },
-              { "label": "Rotazione", "valore": "Ghiera fisica girevole" },
-              { "label": "Sensori", "valore": "ECG, pressione, SpO2, temperatura" },
-              { "label": "Connettività", "valore": "Bluetooth 5.3, Wi-Fi, LTE" },
-              { "label": "Batteria", "valore": "Fino a 40 ore" }
+              {
+                "label": "Display",
+                "valore": "AMOLED 1.9''",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-watch w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 8h12M6 16h12'/></svg>"
+              },
+              {
+                "label": "Sensori",
+                "valore": "HR, SpO2, stress",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-activity w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
+              },
+              {
+                "label": "Connettività",
+                "valore": "Wi-Fi + BT 5.0",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-wifi w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M5 13a10 10 0 0 1 14 0'/><path d='M8.5 16.5a5 5 0 0 1 7 0'/><line x1='12' y1='20' x2='12.01' y2='20'/></svg>"
+              },
+              {
+                "label": "Batteria",
+                "valore": "Fino a 2 giorni",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+              },
+              {
+                "label": "Compatibilità",
+                "valore": "Android / iOS",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              },
+              {
+                "label": "Tracciamento sport",
+                "valore": "Oltre 100 attività",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-heart-pulse w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3l3 8 4-16 3 8h4'/></svg>"
+              }
             ],
             "caratteristicheAvanzate": [
               { "label": "Materiale", "valore": "Acciaio inox + vetro zaffiro" },
@@ -615,13 +789,37 @@
               "/logo/euronics.png"
             ],
             "caratteristiche": [
-              { "label": "Capacità", "valore": "20000 mAh" },
-              { "label": "Uscite", "valore": "2x USB-A 2.4A" },
-              { "label": "Peso", "valore": "357 g" },
-              { "label": "Ricarica", "valore": "PowerIQ" },
-              { "label": "Tecnologia", "valore": "VoltageBoost, PowerIQ" },
-              { "label": "Compatibilità", "valore": "Smartphone, tablet, laptop" }
-            ],
+              {
+                "label": "Capacità",
+                "valore": "20.000 mAh",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+              },
+              {
+                "label": "Porte USB",
+                "valore": "2x USB-A, 1x USB-C",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-usb w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M10 3v2h1v8h1v-8h1V3h-3Z'/><path d='M4 7v2h6v-2H4Z'/><path d='M14 7v2h6v-2h-6Z'/></svg>"
+              },
+              {
+                "label": "Peso",
+                "valore": "350g",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-scale w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M7 21h10'/><path d='M12 3v18'/><path d='M9 3h6'/><path d='M5 6l2 4 2-4'/><path d='M17 6l2 4 2-4'/></svg>"
+              },
+              {
+                "label": "Tempo ricarica",
+                "valore": "3 ore via USB-C",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-clock w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>"
+              },
+              {
+                "label": "Ricarica rapida",
+                "valore": "PD 18W supportato",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-zap w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>"
+              },
+              {
+                "label": "Compatibilità",
+                "valore": "Smartphone e tablet",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              }
+            ],             
             "caratteristicheAvanzate": [
               { "label": "Materiale", "valore": "Plastica rinforzata" },
               { "label": "Uscita veloce", "valore": "Fast charge 18W" },
@@ -657,12 +855,36 @@
               "/logo/mediaworld.png"
             ],
             "caratteristiche": [
-              { "label": "Capacità", "valore": "10000 mAh" },
-              { "label": "Uscite", "valore": "2x USB-A 5V/2.4A" },
-              { "label": "Peso", "valore": "200 g" },
-              { "label": "Ricarica", "valore": "QC 3.0" },
-              { "label": "Tecnologia", "valore": "Mi Fast Charge" },
-              { "label": "Compatibilità", "valore": "Smartphone, tablet" }
+              {
+                "label": "Capacità",
+                "valore": "20.000 mAh",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+              },
+              {
+                "label": "Porte USB",
+                "valore": "2x USB-A, 1x USB-C",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-usb w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M10 3v2h1v8h1v-8h1V3h-3Z'/><path d='M4 7v2h6v-2H4Z'/><path d='M14 7v2h6v-2h-6Z'/></svg>"
+              },
+              {
+                "label": "Peso",
+                "valore": "350g",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-scale w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M7 21h10'/><path d='M12 3v18'/><path d='M9 3h6'/><path d='M5 6l2 4 2-4'/><path d='M17 6l2 4 2-4'/></svg>"
+              },
+              {
+                "label": "Tempo ricarica",
+                "valore": "3 ore via USB-C",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-clock w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>"
+              },
+              {
+                "label": "Ricarica rapida",
+                "valore": "PD 18W supportato",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-zap w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>"
+              },
+              {
+                "label": "Compatibilità",
+                "valore": "Smartphone e tablet",
+                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+              }
             ],
             "caratteristicheAvanzate": [
               { "label": "Materiale", "valore": "Plastica PC + ABS" },

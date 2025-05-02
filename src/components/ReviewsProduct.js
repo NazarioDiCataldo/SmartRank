@@ -144,7 +144,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto) => {
             //Recensioni
             DOM.div({className: 'flex flex-col gap-8 col-span-1 md:col-span-4 lg:col-span-5'}, [
                 //Div che contiene i filtri
-                DOM.div({className: `flex-col lg:flex-row gap-4 w-full ${reviews.length > 0 ? 'flex' : 'hidden'}`}, [
+                DOM.div({className: `flex-col lg:flex-row gap-4 w-full hidden`}, [
                     //barra di ricercaa
                     input,
                     //div che contiene la select e il bottone
