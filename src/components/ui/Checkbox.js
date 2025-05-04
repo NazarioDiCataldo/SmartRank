@@ -1,7 +1,7 @@
 import DOM from 'just-dom';
 import { twMerge } from "tailwind-merge";
 
-const Checkbox = ({id, name, dataValidation = '', DataRequired = false, onChange = () => {}}, children) => {
+const Checkbox = ({id, name, className = '', dataValidation = '', DataRequired = false, onChange = () => {}}, children) => {
     return DOM.div({className: ''}, [
       DOM.div({ className: "flex items-center gap-1" }, [
         DOM.input({
@@ -10,7 +10,7 @@ const Checkbox = ({id, name, dataValidation = '', DataRequired = false, onChange
           type: "checkbox",
           dataValidation,
           DataRequired,
-          className: "checkbox checkbox-accent w-[1rem] h-[1rem] rounded-sm",
+          className: twMerge("checkbox checkbox-accent w-[1rem] h-[1rem] rounded-sm", className),
           onChange: (e) => {onChange(e.target)}
         }),
         DOM.label(

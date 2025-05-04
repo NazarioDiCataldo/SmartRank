@@ -1,8 +1,7 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
-@plugin "flyonui";
 @plugin "daisyui";
-@plugin "flyonui/theme" {
+@plugin "daisyui/theme" {
   name: "smartrank";
   default: true; 
   prefersdark: false; 

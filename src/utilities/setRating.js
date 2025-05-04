@@ -11,36 +11,42 @@ export function calculateColor(average) {
           background: 'bg-green-500',
           text: 'text-green-500', // Verde
           content: 'Ottimo',
+          color: 'green-500',
       }
     } else if (average >= 3.5) {
       return {
           background: 'bg-lime-500', // Verde chiaro
           text: 'text-lime-500',
           content: 'Buono',
+          color: 'lime-500',
       }
     } else if (average >= 2.5) {
       return {
           background: 'bg-yellow-500', // Giallo
           text: 'text-yellow-500',
           content: 'Nella media',
+          color: 'yellow-500',
       }
     } else if (average >= 1.5) {
       return {
           background: 'bg-orange-500',
           content: 'Deludente',
-          text: 'text-orange-500' // Arancio
+          text: 'text-orange-500', // Arancio
+          color: 'orange-500',
       }
     } else if (average >= 0.5) {
       return {
           background: 'bg-red-500',
           content: 'Pessimo',
-          text: 'text-red-500' // Rosso
+          text: 'text-red-500', // Rosso
+          color: 'red-500'
       }
     } else {
       return {
         background: 'bg-gray-800', // Neutro
         text: 'text-white/80',
-        content : 'Nessuna recensione'
+        content : 'Nessuna recensione',
+        color: 'gray-800'
       } 
     }
 }

@@ -56,7 +56,7 @@ const Dettaglio = () => {
             bentoboxRef.current.append(errorText)
             bentoboxRef.current.append(IntroProduct(prodotto, reviews)) //Intro (foto prodotto, nome, prezzo, recensioni)
             bentoboxRef.current.append(DescriptionProduct(prodotto)) //Sezione descrizione: testi, tab
-            bentoboxRef.current.append(ReviewsProduct(modalRef, reviews, prodotto.categoria, prodotto.nome)) //Sezione recensioni
+            bentoboxRef.current.append(ReviewsProduct(modalRef, reviews, prodotto.categoria, prodotto.nome, prodotto.url)) //Sezione recensioni
             bentoboxRef.current.append(PricesProduct(prodotto))
 
             errorTextRef.current.classList.add('hidden');

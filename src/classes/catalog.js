@@ -12,6 +12,16 @@ export default class Catalog {
         this.products.push(product)
     }
     
+    getProductById(id) {
+        const [prodotto] = this.products.filter(p => p.id === id)
+        return prodotto;
+    }
+
+    getProductBySlug(url) {
+        const [prodotto] = this.products.filter(p => p.url === url)
+        return prodotto;
+    }
+
     appendToGrid(gridRef, array = this.products){
         const productsFragment = DOM.fragment(
             array.map(p => p.createCard(gridRef.target))

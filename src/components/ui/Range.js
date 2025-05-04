@@ -1,4 +1,5 @@
 import DOM from 'just-dom';
+import { twMerge } from 'tailwind-merge';
 
 /* noUiSlider.create(ciao, {
   start: [min, max],
@@ -42,8 +43,30 @@ import DOM from 'just-dom';
         }
       }` */
 
-const Range = ({min, max, ref = null}) => {
-    return DOM.div({className: "sm:mt-7 mt-10", ref})
+const Range = ({id, name, min, max, step, className = '', onChange = () => {}}) => {
+    return DOM.div({}, [
+      DOM.label({className: 'font-medium mb-2', htmlFor: name}, [name]),
+      DOM.input({
+        id,
+        name,
+        type: "range",
+        min,
+        max,
+        value: 0,
+        className: twMerge("range w-full", className),
+        step,
+        oninput: (e) => onChange(e.target)
+      }),
+      DOM.div({ className: "flex justify-between px-2.5 mt-2 text-xs" }, [
+        DOM.span({/* className: '!text-red-500' */}, ["1"]),
+        DOM.span({/* className: '!text-orange-500' */}, ["2"]),
+        DOM.span({/* className: '!text-yellow-500' */}, ["3"]),
+        DOM.span({/* className: '!text-lime-500' */}, ["4"]),
+        DOM.span({/* className: '!text-green-500' */}, ["5"]),
+      ]),
+      DOM.small({ id: `${name}-error-message`, className: "hidden" }, []),
+    ])
+    
 }
 
 export default Range;
