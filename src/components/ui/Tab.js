@@ -8,7 +8,7 @@ const Tab = ({caratteristiche, avanzate, className = '', name = ''}) => {
         DOM.input({
           type: "radio",
           name,
-          className: "tab !shadow-none !w-1/2 !text-white/80 checked:!text-accent !p-0",
+          className: "tab !shadow-none !w-1/2 !text-white/80 checked:!text-accent !p-0 !body-sm",
           ariaLabel: "Caratteristiche",
           checked: "checked",
         }),
@@ -17,7 +17,7 @@ const Tab = ({caratteristiche, avanzate, className = '', name = ''}) => {
                 ...caratteristiche.map(c => {
                     return DOM.div({className: 'flex flex-col gap-2 col-span-1 place-items-center'}, [
                         DOM.createElFromHTMLString(c.icona),
-                        DOM.h5({className: 'text-center font-medium'}, [c.label]),
+                        DOM.h5({className: 'text-center font-medium md:whitespace-nowrap'}, [c.label]),
                         DOM.p({className: 'body-sm text-center'}, [c.valore]),
                     ])
                 })
@@ -26,7 +26,7 @@ const Tab = ({caratteristiche, avanzate, className = '', name = ''}) => {
         DOM.input({
           type: "radio",
           name,
-          className: "tab !shadow-none !w-1/2 !text-white/80 checked:!text-accent !p-0",
+          className: "tab !shadow-none !w-1/2 !text-white/80 checked:!text-accent !p-0 !body-sm",
           ariaLabel: "Scheda tecnica",
         }),
         DOM.div({ className: "tab-content pt-6" }, [

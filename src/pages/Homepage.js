@@ -8,14 +8,20 @@ import Carousel from '../components/Carousel';
 import Review from '../components/Review';
 import Modal from '../components/ui/Modal';
 import Catalog from '../classes/catalog';
-
-//Mi creo l'oggetto catalogo
-const catalog = new Catalog();
-await catalog.loadProducts();
-catalog.higerValutations();
+import { getReviews } from './Dettaglio';
 
 
-const Homepage = () => {
+const Homepage = async () => {
+    //Mi creo l'oggetto catalogo
+    const catalog = new Catalog();
+    await catalog.loadProducts();
+    catalog.higerValutations();
+
+    //Mi prendo tutte le recensioni
+    const reviews = await getReviews();
+    //Mi prendo le ultime 3 recensioni
+    const lastThreeRev = reviews.splice(-3)
+
     //Mi creo le ref
     const navigationWrapperRef = createRef(); //Ref per il titolo della bento 2, per appendere la navigazione al titolo della sezione
     const carouselRef = createRef(); //Ref per il carosello, serve per mettere le card orizzontali
@@ -66,63 +72,9 @@ const Homepage = () => {
                     DOM.h3({className: 'fs-3 mb-8'}, [`Prodotti più recensiti`]),
                 ]),
                 Carousel(navigationWrapperRef, {classSlider: '!flex flex-col ', classCard: '!w-max', refCarousel: carouselRef}, 'auto', 16, true, [
-                    
-                    ...catalog.products.splice(0, 5).map(p => {
+                    ...catalog.products.slice(0, 5).map(p => {
                         return p.createCard('carousel')
                     })
-                    //Chiamo la funziona che fa la chiamata e appende alla griglia
-                    /* HorizontalCard({
-                        id: 'ciao',
-                        href: '#',
-                        cardOptions: {
-                            src: './youtube.svg',
-                            mark: 'Apple',
-                            title: 'Iphone XS',
-                            idReviews: 'evi-1',
-                            reviews: [5, 4.5, 3, 3.2, 5, 4.5, 3, 2, 5, 5, 5],
-                            lowestPrice: 200,
-                            alt: 'Immagine Iphone',
-                        }
-                    }),
-                    HorizontalCard({
-                        id: 'ciao',
-                        href: '#',
-                        cardOptions: {
-                            src: './youtube.svg',
-                            mark: 'Apple',
-                            title: 'Iphone XS',
-                            idReviews: 'evi-2',
-                            reviews: [5, 4.5, 3, 3.2, 5, 4.5, 3, 2, 5, 5, 5],
-                            lowestPrice: 200,
-                            alt: 'Immagine Iphone',
-                        }
-                    }),
-                    HorizontalCard({
-                        id: 'ciao',
-                        href: '#',
-                        cardOptions: {
-                            src: './youtube.svg',
-                            mark: 'Apple',
-                            title: 'Iphone XS',
-                            idReviews: 'evi-3',
-                            reviews: [5, 4.5, 3, 3.2, 5, 4.5, 3, 2, 5, 5, 5],
-                            lowestPrice: 200,
-                            alt: 'Immagine Iphone',
-                        }
-                    }),
-                    HorizontalCard({
-                        id: 'ciao',
-                        href: '#',
-                        cardOptions: {
-                            src: './youtube.svg',
-                            mark: 'Apple',
-                            title: 'Iphone XS',
-                            idReviews: 'evi-4',
-                            reviews: [5, 4.5, 3, 3.2, 5, 4.5, 3, 2, 5, 5, 5],
-                            lowestPrice: 200,
-                            alt: 'Immagine Iphone',
-                        }
-                    }), */
                 ])
             ])
         },
@@ -234,8 +186,10 @@ const Homepage = () => {
                     DOM.h3({className: 'fs-3 mb-4'}, [`Ultime recensioni`]),
                 ]),
                 Carousel(reviewsWrapperRef, {classSlider: '!overflow-hidden', classCard: ''}, 1, 0, true, [
-                    /* Review(modalRef, [4]),
-                    Review(modalRef, [4.3]), */
+                    ...lastThreeRev.map(r => {
+                        const prodotto = catalog.getProductById(r.idProdotto)
+                        return Review(modalRef, r, true, prodotto)
+                    })
                 ])
             ])
         },

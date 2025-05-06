@@ -1,12 +1,21 @@
 import DOM from 'just-dom'
+import { twMerge } from 'tailwind-merge';
 
-const Colors = ({color, name, checked = false}) => {
+const Colors = ({color, name, checked = false, ref = '', className = ''}) => {
+    
+    function changeLabel(color, ref) {
+        console.log(color)
+        //Assegno il colore alla label
+        ref.current.textContent = color;
+    }
+
     return DOM.input({
         type: "radio",
         name,
         checked,
-        className:
-          `radio border-${color}-300 checked:text-${color}-600 checked:border-${color}-600`,
+        value: color,
+        className: twMerge('radio', className),
+        onchange: (e) => {changeLabel(e.target.value, ref)}
       });
       
 }

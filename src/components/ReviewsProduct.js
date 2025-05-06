@@ -19,7 +19,10 @@ export function allRatings(reviews, arrayAllRatings) {
 export function assignLabel(categoria) {
     let labels = []
     switch(categoria) {
-        case 'smartphone' || 'tablet': 
+        case 'smartphone': 
+            labels = ['Fotocamera', 'Display', 'Batteria', 'Prestazioni']
+            break
+        case 'tablet': 
             labels = ['Fotocamera', 'Display', 'Batteria', 'Prestazioni']
             break
         case 'laptop': 
@@ -52,7 +55,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
     //Messaggio in caso non ci siano recensioni
     const fallBack = DOM.div({className: `flex-col gap-3 w-full items-center ${reviews.length > 0 ? 'hidden' : 'flex'}`, ref: fallBackRef}, [
         DOM.p({className: 'font-medium body-lg'}, ['Questo prodotto non ha ancora recensioni']),
-        Link({status:'solid', className: 'flex items-center gap-1', href: '/recensione'}, ['Racconta la tua esperienza'])
+        Link({status:'solid', className: 'flex items-center gap-1', href: `/recensione?prodotto=${slugProdotto}`}, ['Racconta la tua esperienza'])
     ])
 
     //array di valutazioni (stelle) 
@@ -105,17 +108,17 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
         //onChange: filterInput,
     });
     //Mi creo le prograss bar delle varie specifiche tecniche
-    const arrayProgress = objProgress.map(({etichetta, mediaValori}) => Progress({value: mediaValori, labelText: etichetta }))
+    const arrayProgress = objProgress.map(({etichetta, mediaValori}) => Progress({value: mediaValori, labelText: etichetta, className: '!w-full' }))
 
     return DOM.section({id: 'reviews-product', className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-5'},[
         DOM.h3({className: 'fs-4 font-semibold mb-8'}, [`Tutte le recensioni su ${nomeProdotto}`]),
         //Griglia
         DOM.div({className: 'grid grid-cols-1 md:grid-cols-8 lg:grid-cols-7 gap-12 md:gap-8', ref: gridRef}, [
             //Div di sinistra
-            DOM.div({className: 'flex flex-col col-span-full md:col-span-4 lg:col-span-2'}, [
+            DOM.div({className: 'flex flex-col col-span-full md:col-span-3 lg:col-span-2'}, [
                 //Sidebar con media recensioni
                 DOM.div({className:' h-max md:sticky md:top-[2rem]'}, [
-                    Bentobox({className: '!h-max flex flex-col md:flex-row gap-4 md:justify-between items-center align-center mb-8'}, [
+                    Bentobox({className: '!h-max flex flex-col md:flex-row flex-wrap gap-4 md:justify-between items-center align-center mb-8'}, [
                         //Media recensioni
                         DOM.div({className: ' flex flex-col items-center gap-2 grow-[1]'},[
                             DOM.h5({className: `${avColor.text} fs-3 text-center w-full`}, [`${av}`]),
@@ -127,7 +130,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
                             ]),
                         ]),
                         //Progress bar
-                        DOM.div({className: `flex-row flex-wrap md:flex-col gap-2 ${reviews.length > 0 ? 'flex' : 'hidden'}`}, [
+                        DOM.div({className: `flex-col w-full gap-2 ${reviews.length > 0 ? 'flex' : 'hidden'}`}, [
                             ...arrayProgress
                         ])
                     ]),
@@ -142,7 +145,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
                 ]),
             ]),
             //Recensioni
-            DOM.div({className: 'flex flex-col gap-8 col-span-1 md:col-span-4 lg:col-span-5'}, [
+            DOM.div({className: 'flex flex-col gap-8 col-span-1 md:col-span-5 lg:col-span-5'}, [
                 //Div che contiene i filtri
                 DOM.div({className: `flex-col lg:flex-row gap-4 w-full hidden`}, [
                     //barra di ricercaa

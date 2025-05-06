@@ -11,6 +11,9 @@ import Checkbox from '../components/ui/Checkbox';
 import Range from '../components/ui/Range';
 import { assignLabel } from '../components/ReviewsProduct';
 import { calculateColor } from '../utilities/setRating';
+import { validateField } from '../utilities/validation';
+import Modal from '../components/ui/Modal';
+import setModal from '../utilities/setModal';
 
 //Mi importo il catalogo
 const catalog = new Catalog();
@@ -18,8 +21,22 @@ await catalog.loadProducts();
 
 
 const Recensione = () => {
+    //Mi prendo il prodotto in base al suo slug, che mi ricavo dalla barra di ricerca
+    const slug = routeLocation().search.prodotto;
+    const prodotto = catalog.getProductBySlug(slug);
+
     setActive('')
     document.title = 'Recensione';
+
+    //Oggetto che contiene gli errori
+    let errors = {};
+
+    //Oggetto che contiene tutti i campi del form
+    let formData = {};
+
+    //mi creo le ref
+    const modalRef = createRef();
+    const submitButtonRef = createRef();
 
     //Array di oggetti con tutti i valori dei filtri, che verrà iterato
     const radioValues = [
@@ -62,6 +79,7 @@ const Recensione = () => {
     
     //Funzione che mostra il commento
     function appearComment(button) {
+        
     //Mi salvo il valore
         const value = parseInt(button.value);
         const commentRange = getElement(`#${button.name}-error-message`)
@@ -75,6 +93,11 @@ const Recensione = () => {
             //Gli metto il testo e il colore in base alla scelta
             commentRange.classList = calculateColor(value).text
             commentRange.textContent = calculateColor(value).content;
+
+            //Mi salvo il valore di quante volte è stato trascinato il range
+            //Di default è 0
+            button.setAttribute('data-count', parseInt(button.getAttribute('data-count')) + 1); 
+
             //'Coloro' il range in base al valore
             switch(value) {
                 case 1: 
@@ -92,18 +115,192 @@ const Recensione = () => {
                 case 5:
                     button.classList = `range [--range-progress:green] [--range-thumb:white] w-full`;
                     break;
-            }   
+            }
+        
         }
     }
 
-    //Mi prendo il prodotto in base al suo slug, che mi ricavo dalla barra di ricerca
-    const slug = routeLocation().search.prodotto;
-    const prodotto = catalog.getProductBySlug(slug)
+    //Funzione che gestisce gli errori
+    const handleInputValidation = (inputEl) => {
+        // recupero i valori dall'input
+        const name = inputEl.name;
+        let value = inputEl.value;
+        let dataRequired = inputEl.dataRequired;
+    
+        //Controllo sul value
+        //Se l'input è una checkbox, non ha una proprietà value
+        //Quindi controllo se il field è una checkbox
+        //Se si, il suo value sarà il suo flag checked (true / false)
+        value = inputEl.type === 'checkbox' ? inputEl.checked : value.trim();
+
+        value = inputEl.type === 'range' ? inputEl.getAttribute('data-count') : value;    
+
+        //Recupero la validazione dall'input
+        //const value_ = inputEl.getAttribute('data-validation');
+        const dataValidation = inputEl.dataset.validation.split(' ')
+            
+        // valido il campo con tutte le sue validazioni
+        const { status, message } = validateField(
+            dataRequired,
+            dataValidation,
+            name,
+            value
+        );
+
+        const errorMessageEl = getElement(`#${name}-error-message`);
+        
+        if (status === "error") {
+            // aggiungo il messaggio di errore all'oggetto errors
+            errors[name] = message;
+            // rimuovo la classe hidden dallo span (messaggio d'errore sotto l'input)
+            errorMessageEl.classList.remove("hidden");
+            errorMessageEl.classList.add("block");
+            errorMessageEl.classList.add("text-error");
+            // aggiungo il testo del messaggio d'errore al contenuto dello span
+            errorMessageEl.textContent = message;
+            
+            return false;
+        } else {
+            // rimuovo il messaggio di errore dall'oggetto errors
+            delete errors[name];
+            // aggiungo la classe hidden allo span (messaggio d'errore sotto l'input)
+            errorMessageEl.classList.add("hidden");
+            errorMessageEl.classList.remove("block");
+            errorMessageEl.classList.remove("text-error");
+            return true;
+        }
+    };
+
+    // funzione che gestisce l'evento submit del form
+    const handleSubmit = (formEl) => {
+
+        // disabilito il submit (pulsante)
+        submitButtonRef.current.disabled = true;
+
+        // Resetto gli errori
+        errors = {};
+        let isValid = true;
+
+        // itero su tutti i campi dell'array fields
+        const fields = formEl.querySelectorAll(`input:not([type=radio]), textarea`);
+        //console.log(fields)
+        fields.forEach((field) => {
+            if (!handleInputValidation(field)) {
+                isValid = false;
+                // se la validazione fallisce non proseguo
+                // rimuovo il valore dall'oggetto formData
+                delete formData[field.name];
+            } else {
+                formData[field.name] = field.value;
+            }
+        });
+
+        //Verifico se l'utente ha cliccato su un rating
+        const valutationRating = document.querySelectorAll('#radio-valutazione input[type=radio]:checked')
+
+        //Mi prendo il tag small dei rating
+        const errorMessageEl = getElement(`#valutazione-error-message`);
+        
+        //Se l'utente non ha cliccato nessun rating, imposto isValid a false e compare il messaggio di errore
+        if(valutationRating.length === 0) {
+            isValid = false;
+            errorMessageEl.textContent = 'Il campo valutazione è obbligatorio';
+            errorMessageEl.classList = 'text-error';
+            delete formData['valutazione'];
+        } else {
+            //Tolgo il tag small di messaggio di errore se l'utente ha selezionato un rating
+            errorMessageEl.textContent = 'Il campo valutazione è obbligatorio';
+            errorMessageEl.classList = 'hidden';
+            formData['valutazione'] = valutationRating[0].value;
+        }
+
+        // Se ci sono errori, riabilito il pulsante e interrompo
+        if (!isValid) {
+            submitButtonRef.current.disabled = false;
+            return;
+        }
+
+        //Mi salvo tutti i label degli input range (Fotocamera, Display), che sono già in maiuscolo, e mi servono nella fetch
+        const labelRange = []
+
+        //Mi prendo tutti gli input range, cosi posso resettarli dopo aver inviato la recensione
+        const rangeInput = formEl.querySelectorAll('input[type=range]')
+        rangeInput.forEach(r => {
+            labelRange.push(r.name.charAt(0).toUpperCase()+r.name.slice(1)) //Rendo maiuscolo l'iniziale di ogni parola
+        })
+
+        //mi creo l'oggetto date
+        const date = new Date();
+        //Mi prendo la data nel momento in cui viene scritta la recensione
+        const today = date.toLocaleString('it-IT', {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+        })
+
+        //Mi prendo l'orario nel momento in cui viene scritta la recensione
+        const now = date.toLocaleString('it-IT', {
+            hour: "numeric",
+            minute: "numeric",
+        })
+
+        //faccio la fetch al json-server per aggiungere la recensione al db
+        fetch('http://localhost:3000/reviews', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            //Mi creo l'oggetto recensione che passerò
+            body: JSON.stringify({
+                'idProdotto': prodotto.id,
+                'autore': 'Nazario Di Cataldo',
+                "fotoProfilo": "/profile-picture.jpg",
+                "ora": now,
+                "data": today,
+                "valutazione": parseInt(formData['valutazione']),
+                "titolo": formData['titolo'],
+                "testo": formData['recensione'],
+                "valutazioniTecniche": labelRange.map(l => {
+                    return {
+                        "etichetta": l,
+                        "valore": parseInt(formData[l.toLowerCase()]),
+                    }
+                })
+            }),
+        })
+        //Se l'operazione va a buon fine svuoto il form e compare la modal di conferma
+        .then((data) => {
+
+            // Svuoto form data
+            formData = {};
+            //Il bottone diventa cliccabile
+            submitButtonRef.current.disabled = false;
+
+            setModal(modalRef, 'Recensione pubblicata', 'Grazie per aver condiviso la tua esperienza!')
+            modalRef.current.showModal();
+
+            //Reset gli input range
+            rangeInput.forEach(r => {
+                r.setAttribute('data-count', '0');
+                r.setAttribute('value', '1'); 
+                r.classList = 'range w-full';
+            })
+
+            //Reset del form
+            formEl.reset();
+        })
+        //Se c'è qualche problema compare la modal che avverte dell'errore
+        .catch((error) => {
+            setModal(modalRef, 'Errore nella pubblicazione', `C'è stato un errore: ${error}`)
+            modalRef.current.showModal();
+            submitButtonRef.current.disabled = false;
+        });
+    };
 
     //Div con bottoni valutazione e commento
     const valutazioniDiv = DOM.div({className: 'flex flex-col gap-2'}, [
         //Div con solo input radio
-        DOM.div({className: 'flex w-full'}, [
+        DOM.div({className: 'flex w-full', id: 'radio-valutazione'}, [
             ...radioValues.map(obj => {
                 return DOM.input({
                     className: 'btn btn-neutral grow-[1] btn-outline hover:text-white/80 focus:text-white/80 active:text-primary ' + obj.className,
@@ -111,12 +308,15 @@ const Recensione = () => {
                     name: obj.label,
                     ariaLabel: obj.name,
                     value: obj.value,
-                    onclick: (e) => {obj.onClick(e.target)},
+                    onchange: (e) => {obj.onClick(e.target)},
                 })
             }),
         ]),
         DOM.small({ id: `valutazione-error-message`, className: "hidden" }, []),
     ]);
+
+    //Mi creo la modal
+    const modal = Modal({className: 'rounded-3xl'}, modalRef);
 
     return DOM.main({}, [
         DOM.section({className: 'container my-8 lg:my-14'}, [
@@ -143,7 +343,13 @@ const Recensione = () => {
                 //Div di destra con il form per la valutazione
                 Bentobox({id: 'bento-recensioni-invio', className: '!h-auto w-full md:w-1/2 rounded-lg'}, [
                     //Form con i campi
-                    DOM.form({className: 'flex flex-col gap-8', action: '#', method: 'POST'}, [
+                    DOM.form({className: 'flex flex-col gap-8', 
+                        action: '#', 
+                        method: 'POST', 
+                        onsubmit: (e) => {
+                            e.preventDefault();
+                            handleSubmit(e.target)
+                        }}, [
                         //Div con gli input radio sulla valutazione e testo
                         DOM.div({className:'flex flex-col gap-4'}, [
                             DOM.h3({className: 'fs-5 font-semibold'}, ['Come valuti questo prodotto?']),
@@ -154,22 +360,29 @@ const Recensione = () => {
                         DOM.div({className:'flex flex-col gap-4'}, [
                             DOM.h3({className: 'fs-5 font-semibold'}, ['Dai un titolo alla tua recensione']),
                             Input({id:'titolo-recensione',
-                                name: 'titolo-recensione',
+                                name: 'titolo',
                                 label: 'Inserisci il titolo della tua recensione',
                                 placeholder: 'Titolo della recensione',
                                 className: 'pl-4 w-full',
                                 dataRequired: true,
-                                dataValidation: 'min:10',
+                                dataValidation: 'min:8 recensione',
+                                onChange: handleInputValidation,
+                                onBlur: handleInputValidation,
                             })
                         ]),
                         //Div che contiene l'input sul testo della recensione
                         DOM.div({className:'flex flex-col gap-4'}, [
                             DOM.h3({className: 'fs-5 font-semibold'}, ['Scrivi la tua recensione']),
                             Textarea({id:'testo-recensione',
-                                name:'testo-recensione', 
+                                name:'recensione', 
                                 ariaLabel: 'Inserisci la tua recensione',
                                 placeholder: 'Testo della recensione',
-                                className: 'pl-4 w-full'})
+                                className: 'pl-4 w-full',
+                                dataRequired: true,
+                                dataValidation: 'min:10 recensione',
+                                onChange: handleInputValidation,
+                                onBlur: handleInputValidation,
+                            })
                         ]),
                         //Div che contiene i range e il titolo
                         DOM.div({className:'flex flex-col gap-4'}, [
@@ -182,7 +395,9 @@ const Recensione = () => {
                                         min: 1, 
                                         max: 5, 
                                         step: 1,
+                                        dataCount: "0",
                                         dataRequired: true,
+                                        dataValidation: 'range',
                                         onChange: appearComment
                                     })
                                 })
@@ -195,14 +410,15 @@ const Recensione = () => {
                             className: 'whitespace-nowrap',
                             dataValidation: 'checkbox',
                             dataRequired: true,
-                            //onChange: handleInputValidation
+                            onChange: handleInputValidation
                         }, ['Dichiaro che questa recensione è onesta *']),
                         //Submit
-                        Button({type: 'submit', status: 'solid'}, ['Pubblica recensione'])
+                        Button({type: 'submit', status: 'solid', ref: submitButtonRef}, ['Pubblica recensione'])
                     ])
                 ])
             ])
-        ])
+        ]),
+        modal
     ])
 }
 

@@ -12,7 +12,7 @@ const Offcanvas = ({id, className = ''}) => {
     checkbox.checked ? checkbox.checked = false : checkbox.checked = true
   }
 
-  return DOM.div({id, className: "drawer w-max rounded-md" }, [
+  return DOM.div({id, className: "drawer w-max rounded-md z-[100]" }, [
     DOM.input({
       ref: modalToggleInputRef,
       id: "offcanvasNav",
@@ -26,13 +26,13 @@ const Offcanvas = ({id, className = ''}) => {
         ]),
     ]),
     //Offcanvas
-    DOM.div({ className: twMerge("drawer-side offcanvas-gradient w-full md:w-[50%] flex flex-col", className), }, [
+    DOM.div({ className: twMerge("drawer-side w-full md:w-[50%] flex flex-col offcanvas-gradient !right-[0rem] !left-[unset]", className), }, [
       //Offcanvas Header
       DOM.div({className: 'flex justify-between w-full p-4'}, [
         DOM.a({ href: '/', dataVanillaRouteLink:'spa'}, [
           DOM.img({ src: '/logo-negativo.svg', width: '128', alt:'Ritorna alla home'})
         ]),
-        DOM.label({ htmlFor: "offcanvasNav", className: "btn btn-primary btn-circle lg:hidden hamburger-btn drawer-button", role: 'button'}, [
+        DOM.label({ htmlFor: "offcanvasNav", className: "btn btn-primary btn-circle lg:hidden hamburger-btn drawer-button drawer-overlay", role: 'button'}, [
             DOM.createElFromHTMLString(`
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`),
             DOM.span({className:'sr-only'}, ['Chiudi menù'])

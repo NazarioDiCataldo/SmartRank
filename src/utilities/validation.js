@@ -66,6 +66,14 @@ export const validateField = (required = false, types, name, value) => {
                     };
                 }
                 break;
+            case "recensione": 
+                if (!/([a-zA-Z].*?){5,}/.test(value)) {
+                    return {
+                        status: "error",
+                        message: `Il campo ${name} deve contenere almeno 5 lettere`,
+                    };
+                }
+                break;
             case "checkbox":
                 if (value !== true) {
                         return {
@@ -74,6 +82,14 @@ export const validateField = (required = false, types, name, value) => {
                         };
                     }
                     break;
+            case "range": 
+                if(value == 0) {
+                    return {
+                        status: "error",
+                        message: `Il campo ${name} è obbligatorio`,
+                    };
+                }
+                break;
             default:
                 break;
         }

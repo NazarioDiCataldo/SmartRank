@@ -43,18 +43,34 @@ import { twMerge } from 'tailwind-merge';
         }
       }` */
 
-const Range = ({id, name, min, max, step, className = '', onChange = () => {}}) => {
+const Range = ({id, 
+              name, 
+              min, 
+              max, 
+              step, 
+              className = '', 
+              dataCount = 0,
+              dataRequired = true,
+              dataValidation = '',
+              onChange = () => {}}) => {
+
+    const originalName = name;
+    name = name.toLowerCase();
+
     return DOM.div({}, [
-      DOM.label({className: 'font-medium mb-2', htmlFor: name}, [name]),
+      DOM.label({className: 'font-medium mb-2', htmlFor: name}, [originalName]),
       DOM.input({
         id,
         name,
         type: "range",
         min,
         max,
-        value: 0,
-        className: twMerge("range w-full", className),
+        value: 1,                 //[--range-progress:red] [--range-thumb:white]
+        className: twMerge("range w-full ", className),
         step,
+        dataRequired,
+        dataValidation,
+        dataCount,
         oninput: (e) => onChange(e.target)
       }),
       DOM.div({ className: "flex justify-between px-2.5 mt-2 text-xs" }, [
@@ -64,7 +80,7 @@ const Range = ({id, name, min, max, step, className = '', onChange = () => {}}) 
         DOM.span({/* className: '!text-lime-500' */}, ["4"]),
         DOM.span({/* className: '!text-green-500' */}, ["5"]),
       ]),
-      DOM.small({ id: `${name}-error-message`, className: "hidden" }, []),
+      DOM.small({ id: `${name}-error-message`, className: "hidden text-error"}, ['Pessimo']),
     ])
     
 }

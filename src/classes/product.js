@@ -55,7 +55,6 @@ export default class Product {
                 cardOptions: {nome: this.nome, marca: this.marca, categoria: this.categoria, immagine: this.immagine, prezzi: this.prezzi}, 
                 reviewObj: {idReview: `Rating-${this.id}` , reviews: this.getAllValutations().valutazioni}})
         } else {
-            console.log(this.url)
             return HorizontalCard({
                 id: this.id, 
                 href: this.url,

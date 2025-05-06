@@ -40,7 +40,7 @@ const Progress = ({value, labelText, className =  ''}) => {
     const progress = DOM.div({className: `rounded-3xl h-[100%] ${color.background}`}, []);
     progress.style.width = `${perc}%`;
 
-    return DOM.div({className:twMerge('w-[8rem]', className)}, [
+    return DOM.div({className:twMerge('w-[10rem]', className)}, [
         DOM.p({className: 'body-sm font-medium'}, labelText),
         DOM.div({className: 'flex items-center gap-2'}, [
             DOM.div({className: `bg-white rounded-3xl w-[100%] h-[0.75rem] `}, [

@@ -1,1000 +1,1600 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": "1",
+      "nome": "iPhone 15 Pro",
+      "url": "iphone-15-pro",
+      "marca": "Apple",
+      "categoria": "smartphone",
+      "immagine": "/img/iphone-15-pro.webp",
+      "prezzi": [
+        1149,
+        1199,
+        1249
+      ],
+      "rivenditori": [
+        "Amazon",
+        "MediaWorld",
+        "Unieuro"
+      ],
+      "rivenditoriLogo": [
+        "/logo/amazon.png",
+        "/logo/mediaworld.png",
+        "/logo/unieuro.png"
+      ],
+      "caratteristiche": [
         {
-            "id": 1,
-            "nome": "iPhone 15 Pro",
-            "url": "iphone-15-pro",
-            "marca": "Apple",
-            "categoria": "smartphone",
-            "immagine": "/img/iphone-15-pro.webp",
-            "prezzi": [
-              1149,
-              1199,
-              1249
-            ],
-            "rivenditori": [
-              "Amazon",
-              "MediaWorld",
-              "Unieuro"
-            ],
-            "rivenditoriLogo": [
-              "/logo/amazon.png",
-              "/logo/mediaworld.png",
-              "/logo/unieuro.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Display",
-                "valore": "6.1'' OLED",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
-              },
-              {
-                "label": "Fotocamera",
-                "valore": "48 MP",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
-              },
-              {
-                "label": "Batteria",
-                "valore": "4200 mAh",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
-              },
-              {
-                "label": "Processore",
-                "valore": "A17 Bionic",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "iOS 17",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Memoria interna",
-                "valore": "256 GB",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
-              }
-            ],            
-            "caratteristicheAvanzate": [
-              {
-                "label": "Tecnologia display",
-                "valore": "Super Retina XDR con ProMotion"
-              },
-              {
-                "label": "Materiale",
-                "valore": "Titanio aerospaziale"
-              },
-              {
-                "label": "Modalità video",
-                "valore": "Cinematic, ProRes, Action mode"
-              },
-              {
-                "label": "Ricarica",
-                "valore": "MagSafe 15W, USB-C"
-              },
-              {
-                "label": "GPU",
-                "valore": "6-core GPU con ray tracing"
-              },
-              {
-                "label": "Protezione",
-                "valore": "Ceramic Shield, IP68"
-              },
-              {
-                "label": "Connettività",
-                "valore": "Wi-Fi 6E, Bluetooth 5.3"
-              },
-              {
-                "label": "Sicurezza",
-                "valore": "Face ID"
-              },
-              {
-                "label": "Registrazione video",
-                "valore": "4K fino a 60 fps"
-              },
-              {
-                "label": "Peso",
-                "valore": "187 g"
-              }
-            ],
-            "descrizioni": [
-              "L’iPhone 15 Pro è la nuova frontiera degli smartphone premium, costruito in titanio e alimentato dal chip A17 Pro. Con un design elegante e leggero, rappresenta una svolta tecnologica per prestazioni e autonomia.",
-              "Offre un’esperienza visiva incredibile grazie al display Super Retina XDR con ProMotion, ideale per gaming, editing e streaming. Il comparto fotografico consente scatti e video di qualità professionale.",
-              "Grazie alla nuova porta USB-C, alla lunga durata della batteria e all’integrazione perfetta con l’ecosistema Apple, è il compagno ideale per utenti avanzati, creatori e professionisti del settore tech."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Display",
+          "valore": "6.1'' OLED",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
         },
         {
-            "id": 2,
-            "nome": "Samsung Galaxy S24",
-            "url": "galaxy-s24",
-            "marca": "Samsung",
-            "categoria": "smartphone",
-            "immagine": "/img/galaxy-s24.webp",
-            "prezzi": [
-              899,
-              949,
-              999
-            ],
-            "rivenditori": [
-              "Samsung ",
-              "Amazon",
-              "Euronics"
-            ],
-            "rivenditoriLogo": [
-              "/logo/samsung.png",
-              "/logo/amazon.png",
-              "/logo/euronics.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Display",
-                "valore": "6.1'' OLED",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
-              },
-              {
-                "label": "Fotocamera",
-                "valore": "48 MP",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
-              },
-              {
-                "label": "Batteria",
-                "valore": "4200 mAh",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
-              },
-              {
-                "label": "Processore",
-                "valore": "A17 Bionic",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "iOS 17",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Memoria interna",
-                "valore": "256 GB",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
-              }
-            ],            
-            "caratteristicheAvanzate": [
-              {
-                "label": "Risoluzione",
-                "valore": "2340 x 1080"
-              },
-              {
-                "label": "Refresh rate",
-                "valore": "120Hz Adaptive"
-              },
-              {
-                "label": "Resistenza",
-                "valore": "IP68"
-              },
-              {
-                "label": "Registrazione video",
-                "valore": "8K a 24fps"
-              },
-              {
-                "label": "Connettività",
-                "valore": "5G, Wi-Fi 6E, Bluetooth 5.3"
-              },
-              {
-                "label": "Audio",
-                "valore": "Stereo AKG, Dolby Atmos"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "Android 14 One UI 6"
-              },
-              {
-                "label": "Materiali",
-                "valore": "Alluminio Armor + Gorilla Glass Victus 2"
-              },
-              {
-                "label": "Sicurezza",
-                "valore": "Impronta + riconoscimento facciale"
-              },
-              {
-                "label": "Dual SIM",
-                "valore": "Nano SIM + eSIM"
-              }
-            ],
-            "descrizioni": [
-              "Il Galaxy S24 è il nuovo smartphone top di gamma di Samsung, con un design compatto e specifiche avanzate. Lo schermo AMOLED ad alta risoluzione con refresh rate dinamico offre immagini fluide e dettagliate.",
-              "Grazie al processore Exynos 2400 e al comparto fotografico con intelligenza artificiale, è ideale per multitasking, gaming e fotografia avanzata. La protezione IP68 e la scocca robusta garantiscono durata.",
-              "Perfetto per utenti Android esigenti, integra tecnologie recenti come la registrazione 8K, la modalità notte migliorata e connettività 5G ultra veloce. Un equilibrio perfetto tra potenza e portabilità."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Fotocamera",
+          "valore": "48 MP",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
         },
         {
-            "id": 3,
-            "nome": "iPad Air M1",
-            "url": "ipad-air-m1",
-            "marca": "Apple",
-            "categoria": "tablet",
-            "immagine": "/img/ipad-air-m1.webp",
-            "prezzi": [
-              719,
-              749,
-              799
-            ],
-            "rivenditori": [
-              "Apple ",
-              "Unieuro",
-              "MediaWorld"
-            ],
-            "rivenditoriLogo": [
-              "/logo/apple.png",
-              "/logo/unieuro.png",
-              "/logo/mediaworld.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Display",
-                "valore": "11'' IPS LCD",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-tablet w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Fotocamera",
-                "valore": "12 MP posteriore",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
-              },
-              {
-                "label": "Batteria",
-                "valore": "8000 mAh",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
-              },
-              {
-                "label": "Processore",
-                "valore": "Snapdragon 8 Gen 2",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "Android 13",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Memoria interna",
-                "valore": "128 GB",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
-              }
-            ],            
-            "caratteristicheAvanzate": [
-              {
-                "label": "Tecnologia display",
-                "valore": "True Tone, P3 wide color"
-              },
-              {
-                "label": "Risoluzione",
-                "valore": "2360 x 1640 pixel"
-              },
-              {
-                "label": "Touch ID",
-                "valore": "Integrato nel pulsante superiore"
-              },
-              {
-                "label": "Porte",
-                "valore": "USB-C"
-              },
-              {
-                "label": "Audio",
-                "valore": "Stereo landscape"
-              },
-              {
-                "label": "Apple Pencil",
-                "valore": "Compatibile (2ª gen)"
-              },
-              {
-                "label": "Materiale",
-                "valore": "Alluminio riciclato"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "iPadOS"
-              },
-              {
-                "label": "Rete",
-                "valore": "Wi-Fi 6"
-              },
-              {
-                "label": "Videocamera frontale",
-                "valore": "12 MP con Center Stage"
-              }
-            ],
-            "descrizioni": [
-              "L’iPad Air con chip M1 unisce potenza e leggerezza in un unico prodotto. Il suo design raffinato lo rende perfetto per studenti, designer e chi cerca un tablet versatile ma prestante.",
-              "Il chip Apple M1 offre prestazioni da notebook e lo rende perfetto anche per lavori più intensi. Supporta Apple Pencil di seconda generazione e tastiere, trasformandosi in una workstation portatile.",
-              "Ottimo anche per chi ama l’intrattenimento: lo schermo è luminoso, i colori fedeli, e il suono stereo di buona qualità. Ideale per Netflix, editing o disegno digitale."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Batteria",
+          "valore": "4200 mAh",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
         },
         {
-            "id": 4,
-            "nome": "Samsung Galaxy Tab S9",
-            "url": "galaxy-tab-s9",
-            "marca": "Samsung",
-            "categoria": "tablet",
-            "immagine": "/img/galaxy-tab-s9.webp",
-            "prezzi": [899, 949, 999],
-            "rivenditori": ["Amazon", "Samsung ", "Euronics"],
-            "rivenditoriLogo": [
-              "/logo/amazon.png",
-              "/logo/samsung.png",
-              "/logo/euronics.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Display",
-                "valore": "11'' IPS LCD",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-tablet w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Fotocamera",
-                "valore": "12 MP posteriore",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
-              },
-              {
-                "label": "Batteria",
-                "valore": "8000 mAh",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
-              },
-              {
-                "label": "Processore",
-                "valore": "Snapdragon 8 Gen 2",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "Android 13",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Memoria interna",
-                "valore": "128 GB",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
-              }
-            ],     
-            "caratteristicheAvanzate": [
-              { "label": "Risoluzione", "valore": "2560 x 1600 WQXGA+" },
-              { "label": "HDR", "valore": "HDR10+" },
-              { "label": "Cornici", "valore": "Sottili, simmetriche" },
-              { "label": "Materiale", "valore": "Alluminio Armor" },
-              { "label": "Audio", "valore": "Quad speaker AKG, Dolby Atmos" },
-              { "label": "Sistema operativo", "valore": "Android 13 One UI 5.1" },
-              { "label": "Porte", "valore": "USB-C 3.2" },
-              { "label": "Riconoscimento", "valore": "Face unlock + impronta" },
-              { "label": "Autonomia", "valore": "Fino a 15 ore video" },
-              { "label": "Peso", "valore": "498 g" }
-            ],
-            "descrizioni": [
-              "Il Galaxy Tab S9 è uno dei migliori tablet Android attualmente disponibili, pensato per chi cerca prestazioni elevate e versatilità in mobilità. Con un display AMOLED di altissima qualità e refresh rate a 120Hz, ogni contenuto risulta vivido e fluido.",
-              "Lo Snapdragon 8 Gen 2 assicura prestazioni da top di gamma, mentre la S Pen inclusa è ideale per creativi, studenti e professionisti. La resistenza IP68 lo rende adatto anche ad ambienti più impegnativi.",
-              "È perfetto per intrattenimento, disegno, multitasking e produttività: grazie all’ecosistema Samsung, si integra perfettamente con smartphone e accessori, offrendo un’esperienza connessa e fluida."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Processore",
+          "valore": "A17 Bionic",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
         },
         {
-            "id": 5,
-            "nome": "MacBook Air M2",
-            "url": "macbook-air-m2",
-            "marca": "Apple",
-            "categoria": "laptop",
-            "immagine": "/img/mac-air-m2.webp",
-            "prezzi": [1199, 1349, 1499],
-            "rivenditori": ["Apple ", "Amazon", "Unieuro"],
-            "rivenditoriLogo": [
-              "/logo/apple.png",
-              "/logo/amazon.png",
-              "/logo/unieuro.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "CPU",
-                "valore": "Intel Core i7",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
-              },
-              {
-                "label": "GPU",
-                "valore": "Intel Iris Xe",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3a2 2 0 0 0-2 2v4h10V3H6Zm0 6v12h10V9H6ZM16 7h4v14h-4'/><path d='M22 5h-2v2h2V5Z'/></svg>"
-              },
-              {
-                "label": "RAM",
-                "valore": "16 GB",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-database w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14a9 3 0 0 0 18 0V5'/><path d='M3 12a9 3 0 0 0 18 0'/></svg>"
-              },
-              {
-                "label": "Storage",
-                "valore": "512 GB SSD",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-hard-drive w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='12' x2='2' y2='12'/><path d='M5 16h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z'/><circle cx='6.5' cy='16.5' r='0.5'/></svg>"
-              },
-              {
-                "label": "Schermo",
-                "valore": "15.6'' FHD",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-laptop w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "Windows 11",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-terminal w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>"
-              }
-            ],            
-            "caratteristicheAvanzate": [
-              { "label": "Risoluzione", "valore": "2560 x 1664 pixel" },
-              { "label": "Touch ID", "valore": "Integrato nella tastiera" },
-              { "label": "Audio", "valore": "4 speaker spatial audio" },
-              { "label": "Webcam", "valore": "1080p FaceTime HD" },
-              { "label": "Materiale", "valore": "Alluminio riciclato" },
-              { "label": "Ventilazione", "valore": "Fanless (silenzioso)" },
-              { "label": "Porte", "valore": "2x Thunderbolt, MagSafe" },
-              { "label": "Wi-Fi", "valore": "Wi-Fi 6" },
-              { "label": "Bluetooth", "valore": "Bluetooth 5.3" },
-              { "label": "Sistema operativo", "valore": "macOS Ventura (espandibile)" }
-            ],
-            "descrizioni": [
-              "Il MacBook Air M2 è un laptop ultra portatile, elegante e potente, pensato per studenti, professionisti e chi lavora spesso in mobilità. Il suo design fanless lo rende estremamente silenzioso e moderno.",
-              "Il chip M2 garantisce prestazioni eccellenti in tutte le attività quotidiane, dalla produttività all'editing leggero. Il display Liquid Retina da 13,6'' offre una resa dei colori realistica e brillante.",
-              "Con un’autonomia di oltre 18 ore, una webcam ad alta definizione e un audio sorprendente, è ideale anche per videoconferenze e streaming. Un ottimo investimento per chi cerca stile e affidabilità nel tempo."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Sistema operativo",
+          "valore": "iOS 17",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
         },
         {
-            "id": 6,
-            "nome": "Dell XPS 13 Plus",
-            "url": "dell-xps-13-plus",
-            "marca": "Dell",
-            "categoria": "laptop",
-            "immagine": "/img/asus-zenbook-14.webp",
-            "prezzi": [1399, 1499, 1649],
-            "rivenditori": ["Dell ", "Amazon", "MediaWorld"],
-            "rivenditoriLogo": [
-              "/logo/dell.png",
-              "/logo/amazon.png",
-              "/logo/mediaworld.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "CPU",
-                "valore": "Intel Core i7",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
-              },
-              {
-                "label": "GPU",
-                "valore": "Intel Iris Xe",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3a2 2 0 0 0-2 2v4h10V3H6Zm0 6v12h10V9H6ZM16 7h4v14h-4'/><path d='M22 5h-2v2h2V5Z'/></svg>"
-              },
-              {
-                "label": "RAM",
-                "valore": "16 GB",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-database w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14a9 3 0 0 0 18 0V5'/><path d='M3 12a9 3 0 0 0 18 0'/></svg>"
-              },
-              {
-                "label": "Storage",
-                "valore": "512 GB SSD",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-hard-drive w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='12' x2='2' y2='12'/><path d='M5 16h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z'/><circle cx='6.5' cy='16.5' r='0.5'/></svg>"
-              },
-              {
-                "label": "Schermo",
-                "valore": "15.6'' FHD",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-laptop w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
-              },
-              {
-                "label": "Sistema operativo",
-                "valore": "Windows 11",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-terminal w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>"
-              }
-            ],
-            "caratteristicheAvanzate": [
-              { "label": "Risoluzione", "valore": "3456 x 2160 (3.5K OLED)" },
-              { "label": "Grafica", "valore": "Intel Iris Xe" },
-              { "label": "Tastiera", "valore": "Zero Lattice retroilluminata" },
-              { "label": "Touchpad", "valore": "Glass TouchPad invisibile" },
-              { "label": "Audio", "valore": "Quad speaker Waves MaxxAudio" },
-              { "label": "Materiali", "valore": "Alluminio fresato e vetro Gorilla" },
-              { "label": "Porte", "valore": "2x USB-C Thunderbolt 4" },
-              { "label": "Wi-Fi", "valore": "Wi-Fi 6E" },
-              { "label": "Sistema operativo", "valore": "Windows 11 Pro" },
-              { "label": "Ricarica", "valore": "ExpressCharge, 80% in 1 ora" }
-            ],
-            "descrizioni": [
-              "Il Dell XPS 13 Plus è un laptop futuristico con linee pulite, schermo OLED spettacolare e prestazioni da top di gamma. È pensato per creativi, developer e utenti business che desiderano estetica e potenza.",
-              "L’infinity edge display riduce al minimo le cornici, offrendo un’immersione visiva totale. La tastiera Zero Lattice e il touchpad invisibile conferiscono un look premium e funzionale.",
-              "Con audio avanzato, ricarica rapida, costruzione solida e compatibilità totale con l’ecosistema Windows, è un notebook perfetto per chi cerca design minimal ma prestazioni eccellenti sul campo."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Memoria interna",
+          "valore": "256 GB",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Tecnologia display",
+          "valore": "Super Retina XDR con ProMotion"
         },
         {
-            "id": 7,
-            "nome": "Sony WH-1000XM5",
-            "url": "sony-wh1000xm5",
-            "marca": "Sony",
-            "categoria": "cuffie",
-            "immagine": "/img/sony-wh1000xm5.webp",
-            "prezzi": [379, 399],
-            "rivenditori": ["Amazon", "Sony ", "MediaWorld"],
-            "rivenditoriLogo": [
-              "/logo/amazon.png",
-              "/logo/sony.png",
-              "/logo/mediaworld.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Tipo",
-                "valore": "In-ear wireless",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-headphones w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 18v-6a9 9 0 0 1 18 0v6'/><path d='M21 18a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2ZM3 18a2 2 0 0 0 2 2h2v-8H5a2 2 0 0 0-2 2Z'/></svg>"
-              },
-              {
-                "label": "Autonomia",
-                "valore": "6h + 24h con case",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
-              },
-              {
-                "label": "Connessione",
-                "valore": "Bluetooth 5.3",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-bluetooth w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='m6.5 6.5 11 11-5 5V1l5 5-11 11'/></svg>"
-              },
-              {
-                "label": "Noise cancelling",
-                "valore": "ANC attivo",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-waveform w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h2m2 0h2m2 0h2m2 0h2m2 0h2'/></svg>"
-              },
-              {
-                "label": "Microfono",
-                "valore": "Dual beamforming",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-mic w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='11' rx='3'/><path d='M5 10v2a7 7 0 0 0 14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><line x1='8' y1='22' x2='16' y2='22'/></svg>"
-              },
-              {
-                "label": "Controlli",
-                "valore": "Touch + gesture",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-touchpad w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='12' rx='2'/><line x1='4' y1='14' x2='20' y2='14'/></svg>"
-              }
-            ],            
-            "caratteristicheAvanzate": [
-              { "label": "Codec audio", "valore": "LDAC, AAC, SBC" },
-              { "label": "Driver", "valore": "30 mm con diaframma in carbonio" },
-              { "label": "Risposta in frequenza", "valore": "4 Hz – 40.000 Hz" },
-              { "label": "NFC", "valore": "Integrato per pairing rapido" },
-              { "label": "Controlli", "valore": "Touch capacitivo + sensore presenza" },
-              { "label": "Multipoint", "valore": "Sì, fino a 2 dispositivi" },
-              { "label": "Modalità ambientale", "valore": "Adaptive Sound Control" },
-              { "label": "Ricarica rapida", "valore": "3 ore in 3 minuti" },
-              { "label": "App dedicata", "valore": "Sony Headphones Connect" },
-              { "label": "Microfoni", "valore": "8 microfoni con AI noise suppression" }
-            ],
-            "descrizioni": [
-              "Le Sony WH-1000XM5 sono tra le cuffie più apprezzate al mondo per chi cerca un’esperienza di ascolto immersiva e senza distrazioni. Comode e leggere, sono ideali per viaggi, lavoro e relax.",
-              "Il sistema avanzato di cancellazione del rumore si adatta in tempo reale all’ambiente circostante, mentre il suono ad alta risoluzione offre profondità e dettaglio in ogni genere musicale.",
-              "Grazie alla lunga autonomia, alle funzioni smart e alla qualità costruttiva premium, rappresentano la scelta perfetta per audiofili e utenti professionali che non vogliono compromessi."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Materiale",
+          "valore": "Titanio aerospaziale"
         },
         {
-            "id": 8,
-            "nome": "AirPods Pro 2",
-            "url": "airpods-pro-2",
-            "marca": "Apple",
-            "categoria": "cuffie",
-            "immagine": "/img/airpods-pro-2.webp",
-            "prezzi": [279, 299],
-            "rivenditori": ["Apple ", "Amazon", "Unieuro"],
-            "rivenditoriLogo": [
-              "/logo/apple.png",
-              "/logo/amazon.png",
-              "/logo/unieuro.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Tipo",
-                "valore": "In-ear wireless",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-headphones w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 18v-6a9 9 0 0 1 18 0v6'/><path d='M21 18a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2ZM3 18a2 2 0 0 0 2 2h2v-8H5a2 2 0 0 0-2 2Z'/></svg>"
-              },
-              {
-                "label": "Autonomia",
-                "valore": "6h + 24h con case",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
-              },
-              {
-                "label": "Connessione",
-                "valore": "Bluetooth 5.3",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-bluetooth w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='m6.5 6.5 11 11-5 5V1l5 5-11 11'/></svg>"
-              },
-              {
-                "label": "Noise cancelling",
-                "valore": "ANC attivo",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-waveform w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h2m2 0h2m2 0h2m2 0h2m2 0h2'/></svg>"
-              },
-              {
-                "label": "Microfono",
-                "valore": "Dual beamforming",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-mic w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='11' rx='3'/><path d='M5 10v2a7 7 0 0 0 14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><line x1='8' y1='22' x2='16' y2='22'/></svg>"
-              },
-              {
-                "label": "Controlli",
-                "valore": "Touch + gesture",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-touchpad w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='12' rx='2'/><line x1='4' y1='14' x2='20' y2='14'/></svg>"
-              }
-            ],            
-            "caratteristicheAvanzate": [
-              { "label": "Audio spaziale", "valore": "Con tracciamento dinamico" },
-              { "label": "Adaptive Transparency", "valore": "Riduce suoni forti improvvisi" },
-              { "label": "Personalizzazione suono", "valore": "EQ adattivo automatico" },
-              { "label": "Resistenza", "valore": "IPX4 (auricolari e custodia)" },
-              { "label": "Bluetooth", "valore": "5.3" },
-              { "label": "U1 chip", "valore": "Precision Find con Dov'è" },
-              { "label": "Porte di ricarica", "valore": "Lightning, USB-C, MagSafe" },
-              { "label": "Case con speaker", "valore": "Feedback sonoro + gancio lanyard" },
-              { "label": "Compatibilità", "valore": "Perfetta con iOS, ma anche Android" },
-              { "label": "Microfoni", "valore": "Beamforming + soppressione rumore vento" }
-            ],
-            "descrizioni": [
-              "Gli AirPods Pro di seconda generazione migliorano tutto ciò che gli utenti hanno amato della prima versione. Leggeri, comodi e incredibilmente intelligenti, si adattano al tuo ambiente in tempo reale.",
-              "Con il chip H2, la cancellazione del rumore è più potente, la modalità trasparenza più naturale, e l’autonomia migliorata. L’audio spaziale offre un suono coinvolgente e personalizzato.",
-              "Perfetti per chi è nell’ecosistema Apple, ma validi anche su Android. Il case include speaker e chip U1 per trovarli facilmente. Una combinazione di funzionalità, qualità audio e praticità senza rivali."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
-        },          
-        {
-            "id": 9,
-            "nome": "Apple Watch Series 9",
-            "marca": "Apple",
-            "url": "apple-watch-series9",
-            "categoria": "smartwatch",
-            "immagine": "/img/apple-watch-series-9.webp",
-            "prezzi": [449, 499],
-            "rivenditori": ["Apple ", "Amazon", "Unieuro"],
-            "rivenditoriLogo": [
-              "/logo/apple.svg",
-              "/logo/amazon.png",
-              "/logo/unieuro.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Display",
-                "valore": "AMOLED 1.9''",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-watch w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 8h12M6 16h12'/></svg>"
-              },
-              {
-                "label": "Sensori",
-                "valore": "HR, SpO2, stress",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-activity w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
-              },
-              {
-                "label": "Connettività",
-                "valore": "Wi-Fi + BT 5.0",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-wifi w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M5 13a10 10 0 0 1 14 0'/><path d='M8.5 16.5a5 5 0 0 1 7 0'/><line x1='12' y1='20' x2='12.01' y2='20'/></svg>"
-              },
-              {
-                "label": "Batteria",
-                "valore": "Fino a 2 giorni",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
-              },
-              {
-                "label": "Compatibilità",
-                "valore": "Android / iOS",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Tracciamento sport",
-                "valore": "Oltre 100 attività",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-heart-pulse w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3l3 8 4-16 3 8h4'/></svg>"
-              }
-            ],
-            "caratteristicheAvanzate": [
-              { "label": "Doppio tap", "valore": "Nuovo gesto con sensori di movimento" },
-              { "label": "Assistente vocale", "valore": "Siri on-device" },
-              { "label": "Fitness", "valore": "Tracking automatico avanzato + Fitness+ compatibile" },
-              { "label": "ECG", "valore": "Elettrocardiogramma certificato" },
-              { "label": "OS", "valore": "watchOS 10" },
-              { "label": "Waterproof", "valore": "WR50 (nuoto)" },
-              { "label": "Materiali", "valore": "Alluminio o acciaio inossidabile" },
-              { "label": "Night mode", "valore": "Automatico con luminosità fino a 2000 nit" },
-              { "label": "Ricarica", "valore": "Magnetica rapida USB-C" },
-              { "label": "UWB", "valore": "Chip U2 per Dov'è e Home" }
-            ],
-            "descrizioni": [
-              "Apple Watch Series 9 è il compagno ideale per chi vuole restare sempre connesso, monitorare la propria salute e restare attivo. Ha un design elegante e un display sempre acceso più brillante che mai.",
-              "Offre funzioni avanzate come ECG, monitoraggio della temperatura e la nuova gesture 'Doppio Tap'. Grazie al chip S9, tutto è più fluido e intelligente. È perfettamente integrato con iPhone e l’ecosistema Apple.",
-              "Un alleato perfetto per il fitness e la vita quotidiana, con ricarica rapida, notifiche smart e funzioni di sicurezza. Adatto sia a chi è sportivo che a chi cerca un tocco tech di eleganza al polso."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Modalità video",
+          "valore": "Cinematic, ProRes, Action mode"
         },
         {
-            "id": 10,
-            "nome": "Samsung Galaxy Watch6 Classic",
-            "marca": "Samsung",
-            "url": "galaxy-watch6-classic",
-            "categoria": "smartwatch",
-            "immagine": "/img/galaxy-watch-6.webp",
-            "prezzi": [419, 449],
-            "rivenditori": ["Samsung ", "Amazon", "MediaWorld"],
-            "rivenditoriLogo": [
-              "/logo/samsung.png",
-              "/logo/amazon.png",
-              "/logo/mediaworld.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Display",
-                "valore": "AMOLED 1.9''",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-watch w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 8h12M6 16h12'/></svg>"
-              },
-              {
-                "label": "Sensori",
-                "valore": "HR, SpO2, stress",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-activity w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
-              },
-              {
-                "label": "Connettività",
-                "valore": "Wi-Fi + BT 5.0",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-wifi w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M5 13a10 10 0 0 1 14 0'/><path d='M8.5 16.5a5 5 0 0 1 7 0'/><line x1='12' y1='20' x2='12.01' y2='20'/></svg>"
-              },
-              {
-                "label": "Batteria",
-                "valore": "Fino a 2 giorni",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
-              },
-              {
-                "label": "Compatibilità",
-                "valore": "Android / iOS",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              },
-              {
-                "label": "Tracciamento sport",
-                "valore": "Oltre 100 attività",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-heart-pulse w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3l3 8 4-16 3 8h4'/></svg>"
-              }
-            ],
-            "caratteristicheAvanzate": [
-              { "label": "Materiale", "valore": "Acciaio inox + vetro zaffiro" },
-              { "label": "Resistenza", "valore": "5ATM, IP68, MIL-STD-810H" },
-              { "label": "Monitoraggio sonno", "valore": "Sleep Coaching + rilevamento apnea notturna" },
-              { "label": "App integrate", "valore": "Google Maps, Assistant, Wallet" },
-              { "label": "Fitness", "valore": "90+ modalità sportive, auto tracking" },
-              { "label": "Banda", "valore": "Intercambiabile standard 20mm" },
-              { "label": "Pagamenti", "valore": "Samsung Pay, Google Pay" },
-              { "label": "Caricamento", "valore": "Wireless Qi" },
-              { "label": "Notifiche", "valore": "Risposta rapida + emoji + tastiera" },
-              { "label": "Compatibilità", "valore": "Android (meglio con Galaxy)" }
-            ],
-            "descrizioni": [
-              "Galaxy Watch6 Classic riporta la lunetta girevole fisica, amata dagli utenti Samsung, unita ad un design elegante e specifiche da top di gamma. Perfetto per chi cerca produttività e benessere in un solo dispositivo.",
-              "Oltre alle classiche funzioni smartwatch, include monitoraggio sonno avanzato, ECG, rilevamento della pressione arteriosa e ben 90 sport tracciabili. Il display AMOLED è luminoso e fluido, anche all’aperto.",
-              "Perfettamente integrato con il mondo Android (in particolare Galaxy), è uno strumento completo anche per il lavoro, con Google Assistant, Maps, e possibilità di rispondere ai messaggi direttamente dal polso."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "Ricarica",
+          "valore": "MagSafe 15W, USB-C"
         },
         {
-            "id": 11,
-            "nome": "Anker PowerCore 20000mAh",
-            "marca": "Anker",
-            "url": "anker-powercore",
-            "categoria": "powerbank",
-            "immagine": "/img/anker-powercore.webp",
-            "prezzi": [35, 45],
-            "rivenditori": ["Amazon", "Anker ", "Euronics"],
-            "rivenditoriLogo": [
-              "/logo/amazon.png",
-              "/logo/anker.png",
-              "/logo/euronics.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Capacità",
-                "valore": "20.000 mAh",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
-              },
-              {
-                "label": "Porte USB",
-                "valore": "2x USB-A, 1x USB-C",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-usb w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M10 3v2h1v8h1v-8h1V3h-3Z'/><path d='M4 7v2h6v-2H4Z'/><path d='M14 7v2h6v-2h-6Z'/></svg>"
-              },
-              {
-                "label": "Peso",
-                "valore": "350g",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-scale w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M7 21h10'/><path d='M12 3v18'/><path d='M9 3h6'/><path d='M5 6l2 4 2-4'/><path d='M17 6l2 4 2-4'/></svg>"
-              },
-              {
-                "label": "Tempo ricarica",
-                "valore": "3 ore via USB-C",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-clock w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>"
-              },
-              {
-                "label": "Ricarica rapida",
-                "valore": "PD 18W supportato",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-zap w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>"
-              },
-              {
-                "label": "Compatibilità",
-                "valore": "Smartphone e tablet",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              }
-            ],             
-            "caratteristicheAvanzate": [
-              { "label": "Materiale", "valore": "Plastica rinforzata" },
-              { "label": "Uscita veloce", "valore": "Fast charge 18W" },
-              { "label": "Protezione", "valore": "Protezione sovraccarico e cortocircuito" },
-              { "label": "Ricarica", "valore": "Ricarica rapida con USB-C" },
-              { "label": "Indicatore batteria", "valore": "LED a 4 livelli" },
-              { "label": "Porte", "valore": "2x USB-A, 1x USB-C" },
-              { "label": "Peso", "valore": "357 g" },
-              { "label": "Ricarica simultanea", "valore": "Sì, 2 dispositivi" },
-              { "label": "Temperatura di lavoro", "valore": "0°-40°C" },
-              { "label": "Certificazioni", "valore": "CE, RoHS, UL" }
-            ],
-            "descrizioni": [
-              "Il PowerCore 20000mAh di Anker è uno dei powerbank più efficienti sul mercato, grazie alla sua enorme capacità di ricarica e alla compatibilità universale con la maggior parte dei dispositivi.",
-              "Con la tecnologia PowerIQ e VoltageBoost, ricarica i tuoi dispositivi fino a 18W in modo rapido e sicuro. Inoltre, la protezione contro sovraccarichi e cortocircuiti garantisce la sicurezza delle tue apparecchiature.",
-              "Il design compatto e leggero permette di trasportarlo facilmente, mentre l'indicatore LED ti mostra il livello della batteria residua. Con le sue 2 uscite, puoi ricaricare più dispositivi contemporaneamente."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
+          "label": "GPU",
+          "valore": "6-core GPU con ray tracing"
         },
         {
-            "id": 12,
-            "nome": "Xiaomi Mi Power Bank 3 10000mAh",
-            "url": "xiaomi-powerbank-3",
-            "marca": "Xiaomi",
-            "categoria": "powerbank",
-            "immagine": "/img/xiaomi-powerbank-3.webp",
-            "prezzi": [20, 25],
-            "rivenditori": ["Amazon", "Xiaomi ", "MediaWorld"],
-            "rivenditoriLogo": [
-              "/logo/amazon.png",
-              "/logo/xiaomi.png",
-              "/logo/mediaworld.png"
-            ],
-            "caratteristiche": [
-              {
-                "label": "Capacità",
-                "valore": "20.000 mAh",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
-              },
-              {
-                "label": "Porte USB",
-                "valore": "2x USB-A, 1x USB-C",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-usb w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M10 3v2h1v8h1v-8h1V3h-3Z'/><path d='M4 7v2h6v-2H4Z'/><path d='M14 7v2h6v-2h-6Z'/></svg>"
-              },
-              {
-                "label": "Peso",
-                "valore": "350g",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-scale w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M7 21h10'/><path d='M12 3v18'/><path d='M9 3h6'/><path d='M5 6l2 4 2-4'/><path d='M17 6l2 4 2-4'/></svg>"
-              },
-              {
-                "label": "Tempo ricarica",
-                "valore": "3 ore via USB-C",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-clock w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>"
-              },
-              {
-                "label": "Ricarica rapida",
-                "valore": "PD 18W supportato",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-zap w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>"
-              },
-              {
-                "label": "Compatibilità",
-                "valore": "Smartphone e tablet",
-                "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
-              }
-            ],
-            "caratteristicheAvanzate": [
-              { "label": "Materiale", "valore": "Plastica PC + ABS" },
-              { "label": "Ricarica rapida", "valore": "Supporto Quick Charge 3.0" },
-              { "label": "Ingressi", "valore": "1x Micro USB, 1x USB-C" },
-              { "label": "Protezione", "valore": "Sovraccarico, cortocircuito e surriscaldamento" },
-              { "label": "Dual Output", "valore": "Supporta 2 dispositivi" },
-              { "label": "Capacità effettiva", "valore": "7.6 - 8.1Ah" },
-              { "label": "Materiale", "valore": "Design resistente" },
-              { "label": "Caricamento", "valore": "Carica rapida fino a 18W" },
-              { "label": "Ricarica simultanea", "valore": "Sì, fino a 2 dispositivi" },
-              { "label": "Certificazione", "valore": "CE, RoHS" }
-            ],
-            "descrizioni": [
-              "Il Mi Power Bank 3 è la soluzione ideale per chi cerca un powerbank potente e compatto. Con una capacità di 10000mAh, è perfetto per ricaricare smartphone e tablet in movimento.",
-              "Le sue 2 uscite USB-A e il supporto per la ricarica rapida tramite QC 3.0 assicurano velocità e affidabilità, mentre la protezione contro sovraccarichi e cortocircuiti garantisce sicurezza.",
-              "Il design elegante e portatile lo rende facile da trasportare in tasca o borsa, ed è l'accessorio perfetto per chi ha bisogno di energia extra durante la giornata."
-            ],
-            "colori": ["Rosso", "Verde", "Blu", "Argento"],
-            "coloriClassi": ["red", "emerald", "blue", "amber"]
-        }  
-    ],
-    "reviews": [
-      {
-        "idRecensione": 1,
-        "idProdotto": 1,
-        "autore": "Matteo R.",
-        "data": "2025-05-08",
-        "ora": "14:32",
-        "fotoProfilo": "/profile-picture.jpg",
-        "valutazione": 4.5,
-        "titolo": "Ottimo telefono per chi ama la fotografia",
-        "testo": "Uso questo smartphone da circa un mese e ne sono molto soddisfatto. Le prestazioni sono fluide anche con più app aperte. Ma il vero punto di forza è la fotocamera: in condizioni di buona luce, gli scatti sono impressionanti.",
-        "valutazioniTecniche": [
-          {
-            "etichetta": "Fotocamera",
-            "valore": 4.8
-          },
-          {
-            "etichetta": "Display",
-            "valore": 4.5
-          },
-          {
-            "etichetta": "Batteria",
-            "valore": 4.1
-          },
-          {
-            "etichetta": "Prestazioni",
-            "valore": 4.2
-          }
-        ]
-      },
-      {
-        "idRecensione": 2,
-        "idProdotto": 5,
-        "autore": "Lorenzo M.",
-        "data": "2025-04-28",
-        "ora": "22:45",
-        "fotoProfilo": "/img/profile-picture-3.jpeg",
-        "valutazione": 4.2,
-        "titolo": "Leggero e potente",
-        "testo": "Lo uso per lavoro e università. Ottimo display e tastiera comoda. Il design è elegante e l'autonomia è sufficiente per arrivare a fine giornata. La ventola a volte si fa sentire ma nel complesso è un gran prodotto.",
-        "valutazioniTecniche": [
-          {
-            "etichetta": "CPU",
-            "valore": 4.3
-          },
-          {
-            "etichetta": "Display",
-            "valore": 4.5
-          },
-          {
-            "etichetta": "Batteria",
-            "valore": 4.0
-          },
-          {
-            "etichetta": "Memoria",
-            "valore": 4.2
-          }
-        ]
-      },
-      {
-        "idRecensione": 3,
-        "idProdotto": 7,
-        "autore": "Alice B.",
-        "data": "2025-05-01",
-        "ora": "09:03",
-        "fotoProfilo": "/img/profile-picture-2.jpeg",
-        "valutazione": 4.7,
-        "titolo": "Isolamento e qualità top",
-        "testo": "Avevo già le XM4 e queste sono un bel passo avanti. Noise cancelling migliorato, suono più definito e app completa. Autonomia più che sufficiente. Il case è un po’ più compatto ma non sempre facile da aprire.",
-        "valutazioniTecniche": [
-          {
-            "etichetta": "Autonomia",
-            "valore": 4.5
-          },
-          {
-            "etichetta": "Audio",
-            "valore": 4.9
-          },
-          {
-            "etichetta": "Microfono",
-            "valore": 4.6
-          },
-          {
-            "etichetta": "Connettività",
-            "valore": 4.4
-          }
-        ]
-      }      
-            
-    ]
+          "label": "Protezione",
+          "valore": "Ceramic Shield, IP68"
+        },
+        {
+          "label": "Connettività",
+          "valore": "Wi-Fi 6E, Bluetooth 5.3"
+        },
+        {
+          "label": "Sicurezza",
+          "valore": "Face ID"
+        },
+        {
+          "label": "Registrazione video",
+          "valore": "4K fino a 60 fps"
+        },
+        {
+          "label": "Peso",
+          "valore": "187 g"
+        }
+      ],
+      "descrizioni": [
+        "L’iPhone 15 Pro è la nuova frontiera degli smartphone premium, costruito in titanio e alimentato dal chip A17 Pro. Con un design elegante e leggero, rappresenta una svolta tecnologica per prestazioni e autonomia.",
+        "Offre un’esperienza visiva incredibile grazie al display Super Retina XDR con ProMotion, ideale per gaming, editing e streaming. Il comparto fotografico consente scatti e video di qualità professionale.",
+        "Grazie alla nuova porta USB-C, alla lunga durata della batteria e all’integrazione perfetta con l’ecosistema Apple, è il compagno ideale per utenti avanzati, creatori e professionisti del settore tech."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "2",
+      "nome": "Samsung Galaxy S24",
+      "url": "galaxy-s24",
+      "marca": "Samsung",
+      "categoria": "smartphone",
+      "immagine": "/img/galaxy-s24.webp",
+      "prezzi": [
+        899,
+        949,
+        999
+      ],
+      "rivenditori": [
+        "Samsung ",
+        "Amazon",
+        "Euronics"
+      ],
+      "rivenditoriLogo": [
+        "/logo/samsung.png",
+        "/logo/amazon.png",
+        "/logo/euronics.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Display",
+          "valore": "6.1'' OLED",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
+        },
+        {
+          "label": "Fotocamera",
+          "valore": "48 MP",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
+        },
+        {
+          "label": "Batteria",
+          "valore": "4200 mAh",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
+        },
+        {
+          "label": "Processore",
+          "valore": "A17 Bionic",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "iOS 17",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Memoria interna",
+          "valore": "256 GB",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Risoluzione",
+          "valore": "2340 x 1080"
+        },
+        {
+          "label": "Refresh rate",
+          "valore": "120Hz Adaptive"
+        },
+        {
+          "label": "Resistenza",
+          "valore": "IP68"
+        },
+        {
+          "label": "Registrazione video",
+          "valore": "8K a 24fps"
+        },
+        {
+          "label": "Connettività",
+          "valore": "5G, Wi-Fi 6E, Bluetooth 5.3"
+        },
+        {
+          "label": "Audio",
+          "valore": "Stereo AKG, Dolby Atmos"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Android 14 One UI 6"
+        },
+        {
+          "label": "Materiali",
+          "valore": "Alluminio Armor + Gorilla Glass Victus 2"
+        },
+        {
+          "label": "Sicurezza",
+          "valore": "Impronta + riconoscimento facciale"
+        },
+        {
+          "label": "Dual SIM",
+          "valore": "Nano SIM + eSIM"
+        }
+      ],
+      "descrizioni": [
+        "Il Galaxy S24 è il nuovo smartphone top di gamma di Samsung, con un design compatto e specifiche avanzate. Lo schermo AMOLED ad alta risoluzione con refresh rate dinamico offre immagini fluide e dettagliate.",
+        "Grazie al processore Exynos 2400 e al comparto fotografico con intelligenza artificiale, è ideale per multitasking, gaming e fotografia avanzata. La protezione IP68 e la scocca robusta garantiscono durata.",
+        "Perfetto per utenti Android esigenti, integra tecnologie recenti come la registrazione 8K, la modalità notte migliorata e connettività 5G ultra veloce. Un equilibrio perfetto tra potenza e portabilità."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "3",
+      "nome": "iPad Air M1",
+      "url": "ipad-air-m1",
+      "marca": "Apple",
+      "categoria": "tablet",
+      "immagine": "/img/ipad-air-m1.webp",
+      "prezzi": [
+        719,
+        749,
+        799
+      ],
+      "rivenditori": [
+        "Apple ",
+        "Unieuro",
+        "MediaWorld"
+      ],
+      "rivenditoriLogo": [
+        "/logo/apple.png",
+        "/logo/unieuro.png",
+        "/logo/mediaworld.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Display",
+          "valore": "11'' IPS LCD",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-tablet w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Fotocamera",
+          "valore": "12 MP posteriore",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
+        },
+        {
+          "label": "Batteria",
+          "valore": "8000 mAh",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
+        },
+        {
+          "label": "Processore",
+          "valore": "Snapdragon 8 Gen 2",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Android 13",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Memoria interna",
+          "valore": "128 GB",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Tecnologia display",
+          "valore": "True Tone, P3 wide color"
+        },
+        {
+          "label": "Risoluzione",
+          "valore": "2360 x 1640 pixel"
+        },
+        {
+          "label": "Touch ID",
+          "valore": "Integrato nel pulsante superiore"
+        },
+        {
+          "label": "Porte",
+          "valore": "USB-C"
+        },
+        {
+          "label": "Audio",
+          "valore": "Stereo landscape"
+        },
+        {
+          "label": "Apple Pencil",
+          "valore": "Compatibile (2ª gen)"
+        },
+        {
+          "label": "Materiale",
+          "valore": "Alluminio riciclato"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "iPadOS"
+        },
+        {
+          "label": "Rete",
+          "valore": "Wi-Fi 6"
+        },
+        {
+          "label": "Videocamera frontale",
+          "valore": "12 MP con Center Stage"
+        }
+      ],
+      "descrizioni": [
+        "L’iPad Air con chip M1 unisce potenza e leggerezza in un unico prodotto. Il suo design raffinato lo rende perfetto per studenti, designer e chi cerca un tablet versatile ma prestante.",
+        "Il chip Apple M1 offre prestazioni da notebook e lo rende perfetto anche per lavori più intensi. Supporta Apple Pencil di seconda generazione e tastiere, trasformandosi in una workstation portatile.",
+        "Ottimo anche per chi ama l’intrattenimento: lo schermo è luminoso, i colori fedeli, e il suono stereo di buona qualità. Ideale per Netflix, editing o disegno digitale."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "4",
+      "nome": "Samsung Galaxy Tab S9",
+      "url": "galaxy-tab-s9",
+      "marca": "Samsung",
+      "categoria": "tablet",
+      "immagine": "/img/galaxy-tab-s9.webp",
+      "prezzi": [
+        899,
+        949,
+        999
+      ],
+      "rivenditori": [
+        "Amazon",
+        "Samsung ",
+        "Euronics"
+      ],
+      "rivenditoriLogo": [
+        "/logo/amazon.png",
+        "/logo/samsung.png",
+        "/logo/euronics.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Display",
+          "valore": "11'' IPS LCD",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-tablet w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Fotocamera",
+          "valore": "12 MP posteriore",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-camera w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M21 19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2l2-3h6l2 3h2a2 2 0 0 1 2 2Z'/><circle cx='12' cy='13' r='4'/></svg>"
+        },
+        {
+          "label": "Batteria",
+          "valore": "8000 mAh",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/><line x1='4' y1='12' x2='16' y2='12'/></svg>"
+        },
+        {
+          "label": "Processore",
+          "valore": "Snapdragon 8 Gen 2",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Android 13",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Memoria interna",
+          "valore": "128 GB",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-sd-card w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-6-6Z'/><path d='M10 11v2'/><path d='M14 11v2'/><path d='M6 11v2'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Risoluzione",
+          "valore": "2560 x 1600 WQXGA+"
+        },
+        {
+          "label": "HDR",
+          "valore": "HDR10+"
+        },
+        {
+          "label": "Cornici",
+          "valore": "Sottili, simmetriche"
+        },
+        {
+          "label": "Materiale",
+          "valore": "Alluminio Armor"
+        },
+        {
+          "label": "Audio",
+          "valore": "Quad speaker AKG, Dolby Atmos"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Android 13 One UI 5.1"
+        },
+        {
+          "label": "Porte",
+          "valore": "USB-C 3.2"
+        },
+        {
+          "label": "Riconoscimento",
+          "valore": "Face unlock + impronta"
+        },
+        {
+          "label": "Autonomia",
+          "valore": "Fino a 15 ore video"
+        },
+        {
+          "label": "Peso",
+          "valore": "498 g"
+        }
+      ],
+      "descrizioni": [
+        "Il Galaxy Tab S9 è uno dei migliori tablet Android attualmente disponibili, pensato per chi cerca prestazioni elevate e versatilità in mobilità. Con un display AMOLED di altissima qualità e refresh rate a 120Hz, ogni contenuto risulta vivido e fluido.",
+        "Lo Snapdragon 8 Gen 2 assicura prestazioni da top di gamma, mentre la S Pen inclusa è ideale per creativi, studenti e professionisti. La resistenza IP68 lo rende adatto anche ad ambienti più impegnativi.",
+        "È perfetto per intrattenimento, disegno, multitasking e produttività: grazie all’ecosistema Samsung, si integra perfettamente con smartphone e accessori, offrendo un’esperienza connessa e fluida."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "5",
+      "nome": "MacBook Air M2",
+      "url": "macbook-air-m2",
+      "marca": "Apple",
+      "categoria": "laptop",
+      "immagine": "/img/mac-air-m2.webp",
+      "prezzi": [
+        1199,
+        1349,
+        1499
+      ],
+      "rivenditori": [
+        "Apple ",
+        "Amazon",
+        "Unieuro"
+      ],
+      "rivenditoriLogo": [
+        "/logo/apple.png",
+        "/logo/amazon.png",
+        "/logo/unieuro.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "CPU",
+          "valore": "Intel Core i7",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+        },
+        {
+          "label": "GPU",
+          "valore": "Intel Iris Xe",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3a2 2 0 0 0-2 2v4h10V3H6Zm0 6v12h10V9H6ZM16 7h4v14h-4'/><path d='M22 5h-2v2h2V5Z'/></svg>"
+        },
+        {
+          "label": "RAM",
+          "valore": "16 GB",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-database w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14a9 3 0 0 0 18 0V5'/><path d='M3 12a9 3 0 0 0 18 0'/></svg>"
+        },
+        {
+          "label": "Storage",
+          "valore": "512 GB SSD",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-hard-drive w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='12' x2='2' y2='12'/><path d='M5 16h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z'/><circle cx='6.5' cy='16.5' r='0.5'/></svg>"
+        },
+        {
+          "label": "Schermo",
+          "valore": "15.6'' FHD",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-laptop w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Windows 11",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-terminal w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Risoluzione",
+          "valore": "2560 x 1664 pixel"
+        },
+        {
+          "label": "Touch ID",
+          "valore": "Integrato nella tastiera"
+        },
+        {
+          "label": "Audio",
+          "valore": "4 speaker spatial audio"
+        },
+        {
+          "label": "Webcam",
+          "valore": "1080p FaceTime HD"
+        },
+        {
+          "label": "Materiale",
+          "valore": "Alluminio riciclato"
+        },
+        {
+          "label": "Ventilazione",
+          "valore": "Fanless (silenzioso)"
+        },
+        {
+          "label": "Porte",
+          "valore": "2x Thunderbolt, MagSafe"
+        },
+        {
+          "label": "Wi-Fi",
+          "valore": "Wi-Fi 6"
+        },
+        {
+          "label": "Bluetooth",
+          "valore": "Bluetooth 5.3"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "macOS Ventura (espandibile)"
+        }
+      ],
+      "descrizioni": [
+        "Il MacBook Air M2 è un laptop ultra portatile, elegante e potente, pensato per studenti, professionisti e chi lavora spesso in mobilità. Il suo design fanless lo rende estremamente silenzioso e moderno.",
+        "Il chip M2 garantisce prestazioni eccellenti in tutte le attività quotidiane, dalla produttività all'editing leggero. Il display Liquid Retina da 13,6'' offre una resa dei colori realistica e brillante.",
+        "Con un’autonomia di oltre 18 ore, una webcam ad alta definizione e un audio sorprendente, è ideale anche per videoconferenze e streaming. Un ottimo investimento per chi cerca stile e affidabilità nel tempo."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "6",
+      "nome": "Dell XPS 13 Plus",
+      "url": "dell-xps-13-plus",
+      "marca": "Dell",
+      "categoria": "laptop",
+      "immagine": "/img/asus-zenbook-14.webp",
+      "prezzi": [
+        1399,
+        1499,
+        1649
+      ],
+      "rivenditori": [
+        "Dell ",
+        "Amazon",
+        "MediaWorld"
+      ],
+      "rivenditoriLogo": [
+        "/logo/dell.png",
+        "/logo/amazon.png",
+        "/logo/mediaworld.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "CPU",
+          "valore": "Intel Core i7",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-cpu w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><path d='M9 9h6v6H9z'/><path d='M3 9h1'/><path d='M3 15h1'/><path d='M9 3v1'/><path d='M15 3v1'/><path d='M21 9h-1'/><path d='M21 15h-1'/><path d='M15 21v-1'/><path d='M9 21v-1'/></svg>"
+        },
+        {
+          "label": "GPU",
+          "valore": "Intel Iris Xe",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-monitor-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M6 3a2 2 0 0 0-2 2v4h10V3H6Zm0 6v12h10V9H6ZM16 7h4v14h-4'/><path d='M22 5h-2v2h2V5Z'/></svg>"
+        },
+        {
+          "label": "RAM",
+          "valore": "16 GB",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-database w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><ellipse cx='12' cy='5' rx='9' ry='3'/><path d='M3 5v14a9 3 0 0 0 18 0V5'/><path d='M3 12a9 3 0 0 0 18 0'/></svg>"
+        },
+        {
+          "label": "Storage",
+          "valore": "512 GB SSD",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-hard-drive w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><line x1='22' y1='12' x2='2' y2='12'/><path d='M5 16h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2Z'/><circle cx='6.5' cy='16.5' r='0.5'/></svg>"
+        },
+        {
+          "label": "Schermo",
+          "valore": "15.6'' FHD",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-laptop w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='3' width='20' height='14' rx='2' ry='2'/><line x1='8' y1='21' x2='16' y2='21'/><line x1='12' y1='17' x2='12' y2='21'/></svg>"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Windows 11",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-terminal w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Risoluzione",
+          "valore": "3456 x 2160 (3.5K OLED)"
+        },
+        {
+          "label": "Grafica",
+          "valore": "Intel Iris Xe"
+        },
+        {
+          "label": "Tastiera",
+          "valore": "Zero Lattice retroilluminata"
+        },
+        {
+          "label": "Touchpad",
+          "valore": "Glass TouchPad invisibile"
+        },
+        {
+          "label": "Audio",
+          "valore": "Quad speaker Waves MaxxAudio"
+        },
+        {
+          "label": "Materiali",
+          "valore": "Alluminio fresato e vetro Gorilla"
+        },
+        {
+          "label": "Porte",
+          "valore": "2x USB-C Thunderbolt 4"
+        },
+        {
+          "label": "Wi-Fi",
+          "valore": "Wi-Fi 6E"
+        },
+        {
+          "label": "Sistema operativo",
+          "valore": "Windows 11 Pro"
+        },
+        {
+          "label": "Ricarica",
+          "valore": "ExpressCharge, 80% in 1 ora"
+        }
+      ],
+      "descrizioni": [
+        "Il Dell XPS 13 Plus è un laptop futuristico con linee pulite, schermo OLED spettacolare e prestazioni da top di gamma. È pensato per creativi, developer e utenti business che desiderano estetica e potenza.",
+        "L’infinity edge display riduce al minimo le cornici, offrendo un’immersione visiva totale. La tastiera Zero Lattice e il touchpad invisibile conferiscono un look premium e funzionale.",
+        "Con audio avanzato, ricarica rapida, costruzione solida e compatibilità totale con l’ecosistema Windows, è un notebook perfetto per chi cerca design minimal ma prestazioni eccellenti sul campo."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "7",
+      "nome": "Sony WH-1000XM5",
+      "url": "sony-wh1000xm5",
+      "marca": "Sony",
+      "categoria": "cuffie",
+      "immagine": "/img/sony-wh1000xm5.webp",
+      "prezzi": [
+        379,
+        399
+      ],
+      "rivenditori": [
+        "Amazon",
+        "Sony ",
+        "MediaWorld"
+      ],
+      "rivenditoriLogo": [
+        "/logo/amazon.png",
+        "/logo/sony.png",
+        "/logo/mediaworld.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Tipo",
+          "valore": "In-ear wireless",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-headphones w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 18v-6a9 9 0 0 1 18 0v6'/><path d='M21 18a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2ZM3 18a2 2 0 0 0 2 2h2v-8H5a2 2 0 0 0-2 2Z'/></svg>"
+        },
+        {
+          "label": "Autonomia",
+          "valore": "6h + 24h con case",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+        },
+        {
+          "label": "Connessione",
+          "valore": "Bluetooth 5.3",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-bluetooth w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='m6.5 6.5 11 11-5 5V1l5 5-11 11'/></svg>"
+        },
+        {
+          "label": "Noise cancelling",
+          "valore": "ANC attivo",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-waveform w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h2m2 0h2m2 0h2m2 0h2m2 0h2'/></svg>"
+        },
+        {
+          "label": "Microfono",
+          "valore": "Dual beamforming",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-mic w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='11' rx='3'/><path d='M5 10v2a7 7 0 0 0 14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><line x1='8' y1='22' x2='16' y2='22'/></svg>"
+        },
+        {
+          "label": "Controlli",
+          "valore": "Touch + gesture",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-touchpad w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='12' rx='2'/><line x1='4' y1='14' x2='20' y2='14'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Codec audio",
+          "valore": "LDAC, AAC, SBC"
+        },
+        {
+          "label": "Driver",
+          "valore": "30 mm con diaframma in carbonio"
+        },
+        {
+          "label": "Risposta in frequenza",
+          "valore": "4 Hz – 40.000 Hz"
+        },
+        {
+          "label": "NFC",
+          "valore": "Integrato per pairing rapido"
+        },
+        {
+          "label": "Controlli",
+          "valore": "Touch capacitivo + sensore presenza"
+        },
+        {
+          "label": "Multipoint",
+          "valore": "Sì, fino a 2 dispositivi"
+        },
+        {
+          "label": "Modalità ambientale",
+          "valore": "Adaptive Sound Control"
+        },
+        {
+          "label": "Ricarica rapida",
+          "valore": "3 ore in 3 minuti"
+        },
+        {
+          "label": "App dedicata",
+          "valore": "Sony Headphones Connect"
+        },
+        {
+          "label": "Microfoni",
+          "valore": "8 microfoni con AI noise suppression"
+        }
+      ],
+      "descrizioni": [
+        "Le Sony WH-1000XM5 sono tra le cuffie più apprezzate al mondo per chi cerca un’esperienza di ascolto immersiva e senza distrazioni. Comode e leggere, sono ideali per viaggi, lavoro e relax.",
+        "Il sistema avanzato di cancellazione del rumore si adatta in tempo reale all’ambiente circostante, mentre il suono ad alta risoluzione offre profondità e dettaglio in ogni genere musicale.",
+        "Grazie alla lunga autonomia, alle funzioni smart e alla qualità costruttiva premium, rappresentano la scelta perfetta per audiofili e utenti professionali che non vogliono compromessi."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "8",
+      "nome": "AirPods Pro 2",
+      "url": "airpods-pro-2",
+      "marca": "Apple",
+      "categoria": "cuffie",
+      "immagine": "/img/airpods-pro-2.webp",
+      "prezzi": [
+        279,
+        299
+      ],
+      "rivenditori": [
+        "Apple ",
+        "Amazon",
+        "Unieuro"
+      ],
+      "rivenditoriLogo": [
+        "/logo/apple.png",
+        "/logo/amazon.png",
+        "/logo/unieuro.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Tipo",
+          "valore": "In-ear wireless",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-headphones w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 18v-6a9 9 0 0 1 18 0v6'/><path d='M21 18a2 2 0 0 1-2 2h-2v-8h2a2 2 0 0 1 2 2ZM3 18a2 2 0 0 0 2 2h2v-8H5a2 2 0 0 0-2 2Z'/></svg>"
+        },
+        {
+          "label": "Autonomia",
+          "valore": "6h + 24h con case",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+        },
+        {
+          "label": "Connessione",
+          "valore": "Bluetooth 5.3",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-bluetooth w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='m6.5 6.5 11 11-5 5V1l5 5-11 11'/></svg>"
+        },
+        {
+          "label": "Noise cancelling",
+          "valore": "ANC attivo",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-waveform w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h2m2 0h2m2 0h2m2 0h2m2 0h2'/></svg>"
+        },
+        {
+          "label": "Microfono",
+          "valore": "Dual beamforming",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-mic w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='2' width='6' height='11' rx='3'/><path d='M5 10v2a7 7 0 0 0 14 0v-2'/><line x1='12' y1='19' x2='12' y2='22'/><line x1='8' y1='22' x2='16' y2='22'/></svg>"
+        },
+        {
+          "label": "Controlli",
+          "valore": "Touch + gesture",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-touchpad w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='12' rx='2'/><line x1='4' y1='14' x2='20' y2='14'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Audio spaziale",
+          "valore": "Con tracciamento dinamico"
+        },
+        {
+          "label": "Adaptive Transparency",
+          "valore": "Riduce suoni forti improvvisi"
+        },
+        {
+          "label": "Personalizzazione suono",
+          "valore": "EQ adattivo automatico"
+        },
+        {
+          "label": "Resistenza",
+          "valore": "IPX4 (auricolari e custodia)"
+        },
+        {
+          "label": "Bluetooth",
+          "valore": "5.3"
+        },
+        {
+          "label": "U1 chip",
+          "valore": "Precision Find con Dov'è"
+        },
+        {
+          "label": "Porte di ricarica",
+          "valore": "Lightning, USB-C, MagSafe"
+        },
+        {
+          "label": "Case con speaker",
+          "valore": "Feedback sonoro + gancio lanyard"
+        },
+        {
+          "label": "Compatibilità",
+          "valore": "Perfetta con iOS, ma anche Android"
+        },
+        {
+          "label": "Microfoni",
+          "valore": "Beamforming + soppressione rumore vento"
+        }
+      ],
+      "descrizioni": [
+        "Gli AirPods Pro di seconda generazione migliorano tutto ciò che gli utenti hanno amato della prima versione. Leggeri, comodi e incredibilmente intelligenti, si adattano al tuo ambiente in tempo reale.",
+        "Con il chip H2, la cancellazione del rumore è più potente, la modalità trasparenza più naturale, e l’autonomia migliorata. L’audio spaziale offre un suono coinvolgente e personalizzato.",
+        "Perfetti per chi è nell’ecosistema Apple, ma validi anche su Android. Il case include speaker e chip U1 per trovarli facilmente. Una combinazione di funzionalità, qualità audio e praticità senza rivali."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "9",
+      "nome": "Apple Watch Series 9",
+      "marca": "Apple",
+      "url": "apple-watch-series9",
+      "categoria": "smartwatch",
+      "immagine": "/img/apple-watch-series-9.webp",
+      "prezzi": [
+        449,
+        499
+      ],
+      "rivenditori": [
+        "Apple ",
+        "Amazon",
+        "Unieuro"
+      ],
+      "rivenditoriLogo": [
+        "/logo/apple.svg",
+        "/logo/amazon.png",
+        "/logo/unieuro.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Display",
+          "valore": "AMOLED 1.9''",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-watch w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 8h12M6 16h12'/></svg>"
+        },
+        {
+          "label": "Sensori",
+          "valore": "HR, SpO2, stress",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-activity w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
+        },
+        {
+          "label": "Connettività",
+          "valore": "Wi-Fi + BT 5.0",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-wifi w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M5 13a10 10 0 0 1 14 0'/><path d='M8.5 16.5a5 5 0 0 1 7 0'/><line x1='12' y1='20' x2='12.01' y2='20'/></svg>"
+        },
+        {
+          "label": "Batteria",
+          "valore": "Fino a 2 giorni",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+        },
+        {
+          "label": "Compatibilità",
+          "valore": "Android / iOS",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Tracciamento sport",
+          "valore": "Oltre 100 attività",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-heart-pulse w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3l3 8 4-16 3 8h4'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Doppio tap",
+          "valore": "Nuovo gesto con sensori di movimento"
+        },
+        {
+          "label": "Assistente vocale",
+          "valore": "Siri on-device"
+        },
+        {
+          "label": "Fitness",
+          "valore": "Tracking automatico avanzato + Fitness+ compatibile"
+        },
+        {
+          "label": "ECG",
+          "valore": "Elettrocardiogramma certificato"
+        },
+        {
+          "label": "OS",
+          "valore": "watchOS 10"
+        },
+        {
+          "label": "Waterproof",
+          "valore": "WR50 (nuoto)"
+        },
+        {
+          "label": "Materiali",
+          "valore": "Alluminio o acciaio inossidabile"
+        },
+        {
+          "label": "Night mode",
+          "valore": "Automatico con luminosità fino a 2000 nit"
+        },
+        {
+          "label": "Ricarica",
+          "valore": "Magnetica rapida USB-C"
+        },
+        {
+          "label": "UWB",
+          "valore": "Chip U2 per Dov'è e Home"
+        }
+      ],
+      "descrizioni": [
+        "Apple Watch Series 9 è il compagno ideale per chi vuole restare sempre connesso, monitorare la propria salute e restare attivo. Ha un design elegante e un display sempre acceso più brillante che mai.",
+        "Offre funzioni avanzate come ECG, monitoraggio della temperatura e la nuova gesture 'Doppio Tap'. Grazie al chip S9, tutto è più fluido e intelligente. È perfettamente integrato con iPhone e l’ecosistema Apple.",
+        "Un alleato perfetto per il fitness e la vita quotidiana, con ricarica rapida, notifiche smart e funzioni di sicurezza. Adatto sia a chi è sportivo che a chi cerca un tocco tech di eleganza al polso."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "10",
+      "nome": "Samsung Galaxy Watch6 Classic",
+      "marca": "Samsung",
+      "url": "galaxy-watch6-classic",
+      "categoria": "smartwatch",
+      "immagine": "/img/galaxy-watch-6.webp",
+      "prezzi": [
+        419,
+        449
+      ],
+      "rivenditori": [
+        "Samsung ",
+        "Amazon",
+        "MediaWorld"
+      ],
+      "rivenditoriLogo": [
+        "/logo/samsung.png",
+        "/logo/amazon.png",
+        "/logo/mediaworld.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Display",
+          "valore": "AMOLED 1.9''",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-watch w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='6' y='2' width='12' height='20' rx='2'/><path d='M6 8h12M6 16h12'/></svg>"
+        },
+        {
+          "label": "Sensori",
+          "valore": "HR, SpO2, stress",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-activity w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
+        },
+        {
+          "label": "Connettività",
+          "valore": "Wi-Fi + BT 5.0",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-wifi w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M5 13a10 10 0 0 1 14 0'/><path d='M8.5 16.5a5 5 0 0 1 7 0'/><line x1='12' y1='20' x2='12.01' y2='20'/></svg>"
+        },
+        {
+          "label": "Batteria",
+          "valore": "Fino a 2 giorni",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+        },
+        {
+          "label": "Compatibilità",
+          "valore": "Android / iOS",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        },
+        {
+          "label": "Tracciamento sport",
+          "valore": "Oltre 100 attività",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-heart-pulse w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12h3l3 8 4-16 3 8h4'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Materiale",
+          "valore": "Acciaio inox + vetro zaffiro"
+        },
+        {
+          "label": "Resistenza",
+          "valore": "5ATM, IP68, MIL-STD-810H"
+        },
+        {
+          "label": "Monitoraggio sonno",
+          "valore": "Sleep Coaching + rilevamento apnea notturna"
+        },
+        {
+          "label": "App integrate",
+          "valore": "Google Maps, Assistant, Wallet"
+        },
+        {
+          "label": "Fitness",
+          "valore": "90+ modalità sportive, auto tracking"
+        },
+        {
+          "label": "Banda",
+          "valore": "Intercambiabile standard 20mm"
+        },
+        {
+          "label": "Pagamenti",
+          "valore": "Samsung Pay, Google Pay"
+        },
+        {
+          "label": "Caricamento",
+          "valore": "Wireless Qi"
+        },
+        {
+          "label": "Notifiche",
+          "valore": "Risposta rapida + emoji + tastiera"
+        },
+        {
+          "label": "Compatibilità",
+          "valore": "Android (meglio con Galaxy)"
+        }
+      ],
+      "descrizioni": [
+        "Galaxy Watch6 Classic riporta la lunetta girevole fisica, amata dagli utenti Samsung, unita ad un design elegante e specifiche da top di gamma. Perfetto per chi cerca produttività e benessere in un solo dispositivo.",
+        "Oltre alle classiche funzioni smartwatch, include monitoraggio sonno avanzato, ECG, rilevamento della pressione arteriosa e ben 90 sport tracciabili. Il display AMOLED è luminoso e fluido, anche all’aperto.",
+        "Perfettamente integrato con il mondo Android (in particolare Galaxy), è uno strumento completo anche per il lavoro, con Google Assistant, Maps, e possibilità di rispondere ai messaggi direttamente dal polso."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "11",
+      "nome": "Anker PowerCore 20000mAh",
+      "marca": "Anker",
+      "url": "anker-powercore",
+      "categoria": "powerbank",
+      "immagine": "/img/anker-powercore.webp",
+      "prezzi": [
+        35,
+        45
+      ],
+      "rivenditori": [
+        "Amazon",
+        "Anker ",
+        "Euronics"
+      ],
+      "rivenditoriLogo": [
+        "/logo/amazon.png",
+        "/logo/anker.png",
+        "/logo/euronics.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Capacità",
+          "valore": "20.000 mAh",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+        },
+        {
+          "label": "Porte USB",
+          "valore": "2x USB-A, 1x USB-C",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-usb w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M10 3v2h1v8h1v-8h1V3h-3Z'/><path d='M4 7v2h6v-2H4Z'/><path d='M14 7v2h6v-2h-6Z'/></svg>"
+        },
+        {
+          "label": "Peso",
+          "valore": "350g",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-scale w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M7 21h10'/><path d='M12 3v18'/><path d='M9 3h6'/><path d='M5 6l2 4 2-4'/><path d='M17 6l2 4 2-4'/></svg>"
+        },
+        {
+          "label": "Tempo ricarica",
+          "valore": "3 ore via USB-C",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-clock w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>"
+        },
+        {
+          "label": "Ricarica rapida",
+          "valore": "PD 18W supportato",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-zap w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>"
+        },
+        {
+          "label": "Compatibilità",
+          "valore": "Smartphone e tablet",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Materiale",
+          "valore": "Plastica rinforzata"
+        },
+        {
+          "label": "Uscita veloce",
+          "valore": "Fast charge 18W"
+        },
+        {
+          "label": "Protezione",
+          "valore": "Protezione sovraccarico e cortocircuito"
+        },
+        {
+          "label": "Ricarica",
+          "valore": "Ricarica rapida con USB-C"
+        },
+        {
+          "label": "Indicatore batteria",
+          "valore": "LED a 4 livelli"
+        },
+        {
+          "label": "Porte",
+          "valore": "2x USB-A, 1x USB-C"
+        },
+        {
+          "label": "Peso",
+          "valore": "357 g"
+        },
+        {
+          "label": "Ricarica simultanea",
+          "valore": "Sì, 2 dispositivi"
+        },
+        {
+          "label": "Temperatura di lavoro",
+          "valore": "0°-40°C"
+        },
+        {
+          "label": "Certificazioni",
+          "valore": "CE, RoHS, UL"
+        }
+      ],
+      "descrizioni": [
+        "Il PowerCore 20000mAh di Anker è uno dei powerbank più efficienti sul mercato, grazie alla sua enorme capacità di ricarica e alla compatibilità universale con la maggior parte dei dispositivi.",
+        "Con la tecnologia PowerIQ e VoltageBoost, ricarica i tuoi dispositivi fino a 18W in modo rapido e sicuro. Inoltre, la protezione contro sovraccarichi e cortocircuiti garantisce la sicurezza delle tue apparecchiature.",
+        "Il design compatto e leggero permette di trasportarlo facilmente, mentre l'indicatore LED ti mostra il livello della batteria residua. Con le sue 2 uscite, puoi ricaricare più dispositivi contemporaneamente."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    },
+    {
+      "id": "12",
+      "nome": "Xiaomi Mi Power Bank 3 10000mAh",
+      "url": "xiaomi-powerbank-3",
+      "marca": "Xiaomi",
+      "categoria": "powerbank",
+      "immagine": "/img/xiaomi-powerbank-3.webp",
+      "prezzi": [
+        20,
+        25
+      ],
+      "rivenditori": [
+        "Amazon",
+        "Xiaomi ",
+        "MediaWorld"
+      ],
+      "rivenditoriLogo": [
+        "/logo/amazon.png",
+        "/logo/xiaomi.png",
+        "/logo/mediaworld.png"
+      ],
+      "caratteristiche": [
+        {
+          "label": "Capacità",
+          "valore": "20.000 mAh",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-battery-full w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='1' y='6' width='18' height='12' rx='2' ry='2'/><line x1='23' y1='13' x2='23' y2='11'/></svg>"
+        },
+        {
+          "label": "Porte USB",
+          "valore": "2x USB-A, 1x USB-C",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-usb w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M10 3v2h1v8h1v-8h1V3h-3Z'/><path d='M4 7v2h6v-2H4Z'/><path d='M14 7v2h6v-2h-6Z'/></svg>"
+        },
+        {
+          "label": "Peso",
+          "valore": "350g",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-scale w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M7 21h10'/><path d='M12 3v18'/><path d='M9 3h6'/><path d='M5 6l2 4 2-4'/><path d='M17 6l2 4 2-4'/></svg>"
+        },
+        {
+          "label": "Tempo ricarica",
+          "valore": "3 ore via USB-C",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-clock w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>"
+        },
+        {
+          "label": "Ricarica rapida",
+          "valore": "PD 18W supportato",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-zap w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>"
+        },
+        {
+          "label": "Compatibilità",
+          "valore": "Smartphone e tablet",
+          "icona": "<svg xmlns='http://www.w3.org/2000/svg' class='lucide lucide-smartphone w-[3.5rem] lg:w-[4rem] h-[3.5rem] lg:h-[4rem]' width='100%' height='100%' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/></svg>"
+        }
+      ],
+      "caratteristicheAvanzate": [
+        {
+          "label": "Materiale",
+          "valore": "Plastica PC + ABS"
+        },
+        {
+          "label": "Ricarica rapida",
+          "valore": "Supporto Quick Charge 3.0"
+        },
+        {
+          "label": "Ingressi",
+          "valore": "1x Micro USB, 1x USB-C"
+        },
+        {
+          "label": "Protezione",
+          "valore": "Sovraccarico, cortocircuito e surriscaldamento"
+        },
+        {
+          "label": "Dual Output",
+          "valore": "Supporta 2 dispositivi"
+        },
+        {
+          "label": "Capacità effettiva",
+          "valore": "7.6 - 8.1Ah"
+        },
+        {
+          "label": "Materiale",
+          "valore": "Design resistente"
+        },
+        {
+          "label": "Caricamento",
+          "valore": "Carica rapida fino a 18W"
+        },
+        {
+          "label": "Ricarica simultanea",
+          "valore": "Sì, fino a 2 dispositivi"
+        },
+        {
+          "label": "Certificazione",
+          "valore": "CE, RoHS"
+        }
+      ],
+      "descrizioni": [
+        "Il Mi Power Bank 3 è la soluzione ideale per chi cerca un powerbank potente e compatto. Con una capacità di 10000mAh, è perfetto per ricaricare smartphone e tablet in movimento.",
+        "Le sue 2 uscite USB-A e il supporto per la ricarica rapida tramite QC 3.0 assicurano velocità e affidabilità, mentre la protezione contro sovraccarichi e cortocircuiti garantisce sicurezza.",
+        "Il design elegante e portatile lo rende facile da trasportare in tasca o borsa, ed è l'accessorio perfetto per chi ha bisogno di energia extra durante la giornata."
+      ],
+      "colori": [
+        "Rosso",
+        "Verde",
+        "Blu",
+        "Argento"
+      ],
+      "coloriClassi": [
+        "radio-error",
+        "radio-success",
+        "radio-info",
+        "radio-neutral"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "746a",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "11:40",
+      "data": "05/05/2025",
+      "valutazione": 4,
+      "titolo": "Ottimo telefono",
+      "testo": "Ho avuto una bellissima esperienza con questo telefono",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 5
+        },
+        {
+          "etichetta": "Display",
+          "valore": 4
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 4
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 4
+        }
+      ]
+    },
+    {
+      "id": "9aeb",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "11:41",
+      "data": "05/05/2025",
+      "valutazione": 1,
+      "titolo": "Fa schifoo",
+      "testo": "Peggior telefono mai avuto",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 1
+        },
+        {
+          "etichetta": "Display",
+          "valore": 1
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 1
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 1
+        }
+      ]
+    },
+    {
+      "id": "79af",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "11:55",
+      "data": "05/05/2025",
+      "valutazione": 2,
+      "titolo": "porco dio ",
+      "testo": "fa schufo tuto",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 4
+        },
+        {
+          "etichetta": "Display",
+          "valore": 3
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 3
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 3
+        }
+      ]
+    },
+    {
+      "id": "a440",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "11:56",
+      "data": "05/05/2025",
+      "valutazione": 3,
+      "titolo": "la schiena",
+      "testo": "emirates suca",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 3
+        },
+        {
+          "etichetta": "Display",
+          "valore": 3
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 3
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 4
+        }
+      ]
+    },
+    {
+      "id": "1efe",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "12:03",
+      "data": "05/05/2025",
+      "valutazione": 4,
+      "titolo": "VIbe coding allo sttuo pur",
+      "testo": "porco priscillo",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 4
+        },
+        {
+          "etichetta": "Display",
+          "valore": 3
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 3
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 3
+        }
+      ]
+    },
+    {
+      "id": "be80",
+      "idProdotto": 2,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "13:35",
+      "data": "05/05/2025",
+      "valutazione": 4,
+      "titolo": "lirili larila",
+      "testo": "porco dio e porco allah",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 3
+        },
+        {
+          "etichetta": "Display",
+          "valore": 3
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 4
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 3
+        }
+      ]
+    },
+    {
+      "id": "2313",
+      "idProdotto": 3,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "13:48",
+      "data": "05/05/2025",
+      "valutazione": 4,
+      "titolo": "trallalero trallala",
+      "testo": "porco dio e porco allah",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 3
+        },
+        {
+          "etichetta": "Display",
+          "valore": 3
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 4
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 3
+        }
+      ]
+    },
+    {
+      "id": "4e8f",
+      "idProdotto": 5,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "15:34",
+      "data": "05/05/2025",
+      "valutazione": 5,
+      "titolo": "orlando furioso",
+      "testo": "pozzo nero",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Cpu",
+          "valore": 4
+        },
+        {
+          "etichetta": "Display",
+          "valore": 4
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 3
+        },
+        {
+          "etichetta": "Memoria",
+          "valore": 4
+        }
+      ]
+    }
+  ]
 }

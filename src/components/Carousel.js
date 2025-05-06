@@ -16,8 +16,6 @@ import SwiperPagination from './ui/SwiperPagination';
 //offsetAfter = 0 elimina il margine destro
 const Carousel = (ref, {classSlider, classCard}, slidePerView = 'auto', offsetAfter = 0, showNavigation = true, children) => {
 
-    console.log(children)
-
     //Voglio mettere i bttoni della navigazione affianco al titolo h3
     const leftButtonRef = createRef();
     const rightButtonRef = createRef();
@@ -39,11 +37,10 @@ const Carousel = (ref, {classSlider, classCard}, slidePerView = 'auto', offsetAf
 
     //Mi chiamo il DOM Element SwiperPagination
     const pagination = SwiperPagination({})
-    console.log(children)
 
     //Mi creo la variabile contenente il DOM element dello slider
     const swiperSlider = DOM.div({className: twMerge('swiper !overflow-visible', classSlider)}, [
-        DOM.div({className: "swiper-wrapper !w-max !pb-4"},[
+        DOM.div({className: "swiper-wrapper !w-max !pb-3"},[
             ...children.map(elem => {
                 return DOM.div({className: twMerge('swiper-slide !h-auto', classCard)}, [
                     elem

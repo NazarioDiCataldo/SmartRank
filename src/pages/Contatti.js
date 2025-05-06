@@ -31,7 +31,7 @@ const Contatti = () => {
         //Se l'input è una checkbox, non ha una proprietà value
         //Quindi controllo se il field è una checkbox
         //Se si, il suo value sarà il suo flag checked (true / false)
-        value = inputEl.type === 'checkbox' ? inputEl.checked : value;
+        value = inputEl.type === 'checkbox' ? inputEl.checked : value.trim();
         
         //Recupero la validazione dall'input
         const value_ = inputEl.getAttribute('data-validation');

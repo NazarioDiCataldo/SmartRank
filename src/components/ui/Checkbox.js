@@ -14,7 +14,7 @@ const Checkbox = ({id, name, className = '', dataValidation = '', DataRequired =
           onChange: (e) => {onChange(e.target)}
         }),
         DOM.label(
-          { className: "body-xs", htmlFor: id },
+          { className: "body-xs whitespace-nowrap", htmlFor: id },
           children
         ),
       ]),

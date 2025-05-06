@@ -1,8 +1,8 @@
 import DOM, { createRef } from 'just-dom';
 import { twMerge } from 'tailwind-merge';
 
-const Rating = ({idReviews, className = 'rating-sm', ref = ''}) => {
-    return DOM.div({id: idReviews, ref, className: twMerge("rating rating-half gap-0", className) }, [
+const Rating = ({id, className = 'rating-sm', ref = ''}) => {
+    return DOM.div({id, ref, className: twMerge("rating rating-half gap-0", className) }, [
         DOM.div({
           className: "mask mask-star-2 mask-half-1",
           ariaLabel: "0.5 star",

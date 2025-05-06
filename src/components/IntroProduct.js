@@ -24,6 +24,7 @@ const IntroProduct = (product, reviews) => {
 
     //Mi creo i ref
     const ratingRef = createRef()
+    const coloreRef = createRef() //Quando seleziono il colore, compare anche la label con il colore scelto
     const averageRef = createRef()
 
     //Mi creo l'oggetto rating per modificare le stelle
@@ -84,14 +85,24 @@ const IntroProduct = (product, reviews) => {
                         'a partire da',
                         DOM.p({className: 'text-xl text-white font-medium'}, [`${product.prezzi[0]} €`])
                     ]),
-                    Link({href: '#prices-product', className: 'underline', status: 'ghost'}, 'Guarda tutte le offerte')
+                    DOM.a({
+                        href: '#prices-product',
+                        className: `rounded-xl bg-transparent text-[#28E496] w-[100%] md:w-max
+                                    transition-all duration-200 underline
+                                    hover:text-[#28E496]
+                                    focus:outline-none focus:ring-2 focus:ring-[#28E496]/40
+                                    disabled:opacity-50 disabled:cursor-not-allowed`,
+                        }, ['Leggi le recensioni'])
                 ]),
                 //Div con colori                
                   //Colors({color: cls, name: 'Colore', checked: true})
                 DOM.div({className: 'flex flex-col gap-3'}, [
-                    DOM.p({className: 'body-lg text-white font-medium'}, [`Colore`]),
+                    DOM.label({className: "body-lg text-white font-medium flex gap-2 items-baseline", htmlFor: 'colore'}, [
+                        `Colore: `,
+                        DOM.span({id: 'label-color', className: 'body-sm font-normal', ref: coloreRef}, ['Argento'])
+                    ]),
                     DOM.div({className: 'flex gap-2'}, [
-                        ...product.coloriClassi.map(cls => Colors({color: cls, name: 'Colore', checked: true})) 
+                        ...product.coloriClassi.map((cls, i) => Colors({className: cls, name: 'colore', checked: true, ref: coloreRef, color: product.colori[i]})) 
                     ])
                 ])
             ])
