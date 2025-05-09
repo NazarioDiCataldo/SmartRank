@@ -205,14 +205,14 @@ const Homepage = async () => {
                 //grid grid-cols-1 md:grid-cols-6
                 DOM.div({className: 'flex flex-col md:flex-row gap-8 md:gap-5'}, [
                     //col-span-1 md:col-span-2 h-max
-                    DOM.div({className: 'lg:w-1/2', ref: buttonWrapperRef}, [
+                    DOM.div({className: 'lg:w-[50%] xl:w-1/2', ref: buttonWrapperRef}, [
                         DOM.ul({className: 'flex flex-col gap-3 mb-4'}, [
                             DOM.li({className: ''}, [
                                 DOM.strong({className: 'font-semibold'}, ['Il nuovo iPhone 16 Pro Max è su SmartRank. ']),
                                 'Leggi le recensioni, scopri i dettagli tecnici e confronta i prezzi dai rivenditori certificati.']),
                             DOM.li({className: ''}, [
                                 DOM.strong({className: 'font-semibold'}, ['Hai già provato l’iPhone 16 Pro Max? ']),
-                                'Condividi la tua esperienza e aiuta altri utenti a scegliere consapevolmente. Ogni recensione conta.']),
+                                'Condividi la tua esperienza e aiuta altri utenti a scegliere consapevolmente. Ogni recensione conta']),
                         ]),
                         DOM.div({className: 'flex flex-col lg:flex-row gap-4 md:gap-3'}, [
                             Link({href: '/recensione?prodotto=iphone-16-pro-max', status: 'outline', className:'order-2 lg:order-1 !w-full lg:!w-max'}, ['Lascia una recensione']),
@@ -223,7 +223,7 @@ const Homepage = async () => {
                         HorizontalCard({
                             id: iphone16ProMax.id, 
                             href: iphone16ProMax.url,
-                            className: 'w-full md:w-[19rem] lg:w-[24rem]',
+                            className: 'w-full md:w-[19rem] lg:w-[17.5rem] xl:w-[24rem]',
                             cardOptions: {
                                 src: iphone16ProMax.immagine,
                                 mark: iphone16ProMax.marca,

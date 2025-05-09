@@ -72,7 +72,7 @@ const IntroProduct = (product, reviews) => {
                     ]),
                     DOM.a({
                         href: '#reviews-product',
-                        className: `rounded-xl bg-transparent text-[#28E496] w-[100%] md:w-max
+                        className: `d-block p-1 rounded-xl bg-transparent text-[#28E496] w-[100%] md:w-max
                                     transition-all duration-200 underline
                                     hover:text-[#28E496]
                                     focus:outline-none focus:ring-2 focus:ring-[#28E496]/40
@@ -87,12 +87,12 @@ const IntroProduct = (product, reviews) => {
                     ]),
                     DOM.a({
                         href: '#prices-product',
-                        className: `rounded-xl bg-transparent text-[#28E496] w-[100%] md:w-max
+                        className: `d-block p-1 rounded-xl bg-transparent text-[#28E496] w-[100%] md:w-max
                                     transition-all duration-200 underline
                                     hover:text-[#28E496]
                                     focus:outline-none focus:ring-2 focus:ring-[#28E496]/40
                                     disabled:opacity-50 disabled:cursor-not-allowed`,
-                        }, ['Leggi le recensioni'])
+                        }, ['Guarda le offerte'])
                 ]),
                 //Div con colori                
                   //Colors({color: cls, name: 'Colore', checked: true})

@@ -1566,6 +1566,35 @@
           "valore": 5
         }
       ]
+    },
+    {
+      "id": "dd8d",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "11:35",
+      "data": "09/05/2025",
+      "valutazione": 5,
+      "titolo": "Ottimo telefono",
+      "testo": "Mi sono trovato molto bene.",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 5
+        },
+        {
+          "etichetta": "Display",
+          "valore": 5
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 5
+        },
+        {
+          "etichetta": "Prestazioni",
+          "valore": 5
+        }
+      ]
     }
   ]
 }
