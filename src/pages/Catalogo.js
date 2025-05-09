@@ -192,7 +192,7 @@ const Catalogo = () => {
                             Button({
                                 type: 'button', 
                                 status: 'solid', 
-                                className: 'w-1/2 lg:hidden', 
+                                className: 'w-1/2 flex-grow-[1] lg:hidden', 
                                 onclick: () => {
                                 setModal(modalRef, 'Filtra per', sidebarRef.current)
                                 modalRef.current.showModal()}}, [

@@ -37,7 +37,7 @@ const HorizontalCard = ({id, className = '', href, cardOptions, reviewObj}) => {
             DOM.div({className: 'flex gap-2 flex-col items-baseline'}, [
                 rating,
                 average,
-                DOM.small({className: 'text-sm text-white/60 '}, [` ${reviews.length} ${reviews.length === 1 ? 'recensione' : 'recensioni'}`]),
+                DOM.small({className: 'text-sm text-white/60 '}, [` ${reviews.length > 0 ? reviews.length : null } ${reviews.length === 1 ? 'recensione' : reviews.length === 0 ? 'Nessuna recensione' : 'recensioni' }`]),
             ]),
             //Prezzo              
             DOM.div({className: ' w-[100%] justify-end flex items-end gap-2'}, [

@@ -15,7 +15,7 @@ const Newsletter = () => {
             const name = inputEl.name;
             let value = inputEl.value;
             let dataRequired = inputEl.dataRequired;
-    
+            
             //Controllo sul value
             //Se l'input è una checkbox, non ha una proprietà value
             //Quindi controllo se il field è una checkbox
@@ -30,7 +30,7 @@ const Newsletter = () => {
             const { status, message } = validateField(
                 dataRequired,
                 dataValidation,
-                name,
+                name.split('-').pop(),
                 value
             );
             if (status === "error") {
@@ -94,7 +94,7 @@ const Newsletter = () => {
                 className: 'w-[100%] lg:w-lg mx-auto flex flex-col align-bottom gap-4'}, [
             Input({
                 id: 'newsletter-field',
-                name: 'email', 
+                name: 'newsletter-email', 
                 type: 'email',
                 label: 'Inserisci la tua email per iscriverti alla newsletter', 
                 className: 'w-full',
@@ -104,8 +104,8 @@ const Newsletter = () => {
                 onChange: handleInputValidation
             }),
             Checkbox({
-                id: 'newsletter-check',
-                name: 'privacy',
+                id: 'newsletter-privacy',
+                name: 'newsletter-privacy',
                 dataValidation: 'checkbox',
                 dataRequired: true,
                 onChange: handleInputValidation 

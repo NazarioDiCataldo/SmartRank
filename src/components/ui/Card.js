@@ -27,7 +27,7 @@ const Card = ({id, className = '', url, cardOptions, reviewObj}) => {
         id, 
         href: `/catalogo/${url}`, 
         dataCategoria: categoria, 
-        className: twMerge('catalogo-card flex flex-col w-[100%] md:w-full flex-shrink-0 gap-3 py-5 px-4 rounded-2xl border-white/5 border-[1px] bg-gradient-to-br shadow-[0_0_12px_rgba(40,228,150,0.1)] hover:shadow-[0_0_16px_1px_rgba(40,228,150,0.15)] from-[rgba(40,228,150,15%)] hover:from-15% to-[rgba(255,255,255,5%)] hover:to-75% hover: scale-[1.02] hover:translate-y-[-2px] transition-all duration-300', className)}, [
+        className: twMerge('catalogo-card h-full flex flex-col w-[max] md:w-full flex-shrink-0 gap-3 py-5 px-4 rounded-2xl border-white/5 border-[1px] bg-gradient-to-br shadow-[0_0_12px_rgba(40,228,150,0.1)] hover:shadow-[0_0_16px_1px_rgba(40,228,150,0.15)] from-[rgba(40,228,150,15%)] hover:from-15% to-[rgba(255,255,255,5%)] hover:to-75% hover: scale-[1.02] hover:translate-y-[-2px] transition-all duration-300', className)}, [
         //Immagine
         DOM.figure({className: 'w-[5rem] md:w-[10rem]'},[
             DOM.img({src: immagine, className: 'h-[100%]', alt: `Anteprima di ${nome}, della ${marca}`},[])
@@ -43,7 +43,7 @@ const Card = ({id, className = '', url, cardOptions, reviewObj}) => {
             DOM.div({className: 'flex gap-2 items-center flex-wrap'}, [
                 rating,
                 average,
-                DOM.small({className: 'text-sm text-white/60 '}, [` ${reviews.length} ${reviews.length === 1 ? 'recensione' : 'recensioni'}`]),
+                DOM.small({className: 'body-sm text-white/60 '}, [` ${reviews.length > 0 ? reviews.length : '' } ${reviews.length === 1 ? 'recensione' : reviews.length === 0 ? 'Nessuna recensione' : 'recensioni' }`]),
             ]),
             //Prezzo              
             DOM.div({className: ' w-[100%] justify-end flex items-baseline gap-2'}, [

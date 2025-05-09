@@ -24,7 +24,7 @@ const Sidebar = ({className = '', ref, gridRef}) => {
     //Variabile con classi comuni dei filtri sulla valutazione
     const classNameFilterVal = 'xl:grow-[1] btn-outline !mx-0 checked:rounded-lg group-has-[input:checked]:grow-0';
     //Variabile con classi comuni sui filtri sulla categoria
-    const classNameFilterCat = 'btn-soft rounded-full bg-accent/10 m-2';
+    const classNameFilterCat = 'btn-soft rounded-full bg-accent/10 m-2 hover:text-white/80 focus:text-white/80 active:text-white checked:text-white';
 
     //Array di oggetti con tutti i valori dei filtri, che verrà iterato
     const filterVal = [
