@@ -48,6 +48,7 @@ export default class Product {
     }
 
     createCard(target) {
+
         if(!target) {
             return Card({
                 id: this.id, 

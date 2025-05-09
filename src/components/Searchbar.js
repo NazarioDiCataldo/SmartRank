@@ -33,49 +33,52 @@ const Searchbar = ({label, className = '', placeholder, name }) => {
     } 
     
     //Mi salvo il DOM elem della searchbar in una variabile
-    const searchbar = DOM.div({className: 'w-[100%] lg:w-3xl flex justify-center'}, [ //Wrapper principale con il width 100%. Lo utilizziamo solo per centrare la searchbar 
-        DOM.form({
-            className: 'relative w-[100%]', 
-            dataVanillaRouteLink:'spa',
-            method: 'GET', 
-            action: '/catalogo',
-            onsubmit: (e) => {
-                e.preventDefault();
-                if (e.target.action) {
-                    Router.go(`/catalogo?ricerca=${inputValue}`);
+    const searchbar = DOM.div({className: 'flex flex-col gap-4 items-center w-full'}, [
+        DOM.div({className: 'w-[100%] lg:w-3xl flex justify-center'}, [ //Wrapper principale con il width 100%. Lo utilizziamo solo per centrare la searchbar 
+            DOM.form({
+                className: 'relative w-[100%]', 
+                dataVanillaRouteLink:'spa',
+                method: 'GET', 
+                action: '/catalogo',
+                onsubmit: (e) => {
+                    e.preventDefault();
+                    if (e.target.action) {
+                        Router.go(`/catalogo?ricerca=${inputValue.split(' ').join('-')}`);
+                    }
                 }
-            }
-        }, [
-            DOM.div({className: 'absolute left-3 top-[50%] translate-y-[-50%] z-[2]'}, [
-                DOM.createElFromHTMLString(
-                    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C6F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search hidden md:block"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>'
-                )
-            ]),
-            input,
-            Button({
-                type: 'submit', 
-                ref: buttonRef,
-                status: 'solid', 
-                className: `rounded-4xl absolute right-3 top-[50%] translate-y-[-50%] z-[1] active:!translate-y-[-50%] w-max `}, [
-                    DOM.span({className: 'hidden md:block'},['Cerca']),
-                    DOM.createElFromHTMLString(`
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search md:hidden"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>        `)
+            }, [
+                DOM.div({className: 'absolute left-3 top-[50%] translate-y-[-50%] z-[2]'}, [
+                    DOM.createElFromHTMLString(
+                        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C6F7F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search hidden md:block"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>'
+                    )
                 ]),
-            /* DOM.a({className: `btn text-primary btn-accent rounded-4xl border-0 px-[12px] py-[16px] transition-all duration-300 w-max 
-                md:w-max 
-                hover:brightness-[1.1] 
-                focus:outline-0 
-                active:scale[0.98]
-                disabled:opacity-50 disabled:cursor-not-allowed
-                absolute right-3 top-[50%] translate-y-[-50%] z-[1] active:!translate-y-[-50%]`,
-                href: `/catalogo`,
-                ref: buttonRef
-                }, [
-                    DOM.span({className: 'hidden md:block'},['Cerca']),
-                    DOM.createElFromHTMLString(`
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search md:hidden"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>        `)
-                ]), */
-        ])
+                input,
+                Button({
+                    type: 'submit', 
+                    ref: buttonRef,
+                    status: 'solid', 
+                    className: `rounded-4xl absolute right-3 top-[50%] translate-y-[-50%] z-[1] active:!translate-y-[-50%] w-max `}, [
+                        DOM.span({className: 'hidden md:block'},['Cerca']),
+                        DOM.createElFromHTMLString(`
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search md:hidden"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>        `)
+                    ]),
+                /* DOM.a({className: `btn text-primary btn-accent rounded-4xl border-0 px-[12px] py-[16px] transition-all duration-300 w-max 
+                    md:w-max 
+                    hover:brightness-[1.1] 
+                    focus:outline-0 
+                    active:scale[0.98]
+                    disabled:opacity-50 disabled:cursor-not-allowed
+                    absolute right-3 top-[50%] translate-y-[-50%] z-[1] active:!translate-y-[-50%]`,
+                    href: `/catalogo`,
+                    ref: buttonRef
+                    }, [
+                        DOM.span({className: 'hidden md:block'},['Cerca']),
+                        DOM.createElFromHTMLString(`
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search md:hidden"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>        `)
+                    ]), */
+            ])
+        ]),
+        Link({href: '/catalogo', status: 'ghost', className: 'underline'}, ['Scopri tutto il catalogo'])
     ])
     //Metto il valore di disabled di default
     buttonRef.current.setAttribute('disabled', '')

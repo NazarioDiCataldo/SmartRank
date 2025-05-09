@@ -66,8 +66,6 @@ body {
 }
 
 /* * {
-  
-
   &:focus-visible,
   &:focus {
     border: 0;
@@ -108,6 +106,38 @@ body {
   }
 }
 
+.btn-accent {
+  /* background: linear-gradient(145deg, #28E496, #2ef0ab); */
+  box-shadow: var(--shadow-neon-accent);
+
+  &:hover {
+    /* transform: translateY(-2px) scale(1.02); */
+  box-shadow:
+    0 0 14px rgba(40, 228, 150, 0.6),
+    0 0 27px rgba(40, 228, 150, 0.3);
+  }
+
+  &:focus {
+    box-shadow:
+    0 0 0 3px rgba(40, 228, 150, 0.3),
+    0 0 8px rgba(40, 228, 150, 0.6);
+  }
+
+  &:active {
+    box-shadow: 0 0 6px rgba(40, 228, 150, 0.3);
+    /* transform: translateY(-50%); */
+  }
+
+  &:disabled {
+    background: rgba(40, 228, 150, 0.2) !important; /* verde sbiadito */
+    color: rgba(10, 15, 44, 0.5) !important;         /* testo spento */
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(40, 228, 150, 0.2) !important; /* bordo appena visibile */
+  }
+}
+
 .list-navbar {
   a {
     @apply hover:text-secondary/50 transition-all duration-300;
@@ -132,8 +162,6 @@ body {
   inherits: false;
 }
 
-
-
 .hamburger-btn {
   background: var(--gradient-primary);
   box-shadow: 0 0 4px 0px rgba(176, 230, 255, 0.25);
@@ -141,64 +169,64 @@ body {
 }
 
 .fs-1 {
-  font-size: clamp(1.66rem, 1.4827rem + 0.8866vw, 2.280625rem);
+  font-size: clamp(1.438rem, 0.564vw + 1.323rem, 2rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .fs-2 {
-  font-size: clamp(1.555625rem, 1.4208rem + 0.6741vw, 2.0275rem);
+  font-size: clamp(1.375rem, 0.376vw + 1.299rem, 1.75rem);
   line-height: 1.2;
   letter-spacing: -0.015em;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .fs-3 {
-  font-size: clamp(1.458125rem, 1.3599rem + 0.4911vw, 1.801875rem);
+  font-size: clamp(1.25rem, 0.313vw + 1.186rem, 1.563rem);
   line-height: 1.3;
   letter-spacing: -0.01em;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .fs-4 {
-  font-size: clamp(1.366875rem, 1.2997rem + 0.3357vw, 1.601875rem);
+  font-size: clamp(1.188rem, 0.188vw + 1.149rem, 1.375rem);
   line-height: 1.4;
   letter-spacing: -0.005em;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .fs-5 {
-  font-size: clamp(1.280625rem, 1.2397rem + 0.2045vw, 1.42375rem);
+  font-size: clamp(1.125rem, 0.125vw + 1.1rem, 1.25rem);
   line-height: 1.5;
   letter-spacing: normal;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .fs-6 {
-  font-size: clamp(1.200625rem, 1.1821rem + 0.0929vw, 1.265625rem);
+  font-size: clamp(1.063rem, 0.063vw + 1.05rem, 1.125rem);
   line-height: 1.5;
   letter-spacing: normal;
-  @apply font-medium;
+  @apply font-semibold;
 }
 
 .body-lg {
-  font-size: clamp(1.125rem, 1.1034rem + 0.108vw, 1.200625rem);
+  font-size: clamp(1.063rem, 0.063vw + 1.05rem, 1.125rem);
   line-height: 1.5;
 }
 
 .body-md {
-  font-size: clamp(1.054375rem, 1.0342rem + 0.1009vw, 1.125rem);
+  font-size: clamp(1rem, 0vw + 1rem, 1rem);
   line-height: 1.5;
 }
 
 .body-sm {
-  font-size: clamp(0.988125rem, 0.9692rem + 0.0946vw, 1.054375rem);
+  font-size: clamp(0.875rem, 0.063vw + 0.862rem, 0.938rem);
   line-height: 1.5;
 }
 
 .body-xs {
-  font-size: clamp(0.778rem, 0.063vw + 0.767rem, 0.833rem);
+  font-size: clamp(0.75rem, 0.125vw + 0.725rem, 0.875rem);
   line-height: 1.5;
 }
 

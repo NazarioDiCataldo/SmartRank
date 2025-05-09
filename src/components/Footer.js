@@ -30,8 +30,8 @@ const AAsButton = ({link, src, label}) => {
 const Footer = () => {            //py-8 lg:pt-18
     return DOM.footer({className: 'py-8 lg:pt-18'}, [
         DOM.div({className: 'container text-center mx-auto'},[
-            DOM.h3({className: 'fs-3 mb-4'}, ['Iscrivi alla nostra newsletter']),
-            DOM.p({className: 'text-white/60 mb-4'}, ['Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus amet dui quam vitae quis leo.']),
+            DOM.h3({className: 'fs-3 mb-3'}, ['Iscrivi alla nostra newsletter']),
+            DOM.p({className: 'text-white/60 mb-5'}, ['Ricevi recensioni, offerte e novità direttamente nella tua inbox.']),
             Newsletter(),
             DOM.div({className: 'flex gap-4 justify-center py-8 border-0 border-white/60 border-b-[1px]'}, [
                 ...social.map(s => AAsButton(s))

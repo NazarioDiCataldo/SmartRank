@@ -172,7 +172,7 @@ const Contatti = () => {
                         }),
                     ]),
                     //Textarea
-                    Textarea({id:'contatti-messaggio', name:'messaggio', placeholder: 'Messaggio (Opzionale)'}, []),
+                    Textarea({id:'contatti-messaggio', name:'messaggio', placeholder: 'Messaggio (Opzionale)', className: 'w-full'}, []),
                     //Checkbox
                     Checkbox({
                         id: 'contatti-privacy', 

@@ -23,14 +23,14 @@ export default class Catalog {
     }
 
     appendToGrid(gridRef, array = this.products){
-        const productsFragment = DOM.fragment(
+
+        const productsFragment = DOM.fragment(            
             array.map(p => p.createCard(gridRef.target))
         )
-
         gridRef.current.append(productsFragment)
     }
 
-    async loadProducts() {
+    async loadProducts(messageRef = null) {
         try {
             const reviews = await getReviews()
 
@@ -47,13 +47,13 @@ export default class Catalog {
                             this.addProduct(product)
                         })
         } catch (err) {
-            console.error(err)
+            messageRef.current.textContent = `Errore nel recupero dei prodotti: ${err}`;
         }
     }
 
     filterCatalog({nameProduct = null, categoryProduct = null, valueProduct = null}) {
 
-        return this.products.filter(p => {
+        const filtered = this.products.filter(p => {
             // Se nessun filtro è attivo, ritorna tutto
             if (!nameProduct && !categoryProduct && !valueProduct) {
                     
@@ -68,10 +68,11 @@ export default class Catalog {
 
             //Se attivo il filtro nameProduct, il nome inserito dall'utente, vediamo se combacia
             if(nameProduct) {
+                const nameWithSpaces = nameProduct.split('-').join(' ');         
                 //Matches sarà uguale a un true o false
                 //Verifichiamo prima che matches sia true, quindi per il momento il prodotto sta soddisfando i filtri precedenti
                 //Poi verifichiamo se la stringa passata dall'utente, sia inclusa nel nome del prodotto, trascritto tutto in minuscolo
-                matches = matches && p.nome.toLowerCase().includes(nameProduct.toLowerCase());
+                matches = matches && p.nome.toLowerCase().includes(nameWithSpaces.toLowerCase());
             }
 
             //Poi verifichiamo se è presente il filtro sulla categoria
@@ -93,6 +94,8 @@ export default class Catalog {
             //Se matches sarà false, il prodotto sarà scartato dall'array finale
             return matches;
         })
+
+        return filtered
     }
 
     sortProducts(order) {

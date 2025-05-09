@@ -25,7 +25,7 @@ const Button = ({type, className = '', status = 'solid', ...options}, children) 
                 disabled:opacity-50 disabled:cursor-not-allowed`, className)
             break;
         case 'ghost': 
-            classes = twMerge(`rounded-xl bg-transparent text-[#28E496] w-[100%] md:w-max
+            classes = twMerge(`rounded-xl p-1 bg-transparent text-[#28E496] w-[100%] md:w-max
                 transition-all duration-200 cursor-pointer
                 hover:text-[#28E496]
                 focus:outline-none focus:ring-2 focus:ring-[#28E496]/40

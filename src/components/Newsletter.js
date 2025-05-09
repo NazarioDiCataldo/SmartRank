@@ -97,6 +97,7 @@ const Newsletter = () => {
                 name: 'email', 
                 type: 'email',
                 label: 'Inserisci la tua email per iscriverti alla newsletter', 
+                className: 'w-full',
                 placeholder: 'La tua email',
                 dataValidation: 'email',
                 dataRequired: true,

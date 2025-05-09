@@ -13,19 +13,19 @@ import { getReviews } from './Dettaglio';
 import Catalog from '../classes/catalog';
 import Product from '../classes/product';
 
-const divTestualeTitleRef = createRef(); //Ref del div che contiene il testo (sia errore, che ricerca)
 const gridRef = createRef();
-const inputSearchRef = createRef();
+
+const divTestualeTitleRef = createRef(); //Ref del div che contiene il testo (sia errore, che ricerca)
 
 //Mi creo l'oggetto catalogo
 const catalog = new Catalog();
 
 //Funzione per la chiamata al js-server
-export const getProducts = async (gridRef) => {
+const getProducts = async (gridRef) => {
     //Mi chiamo la funzione per prendermi tutte le recensioni
     const reviews = await getReviews()
-
     try{
+        catalog.products = [];
         const res = await fetch("http://localhost:3000/products")
         const data = await res.json();
         const products = DOM.fragment( 
@@ -42,24 +42,29 @@ export const getProducts = async (gridRef) => {
             }),
         )
 
+        //mi filtro i prodotti
+        const filterCatalog = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria})
+
         //appendo tutte le card, usando la ref
-        catalog.appendToGrid(gridRef)
+        catalog.appendToGrid(gridRef, filterCatalog)
 
         //Testo per il risultato di ricerca
-        divTestualeTitleRef.current.textContent = flagFiltri.nome ? `${catalog.products.length} risultati trovati per "${flagFiltri.nome}"` : `${catalog.products.length} risultati trovati`;
+        divTestualeTitleRef.current.textContent = flagFiltri.nome ? `${filterCatalog.length} risultati trovati per "${flagFiltri.nome.split('-').join(' ')}"` : `${filterCatalog.length} risultati trovati`;
 
     } catch(err) {
-        console.error(err)
+        console.log(err)
         //Se c'è un errore, ritorna una p con un messaggio di errore
         divTestualeTitleRef.current.textContent = `Errore nel recupero dei prodotti: ${err}`;
     }
 }
 
 const Catalogo = () => {
-    
     //Imposto l'active e il titolo della pagina
     setActive('catalogo')
     document.title = 'Catalogo';
+
+    //Mi creo la griglia
+    const grid = DOM.div({className: 'grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center', ref: gridRef}, [])
     
     //Mi prendo l'url spliitato
     const urlCategoria = document.location.href.split('categoria=')
@@ -75,9 +80,31 @@ const Catalogo = () => {
     const modalRef = createRef();
     const mainWrapperRef = createRef(); //Ref del wrapper che contiene sia i filtri che la griglia
     const sidebarRef = createRef(); //Ref della sidebar
+    const inputSearchRef = createRef();
+    const cancellaRicercaRef = createRef(); //Ref del bottone cancella ricerca
 
     //Mi creo la modal
     const modal = Modal({className: 'rounded-3xl'}, modalRef);
+
+    //DOM element del div che contiene messaggi di errori/risultati di ricerca
+    const divTestuale = DOM.div({className: 'text-left w-full flex flex-col lg:flex-row gap-3 lg:justify-between'}, [
+        DOM.h6({className: '', ariaLive: 'polite', ref: divTestualeTitleRef}, [``]),
+        Button({
+            ref: cancellaRicercaRef,
+            type: 'button', 
+            status: 'ghost', 
+            className: `underline items-center ${flagFiltri.nome ? 'flex' : 'hidden'}` , 
+            onclick: () => { 
+                flagFiltri.nome = null; 
+                inputSearchRef.current.value = ''
+                gridRef.current.innerHTML = '';
+                getProducts(gridRef);
+            }},
+            [   'Cancella ricerca',
+                DOM.createElFromHTMLString(`
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`)
+            ])
+    ])
 
     //Mi creo l'input per la ricerca
     const input = Input({
@@ -90,12 +117,17 @@ const Catalogo = () => {
         onChange: filterInput,
     });
 
-    //Mi creo la griglia
-    const grid = DOM.div({className: 'grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center', ref: gridRef}, [])
-
     function filterInput(inputEl) {
-        //mi salvo in una variabile l'input dell'utente, togliendo gli spazi
-        flagFiltri.nome = inputEl.value.trim() === '' ? null : inputEl.value.trim();
+        //Controllo se l'input è vuoto o no
+        if(inputEl.value.trim() !== '') {
+            //mi salvo in una variabile l'input dell'utente, togliendo gli spazi
+            flagFiltri.nome = inputEl.value.trim().split(' ').join('-');
+            cancellaRicercaRef.current.classList.remove('hidden');
+            cancellaRicercaRef.current.classList.add('flex')
+        } else {
+            cancellaRicercaRef.current.classList.add('hidden');
+            cancellaRicercaRef.current.classList.remove('flex')
+        }
 
         //Svuoto la griglia
         gridRef.current.innerHTML = ''
@@ -138,26 +170,8 @@ const Catalogo = () => {
         filterCatalog.appendToGrid(gridRef);
     }
 
-    //DOM element del div che contiene messaggi di errori/risultati di ricerca
-    const divTestuale = DOM.div({className: 'text-left w-full flex flex-col lg:flex-row gap-3 lg:justify-between'}, [
-        DOM.h6({className: '', ariaLive: 'polite', ref: divTestualeTitleRef}, [``]),
-        Button({
-            type: 'button', 
-            status: 'ghost', 
-            className: `underline items-center ${flagFiltri.nome ? 'flex' : 'hidden'}` , 
-            onclick: () => { 
-                flagFiltri.nome = null; 
-                inputSearchRef.current.value = ''
-                getProducts({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione}, gridRef);
-            }},
-            [   'Cancella ricerca',
-                DOM.createElFromHTMLString(`
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`)
-            ])
-    ])
-
-    //Chiamo la funziona che fa la chiamata e appende alla griglia
-    getProducts(gridRef);
+    //Chiamo la funziona che fa appende alla griglia
+    getProducts(gridRef)
 
     return DOM.main({}, [
         //Sezione catalogo

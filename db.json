@@ -2,8 +2,8 @@
   "products": [
     {
       "id": "1",
-      "nome": "iPhone 15 Pro",
-      "url": "iphone-15-pro",
+      "nome": "iPhone 16 Pro Max",
+      "url": "iphone-16-pro-max",
       "marca": "Apple",
       "categoria": "smartphone",
       "immagine": "/img/iphone-15-pro.webp",
@@ -97,7 +97,7 @@
         }
       ],
       "descrizioni": [
-        "L’iPhone 15 Pro è la nuova frontiera degli smartphone premium, costruito in titanio e alimentato dal chip A17 Pro. Con un design elegante e leggero, rappresenta una svolta tecnologica per prestazioni e autonomia.",
+        "L’iPhone 16 Pro Max è la nuova frontiera degli smartphone premium, costruito in titanio e alimentato dal chip A17 Pro. Con un design elegante e leggero, rappresenta una svolta tecnologica per prestazioni e autonomia.",
         "Offre un’esperienza visiva incredibile grazie al display Super Retina XDR con ProMotion, ideale per gaming, editing e streaming. Il comparto fotografico consente scatti e video di qualità professionale.",
         "Grazie alla nuova porta USB-C, alla lunga durata della batteria e all’integrazione perfetta con l’ecosistema Apple, è il compagno ideale per utenti avanzati, creatori e professionisti del settore tech."
       ],
@@ -1025,7 +1025,7 @@
     },
     {
       "id": "10",
-      "nome": "Samsung Galaxy Watch6 Classic",
+      "nome": "Samsung Galaxy Watch6",
       "marca": "Samsung",
       "url": "galaxy-watch6-classic",
       "categoria": "smartwatch",
@@ -1138,7 +1138,7 @@
     },
     {
       "id": "11",
-      "nome": "Anker PowerCore 20000mAh",
+      "nome": "Anker PowerCore",
       "marca": "Anker",
       "url": "anker-powercore",
       "categoria": "powerbank",
@@ -1251,7 +1251,7 @@
     },
     {
       "id": "12",
-      "nome": "Xiaomi Mi Power Bank 3 10000mAh",
+      "nome": "Xiaomi Mi Power Bank 3",
       "url": "xiaomi-powerbank-3",
       "marca": "Xiaomi",
       "categoria": "powerbank",
@@ -1365,102 +1365,15 @@
   ],
   "reviews": [
     {
-      "id": "746a",
-      "idProdotto": 1,
-      "autore": "Nazario Di Cataldo",
-      "fotoProfilo": "/profile-picture.jpg",
-      "ora": "11:40",
-      "data": "05/05/2025",
-      "valutazione": 4,
-      "titolo": "Ottimo telefono",
-      "testo": "Ho avuto una bellissima esperienza con questo telefono",
-      "valutazioniTecniche": [
-        {
-          "etichetta": "Fotocamera",
-          "valore": 5
-        },
-        {
-          "etichetta": "Display",
-          "valore": 4
-        },
-        {
-          "etichetta": "Batteria",
-          "valore": 4
-        },
-        {
-          "etichetta": "Prestazioni",
-          "valore": 4
-        }
-      ]
-    },
-    {
-      "id": "9aeb",
-      "idProdotto": 1,
-      "autore": "Nazario Di Cataldo",
-      "fotoProfilo": "/profile-picture.jpg",
-      "ora": "11:41",
-      "data": "05/05/2025",
-      "valutazione": 1,
-      "titolo": "Fa schifoo",
-      "testo": "Peggior telefono mai avuto",
-      "valutazioniTecniche": [
-        {
-          "etichetta": "Fotocamera",
-          "valore": 1
-        },
-        {
-          "etichetta": "Display",
-          "valore": 1
-        },
-        {
-          "etichetta": "Batteria",
-          "valore": 1
-        },
-        {
-          "etichetta": "Prestazioni",
-          "valore": 1
-        }
-      ]
-    },
-    {
-      "id": "79af",
-      "idProdotto": 1,
-      "autore": "Nazario Di Cataldo",
-      "fotoProfilo": "/profile-picture.jpg",
-      "ora": "11:55",
-      "data": "05/05/2025",
-      "valutazione": 2,
-      "titolo": "porco dio ",
-      "testo": "fa schufo tuto",
-      "valutazioniTecniche": [
-        {
-          "etichetta": "Fotocamera",
-          "valore": 4
-        },
-        {
-          "etichetta": "Display",
-          "valore": 3
-        },
-        {
-          "etichetta": "Batteria",
-          "valore": 3
-        },
-        {
-          "etichetta": "Prestazioni",
-          "valore": 3
-        }
-      ]
-    },
-    {
       "id": "a440",
-      "idProdotto": 1,
+      "idProdotto": 2,
       "autore": "Nazario Di Cataldo",
       "fotoProfilo": "/profile-picture.jpg",
       "ora": "11:56",
       "data": "05/05/2025",
       "valutazione": 3,
-      "titolo": "la schiena",
-      "testo": "emirates suca",
+      "titolo": "Non all’altezza delle aspettative",
+      "testo": "Mi aspettavo di più dal Galaxy Tab S9. Prestazioni sotto tono e display poco luminoso all'aperto. Non lo consiglio a chi cerca un tablet top di gamma.",
       "valutazioniTecniche": [
         {
           "etichetta": "Fotocamera",
@@ -1482,14 +1395,14 @@
     },
     {
       "id": "1efe",
-      "idProdotto": 1,
+      "idProdotto": 3,
       "autore": "Nazario Di Cataldo",
       "fotoProfilo": "/profile-picture.jpg",
       "ora": "12:03",
       "data": "05/05/2025",
       "valutazione": 4,
-      "titolo": "VIbe coding allo sttuo pur",
-      "testo": "porco priscillo",
+      "titolo": "Tablet eccezionale!",
+      "testo": "L' iPad Air M2 è una macchina incredibile. Silenzioso, leggero e super performante. Vale ogni centesimo speso.",
       "valutazioniTecniche": [
         {
           "etichetta": "Fotocamera",
@@ -1497,28 +1410,28 @@
         },
         {
           "etichetta": "Display",
-          "valore": 3
+          "valore": 4
         },
         {
           "etichetta": "Batteria",
-          "valore": 3
+          "valore": 5
         },
         {
           "etichetta": "Prestazioni",
-          "valore": 3
+          "valore": 5
         }
       ]
     },
     {
       "id": "be80",
-      "idProdotto": 2,
+      "idProdotto": 1,
       "autore": "Nazario Di Cataldo",
       "fotoProfilo": "/profile-picture.jpg",
       "ora": "13:35",
       "data": "05/05/2025",
       "valutazione": 4,
-      "titolo": "lirili larila",
-      "testo": "porco dio e porco allah",
+      "titolo": "Buone telefono, ma non eccellente",
+      "testo": "L' iPhone 16 Pro Max è un buon telefono, ma la durata della batteria non mi ha convinto. A questo prezzo mi aspettavo di più.",
       "valutazioniTecniche": [
         {
           "etichetta": "Fotocamera",
@@ -1545,42 +1458,100 @@
       "fotoProfilo": "/profile-picture.jpg",
       "ora": "13:48",
       "data": "05/05/2025",
-      "valutazione": 4,
-      "titolo": "trallalero trallala",
-      "testo": "porco dio e porco allah",
+      "valutazione": 5,
+      "titolo": "Ottimo acquisto!",
+      "testo": "Ho acquistato l'iPhone 16 Pro Max da una settimana e devo dire che sono davvero soddisfatto. Batteria eccellente e fotocamera incredibile.",
       "valutazioniTecniche": [
         {
           "etichetta": "Fotocamera",
-          "valore": 3
+          "valore": 5
         },
         {
           "etichetta": "Display",
-          "valore": 3
+          "valore": 5
         },
         {
           "etichetta": "Batteria",
-          "valore": 4
+          "valore": 5
         },
         {
           "etichetta": "Prestazioni",
-          "valore": 3
+          "valore": 5
         }
       ]
     },
     {
-      "id": "4e8f",
+      "id": "5313",
       "idProdotto": 5,
       "autore": "Nazario Di Cataldo",
       "fotoProfilo": "/profile-picture.jpg",
-      "ora": "15:34",
-      "data": "05/05/2025",
+      "ora": "13:48",
+      "data": "07/05/2025",
       "valutazione": 5,
-      "titolo": "orlando furioso",
-      "testo": "pozzo nero",
+      "titolo": "Top di gamma!",
+      "testo": "Il MacBook Air M2 è un vero concetrato di tecnologia. Display eccezionale, prestazioni da urlo e batteria che dura tutto il giorno",
       "valutazioniTecniche": [
         {
-          "etichetta": "Cpu",
+          "etichetta": "CPU",
+          "valore": 5
+        },
+        {
+          "etichetta": "Display",
+          "valore": 5
+        },
+        {
+          "etichetta": "Batteria",
+          "valore": 5
+        },
+        {
+          "etichetta": "Memoria",
+          "valore": 5
+        }
+      ]
+    },
+    {
+      "id": "5313",
+      "idProdotto": 12,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "13:48",
+      "data": "08/05/2025",
+      "valutazione": 5,
+      "titolo": "Powerbank indispensabile",
+      "testo": "Compatto e potente, ricarica velocemente il mio telefono. Ormai è un must-have in borsa, soprattutto quando sono in viaggio. Consigliato",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Capacità",
+          "valore": 5
+        },
+        {
+          "etichetta": "Ricarica",
+          "valore": 5
+        },
+        {
+          "etichetta": "Peso",
+          "valore": 5
+        },
+        {
+          "etichetta": "Compatibilità",
           "valore": 4
+        }
+      ]
+    },
+    {
+      "id": "5313",
+      "idProdotto": 1,
+      "autore": "Nazario Di Cataldo",
+      "fotoProfilo": "/profile-picture.jpg",
+      "ora": "09:44",
+      "data": "09/05/2025",
+      "valutazione": 5,
+      "titolo": "Meglio del previsto",
+      "testo": "Non pensavo di trovarmi così bene con il nuovo iPhone. La fotocamera è il suo punto forte, ottima la batteria e le prestazioni top.",
+      "valutazioniTecniche": [
+        {
+          "etichetta": "Fotocamera",
+          "valore": 5
         },
         {
           "etichetta": "Display",
@@ -1588,11 +1559,11 @@
         },
         {
           "etichetta": "Batteria",
-          "valore": 3
+          "valore": 5
         },
         {
-          "etichetta": "Memoria",
-          "valore": 4
+          "etichetta": "Prestazioni",
+          "valore": 5
         }
       ]
     }

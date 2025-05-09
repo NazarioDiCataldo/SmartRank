@@ -113,8 +113,17 @@ const Sidebar = ({className = '', ref, gridRef}) => {
         //Svuoto la proprietà sul filtro
         flagFiltri[resetInput.name] = null
         
+        //Filtri il catalogo in base ai filtri
         const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
-        catalog.appendToGrid(gridRef, filteredProducts)
+        
+        //Mi creo un secondo catalogo che contiene solo i prodotti filtrati
+        const filteredCatalog = new Catalog(filteredProducts);
+        
+        //Ordino l'array;
+        filteredCatalog.sortProducts(flagFiltri.ordine);
+        
+        //Appendo alla griglia il nuovo array filtrato
+        filteredCatalog.appendToGrid(gridRef)
     }
 
     function filtraPer(gridRef) {
@@ -127,8 +136,17 @@ const Sidebar = ({className = '', ref, gridRef}) => {
         //Svuoto la griglia
         gridRef.current.innerHTML = '';
 
+        //Filtri il catalogo in base ai filtri
         const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
-        catalog.appendToGrid(gridRef, filteredProducts)
+        
+        //Mi creo un secondo catalogo che contiene solo i prodotti filtrati
+        const filteredCatalog = new Catalog(filteredProducts);
+        
+        //Ordino l'array;
+        filteredCatalog.sortProducts(flagFiltri.ordine);
+        
+        //Appendo alla griglia il nuovo array filtrato
+        filteredCatalog.appendToGrid(gridRef)
     }
 
     //Mi creo i ref
