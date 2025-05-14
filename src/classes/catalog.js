@@ -51,11 +51,11 @@ export default class Catalog {
         }
     }
 
-    filterCatalog({nameProduct = null, categoryProduct = null, valueProduct = null}) {
+    filterCatalog({nameProduct = null, categoryProduct = null, valueProduct = null, priceProduct = null}) {
 
         const filtered = this.products.filter(p => {
             // Se nessun filtro è attivo, ritorna tutto
-            if (!nameProduct && !categoryProduct && !valueProduct) {
+            if (!nameProduct && !categoryProduct && !valueProduct && !priceProduct) {
                     
                 //Quindi vuol dire che il prodotto non sarà scartato
                 return true;
@@ -88,6 +88,16 @@ export default class Catalog {
                 //Mi calcolo la media delle recensioni, attraverso una funzione e verifico se questa è maggiore o uguale a quella chiesta dall'utente
                 matches = matches && averageCalculator(p.getAllValutations().valutazioni) >= valueProduct;
             }
+
+            console.log(priceProduct)
+            //Quarta condizione: verificare se il prezzo più basso del prodotto è compreso tra il range di prezzo scelto dall'utente
+            if(priceProduct) { //Verifico se è presente il filtro sul prezzo
+                
+                //Prima verifico se matches sia ancora true
+                //Poi controllo se il prezzo più basso prezzi[0] è più alto o uguale del valore minimo priceProduct[0]
+                //e se è anche più basso o uguale al valore massimo priceProduct[1]
+                matches = matches && (p.prezzi[0] >= priceProduct[0] && p.prezzi[0] <= priceProduct[1])
+            }
     
             //Alla fine di tutto ritorno matches
             //Se matches sarà ancora true, il prodotto soddisfa i filtri e sarà passato all'array finale, che verrà mappato
@@ -109,10 +119,44 @@ export default class Catalog {
             case 'Recensioni più basse':
                 this.lowerValutations();
                 break;
+            case 'Prezzo più basso':
+                this.higerPrice();
+                break;
+            case 'Prezzo più alto':
+                this.lowerPrice();
+                break;
             default: 
                 this.defaultSort();
                 break;
         }
+    }
+
+    higerPrice() {
+        function compare( a, b ) {
+            if ( a.prezzi[0] < b.prezzi[0] ){
+              return -1;
+            }
+            if ( a.prezzi[0] > b.prezzi[0]){
+              return 1;
+            }
+            return 0;
+          }
+          
+        this.products.sort(compare);
+    }
+
+    lowerPrice() {
+        function compare( a, b ) {
+            if ( a.prezzi[0] > b.prezzi[0] ){
+              return -1;
+            }
+            if ( a.prezzi[0] < b.prezzi[0]){
+              return 1;
+            }
+            return 0;
+          }
+          
+        this.products.sort(compare);
     }
 
     higerValutations() {

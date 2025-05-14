@@ -1,10 +1,11 @@
 import DOM, { createRef } from 'just-dom';
 import { twMerge } from 'tailwind-merge';
 import Filter from './ui/Filter';
-import Range from './ui/Range';
 import Button from './ui/Button';
 import {debounce} from 'lodash'
 import Catalog from '../classes/catalog';
+import setRangeSlider from '../utilities/setRangeSlider';
+import noUiSlider from 'nouislider';
 
 //Flag globali 
 //Dovranno essere esportati su catalogo, per coordinare i filtri divisi tra le varie pagine
@@ -12,6 +13,7 @@ export const flagFiltri = {
     valutazione: null,
     categoria: null,
     nome: null,
+    prezzo: null, //[]
     ordine: 'Rilevanza'
 }
 
@@ -19,7 +21,7 @@ export const flagFiltri = {
 const catalog = new Catalog();
 await catalog.loadProducts();
 
-const Sidebar = ({className = '', ref, gridRef}) => {
+const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef}) => {
     
     //Variabile con classi comuni dei filtri sulla valutazione
     const classNameFilterVal = 'xl:grow-[1] btn-outline !mx-0 checked:rounded-lg group-has-[input:checked]:grow-0';
@@ -106,6 +108,7 @@ const Sidebar = ({className = '', ref, gridRef}) => {
 
     //Resetta i filtri in questione
     function resetFilter(resetInput, gridRef) {
+        console.log(flagFiltri.prezzo)
 
         //Svuoto la griglia
         gridRef.current.innerHTML = '';
@@ -114,36 +117,43 @@ const Sidebar = ({className = '', ref, gridRef}) => {
         flagFiltri[resetInput.name] = null
         
         //Filtri il catalogo in base ai filtri
-        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione, priceProduct: flagFiltri.prezzo})
         
         //Mi creo un secondo catalogo che contiene solo i prodotti filtrati
         const filteredCatalog = new Catalog(filteredProducts);
         
         //Ordino l'array;
         filteredCatalog.sortProducts(flagFiltri.ordine);
+
+        //Imposto il numero di prodotti trovati, dopo aver impostato i filtri
+        divTestualeTitleRef.current.textContent = filteredCatalog.products.length !== 1 ? `${filteredCatalog.products.length} risultati trovati` : `${filteredCatalog.products.length} risultato trovato`;
         
         //Appendo alla griglia il nuovo array filtrato
         filteredCatalog.appendToGrid(gridRef)
     }
 
     function filtraPer(gridRef) {
+        console.log(flagFiltri.prezzo)
 
         //Mi prendo i valori degli input dei filtri
         flagFiltri.valutazione = valutazioneRef.current.querySelector('input[type=radio]:checked')?.value; //Input radio valutazione
         flagFiltri.categoria = categoriaRef.current.querySelector('input[type=radio]:checked')?.value; //Input radio categoria
-        //const prezzoFiltro = prezzoRef.current.querySelector('input[type=radio]:checked'); //Input range prezzo
+        flagFiltri.prezzo = rangeSliderRef.current.noUiSlider.get();
 
         //Svuoto la griglia
         gridRef.current.innerHTML = '';
 
         //Filtri il catalogo in base ai filtri
-        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione, priceProduct: flagFiltri.prezzo})
         
         //Mi creo un secondo catalogo che contiene solo i prodotti filtrati
         const filteredCatalog = new Catalog(filteredProducts);
         
         //Ordino l'array;
         filteredCatalog.sortProducts(flagFiltri.ordine);
+
+        //Imposto il numero di prodotti trovati, dopo aver impostato i filtri
+        divTestualeTitleRef.current.textContent = filteredCatalog.products.length !== 1 ? `${filteredCatalog.products.length} risultati trovati` : `${filteredCatalog.products.length} risultato trovato`;
         
         //Appendo alla griglia il nuovo array filtrato
         filteredCatalog.appendToGrid(gridRef)
@@ -152,7 +162,15 @@ const Sidebar = ({className = '', ref, gridRef}) => {
     //Mi creo i ref
     const valutazioneRef = createRef();
     const categoriaRef = createRef();
-    //const prezzoRef = createRef();
+    const rangeSliderRef = createRef();
+
+    const rangeSlier = DOM.div({ref: rangeSliderRef})
+
+    //Funzione per settare lo slider range
+    setRangeSlider(rangeSliderRef.current)
+
+    //Funzione che si attiva quando cambio il valore dello slider
+    rangeSliderRef.current.noUiSlider.on('end.one', () => {filtraPer(gridRef)})
 
     //Mi creo in anticipo il DOM element cosi da poter usare il ref della categoria
     const categoryForm = DOM.form({className: 'filter justify-start flex', ref: categoriaRef},[
@@ -194,10 +212,11 @@ const Sidebar = ({className = '', ref, gridRef}) => {
                     categoryForm,
                 ]),
                 //Filtri prezzo
-                /* DOM.div({className: ''}, [
+                DOM.div({className: ''}, [
                     DOM.h5({className: 'fs-6 font-semibold mb-2'}, ['Prezzo']),
-                    Range({min: '0', max: '1500', ref: prezzoRef}),
-                ]) */
+                    //Semplice div che diventerà un range slider
+                    rangeSlier,
+                ])
             ]),
             //Div con i bottoni
             /* DOM.div({className: 'flex gap-3 mt-4'}, [

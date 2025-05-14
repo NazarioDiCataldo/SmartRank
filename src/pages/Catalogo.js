@@ -64,7 +64,7 @@ const Catalogo = () => {
     document.title = 'Catalogo';
 
     //Mi creo la griglia
-    const grid = DOM.div({className: 'grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center', ref: gridRef}, [])
+    const grid = DOM.div({className: 'grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 place-items-center', ref: gridRef}, [])
     
     //Mi prendo l'url spliitato
     const urlCategoria = document.location.href.split('categoria=')
@@ -134,7 +134,7 @@ const Catalogo = () => {
         
         catalog.sortProducts(flagFiltri.ordine);
   
-        const filteredProducts= catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        const filteredProducts= catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione, priceProduct: flagFiltri.prezzo})
         
         catalog.appendToGrid(gridRef, filteredProducts)
 
@@ -157,7 +157,7 @@ const Catalogo = () => {
         //Assegno il valore della select alal variabile globale dei filtri
         flagFiltri.ordine = selectEl ? selectEl.value : null;
 
-        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione})
+        const filteredProducts = catalog.filterCatalog({nameProduct: flagFiltri.nome, categoryProduct: flagFiltri.categoria, valueProduct: flagFiltri.valutazione, priceProduct: flagFiltri.prezzo})
         //Mi creo un nuovo oggetto catalogo sul quale farò il sorting
         //visto che filterCatalog rilascia un array, ma non oggetto catalodo e quindi senza metodi 
         const filterCatalog = new Catalog();
@@ -182,7 +182,7 @@ const Catalogo = () => {
             DOM.div({className: 'grid grid-cols-1 lg:grid-cols-6 gap-8', ref: mainWrapperRef}, [
                 //Sidebar che contiene i filtri
                 //Visibile solo da desktop
-                Sidebar({className: 'hidden lg:block lg:col-span-2', ref: sidebarRef, gridRef}),
+                Sidebar({className: 'hidden lg:block lg:col-span-2', ref: sidebarRef, gridRef, divTestualeTitleRef}),
                 //Div che contiene searchbar, select e grid con catalogo
                 //Su mobile è 1/1, da desktop 3/4
                 DOM.div({className: 'flex flex-col gap-8 col-span-1 lg:col-span-4'}, [
@@ -204,6 +204,8 @@ const Catalogo = () => {
                                 DOM.option({}, ['Rilevanza']),
                                 DOM.option({}, ['Recensioni più alte']),
                                 DOM.option({}, ['Recensioni più basse']),
+                                DOM.option({}, ['Prezzo più alto']),
+                                DOM.option({}, ['Prezzo più basso']),
                             ])
                         ]),
                     ]),  

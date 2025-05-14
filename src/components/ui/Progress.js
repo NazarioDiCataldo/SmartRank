@@ -43,7 +43,7 @@ const Progress = ({value, labelText, className =  ''}) => {
     return DOM.div({className:twMerge('w-[10rem]', className)}, [
         DOM.p({className: 'body-sm font-medium'}, labelText),
         DOM.div({className: 'flex items-center gap-2'}, [
-            DOM.div({className: `bg-white rounded-3xl w-[100%] h-[0.75rem] `}, [
+            DOM.div({className: `bg-neutral rounded-3xl w-[100%] h-[0.75rem] `}, [
                 progress,
             ]),
             DOM.p({className: `text-sm ${color.text}`}, [`${value}`])
