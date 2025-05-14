@@ -41,7 +41,7 @@ const Homepage = async () => {
         //box 1: Cos'è SmartRank
         {
             id: 'bento-1',
-            className: 'col-span-6 lg:col-span-2',
+            className: 'col-span-6 lg:col-span-2 lg:h-full',
             value: DOM.fragment([
                 DOM.h3({className: 'fs-3 mb-8'}, [`Cos'è SmartRank?`]),
                 DOM.div({className: 'flex flex-col gap-2'}, [
@@ -69,7 +69,7 @@ const Homepage = async () => {
         //box 2: Prodotti più recensiti
         {
             id: 'bento-2',
-            className: 'col-span-6 lg:col-span-4 overflow-hidden',
+            className: 'col-span-6 lg:col-span-4 overflow-hidden lg:h-full',
             value: DOM.fragment([
                 DOM.div({ref: navigationWrapperRef, className: 'flex justify-between items-center'}, [
                     DOM.h3({className: 'fs-3 mb-8'}, [`Prodotti più apprezzati`]),
@@ -84,7 +84,7 @@ const Homepage = async () => {
         //box 3: Perchè scegliere SmartRank?
         {
             id: 'bento-3',
-            className: 'col-span-6 lg:col-span-3',
+            className: 'col-span-6 lg:col-span-3 lg:h-full',
             value: DOM.fragment([
                 DOM.h3({className: 'fs-3 mb-8'}, [`Perchè scegliere SmartRank?`]),
                 DOM.ul({className: 'flex flex-col md:flex-row gap-8 w-[100%] items-start'}, [
@@ -115,7 +115,7 @@ const Homepage = async () => {
         //box 4: Le nostre categorie
         {
             id: 'bento-4',
-            className: 'col-span-6 lg:col-span-3',
+            className: 'col-span-6 lg:col-span-3 lg:h-full',
             value: DOM.fragment([
                 DOM.h3({className: 'fs-3 mb-8'}, [`Le nostre categorie`]),
                 DOM.ul({className: 'grid grid-cols-3 grid-rows-2 gap-8 w-[100%] items-center'}, [
@@ -183,7 +183,7 @@ const Homepage = async () => {
         //box 5: Ultime recensioni
         {
             id: 'bento-5',
-            className: 'col-span-6 lg:col-span-2',
+            className: 'col-span-6 lg:col-span-2 lg:h-full',
             value: DOM.fragment([
                 DOM.div({className: 'flex justify-between items-center', ref: reviewsWrapperRef}, [
                     DOM.h3({className: 'fs-3 mb-4'}, [`Ultime recensioni`]),
@@ -199,7 +199,7 @@ const Homepage = async () => {
         //box 6: E' arrivato iPhone 16 Pro Max
         {
             id: 'bento-6',
-            className: 'col-span-6 lg:col-span-4',
+            className: 'col-span-6 lg:col-span-4 lg:h-full',
             value: DOM.fragment([
                 DOM.h3({className: 'fs-3 mb-4'}, [`È arrivato iPhone 16 Pro Max`]),  
                 //grid grid-cols-1 md:grid-cols-6
@@ -214,16 +214,16 @@ const Homepage = async () => {
                                 DOM.strong({className: 'font-semibold'}, ['Hai già provato l’iPhone 16 Pro Max? ']),
                                 'Condividi la tua esperienza e aiuta altri utenti a scegliere consapevolmente. Ogni recensione conta']),
                         ]),
-                        DOM.div({className: 'flex flex-col lg:flex-row gap-4 md:gap-3'}, [
-                            Link({href: '/recensione?prodotto=iphone-16-pro-max', status: 'outline', className:'order-2 lg:order-1 !w-full lg:!w-max'}, ['Lascia una recensione']),
-                            Link({href: '/catalogo/iphone-16-pro-max', status: 'solid', className:'order-1 lg:order-2 !w-full lg:!w-max'}, ['Scopri di più'])
+                        DOM.div({className: 'flex flex-col md:flex-row lg:flex-col xl:flex-row  gap-4 md:gap-3'}, [
+                            Link({href: '/recensione?prodotto=iphone-16-pro-max', status: 'outline', className:'order-2 md:order-1 lg:order-2 xl:order-1 !w-full md:!w-max lg:!w-full xl:!w-max'}, ['Lascia una recensione']),
+                            Link({href: '/catalogo/iphone-16-pro-max', status: 'solid', className:'order-1 md:order-2 lg:order-1 xl:order-2 !w-full md:!w-max lg:!w-full xl:!w-max'}, ['Scopri di più'])
                         ])
                     ]),
                     DOM.div({className: 'col-span-2 md:col-span-1'}, [
                         HorizontalCard({
                             id: iphone16ProMax.id, 
                             href: iphone16ProMax.url,
-                            className: 'w-full md:w-[19rem] lg:w-[17.5rem] xl:w-[24rem]',
+                            className: 'w-full md:w-[19rem] lg:w-[17.5rem] xl:w-[22rem]',
                             cardOptions: {
                                 src: iphone16ProMax.immagine,
                                 mark: iphone16ProMax.marca,

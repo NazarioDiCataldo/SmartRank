@@ -110,7 +110,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
     //Mi creo le prograss bar delle varie specifiche tecniche
     const arrayProgress = objProgress.map(({etichetta, mediaValori}) => Progress({value: mediaValori, labelText: etichetta, className: '!w-full' }))
 
-    return DOM.section({id: 'reviews-product', className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-5'},[
+    return DOM.section({id: 'reviews-product', className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-4 md:p-5'},[
         DOM.h3({className: 'fs-4 font-semibold mb-8'}, [`Tutte le recensioni su ${nomeProdotto}`]),
         //Griglia
         DOM.div({className: 'grid grid-cols-1 md:grid-cols-8 lg:grid-cols-7 gap-12 md:gap-8', ref: gridRef}, [
@@ -121,7 +121,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
                     Bentobox({className: '!h-max flex flex-col md:flex-row flex-wrap gap-4 md:justify-between items-center align-center mb-8'}, [
                         //Media recensioni
                         DOM.div({className: ' flex flex-col items-center gap-2 grow-[1]'},[
-                            DOM.h5({className: `${avColor.text} fs-3 text-center w-full`}, [`${av}`]),
+                            DOM.h5({className: `${avColor.text} fs-1 text-center w-full`}, [`${av}`]),
                             //Rating
                             DOM.div({className: 'flex gap-2 items-center flex-col'}, [
                                 DOM.p({className: `${avColor.text} text-center`}, [`${avColor.content}`]),
@@ -137,8 +137,8 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
                     //CTA per le recensioni
                     DOM.div({className: `flex-col gap-3 ${reviews.length > 0 ? 'flex' : 'hidden'}`}, [
                         DOM.p({className: 'font-medium body-lg'}, ['Hai provato questo prodotto?']),
-                        Link({status:'ghost', className: 'underline flex items-center gap-1', href: `/recensione?prodotto=${slugProdotto}`}, [
-                            'Racconta la tua esperienza',
+                        Link({status:'solid', className: 'flex items-center gap-1', href: `/recensione?prodotto=${slugProdotto}`}, [
+                            'Scrivi la tua esperienza',
                             DOM.createElFromHTMLString(`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pen-line-icon lucide-pen-line"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>`)
                         ])
                     ])
@@ -174,7 +174,7 @@ const ReviewsProduct = (modalRef, reviews, categoria, nomeProdotto, slugProdotto
                 //Div che contiene le recensioni
                 DOM.div({className: 'flex flex-col gap-8'},[
                     fallBack,
-                    ...reviews.map(r => {
+                    ...reviews.reverse().map(r => {
                         return Review(modalRef, r,  false)
                     })
                 ])

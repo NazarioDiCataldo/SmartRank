@@ -5,7 +5,7 @@ import Link from './ui/Link';
 const PricesProduct = (prodotto) => {
     const vantaggi = ['Pagamenti sicuri', 'Garanzia di 12 mesi', 'AppleCare incluso']
 
-    return DOM.section({className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-5', id: 'prices-product'},[
+    return DOM.section({className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-4 md:p-5', id: 'prices-product'},[
         DOM.h3({className: 'fs-4 font-semibold mb-8'}, ['Le migliori offerte']),
         //Wrapper card-prezzo
         DOM.div({className: 'flex flex-col gap-8'}, [

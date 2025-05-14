@@ -7,7 +7,7 @@ const DescriptionProduct = (prodotto) => {
     //Array che contiene i titoli 
     const arrayTitle = ['Panoramica prodotto', 'Perché sceglierlo', 'Dettagli']
 
-    return DOM.section({className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-5 flex flex-col lg:flex-row gap-10'}, [
+    return DOM.section({className: 'bento-box border-white/5 border-[1px] rounded-lg backdrop-blur-lg p-4 md:p-5 flex flex-col lg:flex-row gap-10'}, [
         //Div che contiene i testi 
         DOM.div({className: 'w-full lg:w-1/2 flex flex-col gap-6 col-span-1 order-2 lg:order-1'}, [
             ...arrayTitle.map((title, i) => {
