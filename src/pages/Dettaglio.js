@@ -7,14 +7,14 @@ import DescriptionProduct from '../components/DescriptionProduct';
 import ReviewsProduct from '../components/ReviewsProduct';
 import PricesProduct from '../components/PricesProduct';
 import Modal from '../components/ui/Modal';
+import ReviewsStore from '../classes/reviews_store';
 
-export async function getReviews(idProdotto = '') {
+export async function getReviews(idProdotto = '', errorTextRef = null) { 
     try {
-        
         const endpoint = idProdotto ? `http://localhost:3000/reviews?idProdotto=${idProdotto}` : 'http://localhost:3000/reviews'; 
         const res = await fetch(endpoint);
         const reviews = await res.json();
-        return reviews;
+        return reviews
 
     } catch (err) {
         //Se c'è un errore, ritorna una p con un messaggio di errore
@@ -24,6 +24,9 @@ export async function getReviews(idProdotto = '') {
 }
 
 const Dettaglio = () => {
+    //Mi creo il contenitore di recensioni
+    const reviewsStore = new ReviewsStore();
+
     setActive(routeLocation())
     document.title = 'Dettaglio';
 
@@ -50,17 +53,18 @@ const Dettaglio = () => {
             const [prodotto] = product;
 
             //Mi salvo le recensioni in una variabile
-            const reviews = await getReviews(prodotto.id)
+            reviewsStore.reviews = await getReviews(prodotto.id, errorTextRef)
 
             //Creazioni delle varie sezioni della pagina
             bentoboxRef.current.append(errorText)
-            bentoboxRef.current.append(IntroProduct(prodotto, reviews)) //Intro (foto prodotto, nome, prezzo, recensioni)
+            bentoboxRef.current.append(IntroProduct(prodotto, reviewsStore.reviews)) //Intro (foto prodotto, nome, prezzo, recensioni)
             bentoboxRef.current.append(DescriptionProduct(prodotto)) //Sezione descrizione: testi, tab
-            bentoboxRef.current.append(ReviewsProduct(modalRef, reviews, prodotto.categoria, prodotto.nome, prodotto.url)) //Sezione recensioni
+            bentoboxRef.current.append(ReviewsProduct(modalRef, reviewsStore, prodotto.categoria, prodotto.nome, prodotto.url)) //Sezione recensioni
             bentoboxRef.current.append(PricesProduct(prodotto))
 
             errorTextRef.current.classList.add('hidden');
         } catch (err) {
+            console.log(err)
             //Se c'è un errore, ritorna una p con un messaggio di errore
             errorTextRef.current.classList.remove('hidden');
             errorTextRef.current.textContent = `Errore nel recupero dei prodotti: ${err}`;

@@ -42,12 +42,12 @@ const Review = (modalRef, rev, showRedmore = true, prodotto = null) => {
         modalRef.current.showModal();
     }}, ['Leggi di più']);
 
-    return DOM.div({className: 'flex flex-col bento-box border-white/5 border-[1px] rounded-2xl py-5 px-5 h-full'}, [
+    return DOM.div({className: 'flex flex-col bento-box border-white/5 border-[1px] rounded-2xl p-4 md:p-5 h-full'}, [
         //Top della card
         DOM.div({className: 'flex gap-4 items-center mb-4'}, [
             //Foto profilo
             DOM.figure({className: `${classImage}`}, [
-                DOM.img({src: fotoProfilo, alt: `Foto profilo di ${autore}`, className: 'w-[100%] h-[100%] object-cover rounded-full'}, [])
+                DOM.img({src: fotoProfilo, alt: `Foto profilo di ${autore}`, className: 'w-full h-full object-cover rounded-full'}, [])
             ]),
             DOM.div({className: 'flex flex-col gap-0 w-full'}, [
                 //Div che contiene nome utente e data

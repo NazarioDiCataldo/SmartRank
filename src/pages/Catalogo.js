@@ -12,6 +12,7 @@ import { debounce } from 'lodash';
 import { getReviews } from './Dettaglio';
 import Catalog from '../classes/catalog';
 import Product from '../classes/product';
+import ReviewsStore from '../classes/reviews_store';
 
 const gridRef = createRef();
 
@@ -20,10 +21,13 @@ const divTestualeTitleRef = createRef(); //Ref del div che contiene il testo (si
 //Mi creo l'oggetto catalogo
 const catalog = new Catalog();
 
+//Mi creo l'oggetto reviewsStore 
+const reviewsStore = new ReviewsStore();
+
 //Funzione per la chiamata al js-server
 const getProducts = async (gridRef) => {
     //Mi chiamo la funzione per prendermi tutte le recensioni
-    const reviews = await getReviews()
+    reviewsStore.reviews = await getReviews()
     try{
         catalog.products = [];
         const res = await fetch("http://localhost:3000/products")
@@ -34,7 +38,7 @@ const getProducts = async (gridRef) => {
                 //Mi creo l'oggetto prodotto
                 const product = new Product(p.id, p.nome, p.url, p.marca, p.categoria, p.immagine, p.prezzi, p.rivenditori, p.rivenditoriLogo, p.caratteristiche, p.caratteristicheAvanzate)
                 //aggiungo la recensioni al prodotto
-                product.addReview(reviews);
+                product.addReview(reviewsStore.reviews);
                 //Imposto la valutazione del prodotto
                 product.setValutazion()
                 //aggiungo il prodotto al catalogo
@@ -95,6 +99,10 @@ const Catalogo = () => {
             status: 'ghost', 
             className: `underline items-center ${flagFiltri.nome ? 'flex' : 'hidden'}` , 
             onclick: () => { 
+                //Rimuovo la visibilità del bottone
+                cancellaRicercaRef.current.classList.add('hidden');
+                cancellaRicercaRef.current.classList.remove('flex')
+                //Azzerro la ricerca e il flag filtri
                 flagFiltri.nome = null; 
                 inputSearchRef.current.value = ''
                 gridRef.current.innerHTML = '';
@@ -173,6 +181,9 @@ const Catalogo = () => {
     //Chiamo la funziona che fa appende alla griglia
     getProducts(gridRef)
 
+    //Mi creo il dom element del badge
+    const badge = DOM.div({ className: "badge badge-xs badge-primary hidden"}, [""]);
+
     return DOM.main({}, [
         //Sezione catalogo
         DOM.section({className: 'container my-8 lg:my-14'}, [
@@ -182,7 +193,7 @@ const Catalogo = () => {
             DOM.div({className: 'grid grid-cols-1 lg:grid-cols-6 gap-8', ref: mainWrapperRef}, [
                 //Sidebar che contiene i filtri
                 //Visibile solo da desktop
-                Sidebar({className: 'hidden lg:block lg:col-span-2', ref: sidebarRef, gridRef, divTestualeTitleRef}),
+                Sidebar({className: 'hidden lg:block lg:col-span-2', ref: sidebarRef, gridRef, divTestualeTitleRef, badge}),
                 //Div che contiene searchbar, select e grid con catalogo
                 //Su mobile è 1/1, da desktop 3/4
                 DOM.div({className: 'flex flex-col gap-8 col-span-1 lg:col-span-4'}, [
@@ -197,7 +208,8 @@ const Catalogo = () => {
                                 setModal(modalRef, 'Filtra per', sidebarRef.current)
                                 modalRef.current.showModal()}}, [
                                 'Filtri',
-                                DOM.createElFromHTMLString(`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal-icon lucide-sliders-horizontal"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>`)
+                                DOM.createElFromHTMLString(`<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sliders-horizontal-icon lucide-sliders-horizontal"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>`),
+                                badge
                             ]),
                             Select({name: 'select-catalogo-mobile', className: 'w-1/2 lg:w-full h-full', onChange: orderGrid}, [
                                 DOM.option({disabled: "true", selected: "true"}, ['Ordina per']),

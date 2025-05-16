@@ -2,6 +2,7 @@ import DOM from 'just-dom';
 import { averageCalculator } from '../utilities/setRating';
 import Product from './product';
 import { getReviews } from '../pages/Dettaglio';
+import ReviewsStore from './reviews_store';
 
 export default class Catalog {
     constructor(products = []){
@@ -31,8 +32,10 @@ export default class Catalog {
     }
 
     async loadProducts(messageRef = null) {
+        const reviewsStore = new ReviewsStore()
+
         try {
-            const reviews = await getReviews()
+            reviewsStore.reviews = await getReviews("")
 
             const res = await fetch("http://localhost:3000/products")
             const data = await res.json();
@@ -40,7 +43,7 @@ export default class Catalog {
                             //Mi creo l'oggetto prodotto
                             const product = new Product(p.id, p.nome, p.url, p.marca, p.categoria, p.immagine, p.prezzi, p.rivenditori, p.rivenditoriLogo, p.caratteristiche, p.caratteristicheAvanzate)
                             //aggiungo la recensioni al prodotto
-                            product.addReview(reviews);
+                            product.addReview(reviewsStore.reviews);
                             //Imposto la valutazione del prodotto
                             product.setValutazion()
                             //aggiungo il prodotto al catalogo
@@ -89,7 +92,6 @@ export default class Catalog {
                 matches = matches && averageCalculator(p.getAllValutations().valutazioni) >= valueProduct;
             }
 
-            console.log(priceProduct)
             //Quarta condizione: verificare se il prezzo più basso del prodotto è compreso tra il range di prezzo scelto dall'utente
             if(priceProduct) { //Verifico se è presente il filtro sul prezzo
                 

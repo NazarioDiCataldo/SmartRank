@@ -21,7 +21,7 @@ export const flagFiltri = {
 const catalog = new Catalog();
 await catalog.loadProducts();
 
-const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef}) => {
+const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef, badge = null}) => {
     
     //Variabile con classi comuni dei filtri sulla valutazione
     const classNameFilterVal = 'xl:grow-[1] btn-outline !mx-0 checked:rounded-lg group-has-[input:checked]:grow-0';
@@ -108,7 +108,6 @@ const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef}) => {
 
     //Resetta i filtri in questione
     function resetFilter(resetInput, gridRef) {
-        console.log(flagFiltri.prezzo)
 
         //Svuoto la griglia
         gridRef.current.innerHTML = '';
@@ -125,6 +124,25 @@ const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef}) => {
         //Ordino l'array;
         filteredCatalog.sortProducts(flagFiltri.ordine);
 
+        //Se sono attivi dei filtri, aggiungo un badge al bottone dei filtri
+        //Migliora la UX
+        //Se attivo un solo filtro uscirà 1, se attivi 2 uscirà 2, mentre se nessun filtri è attivo allora il badge sarà nascosto
+
+        let contatore = 0;//Mi creo il contatore, che sarà incrementato ogni volta che un filtro è attivo
+
+        if(flagFiltri.valutazione) contatore++;
+
+        if(flagFiltri.categoria) contatore++;
+
+        if(flagFiltri.prezzo) contatore++;
+
+        if(contatore === 0) {
+            badge.classList.add('hidden')
+        } else {
+            badge.textContent = `${contatore}`
+            badge.classList.remove('hidden');
+        }
+
         //Imposto il numero di prodotti trovati, dopo aver impostato i filtri
         divTestualeTitleRef.current.textContent = filteredCatalog.products.length !== 1 ? `${filteredCatalog.products.length} risultati trovati` : `${filteredCatalog.products.length} risultato trovato`;
         
@@ -133,7 +151,6 @@ const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef}) => {
     }
 
     function filtraPer(gridRef) {
-        console.log(flagFiltri.prezzo)
 
         //Mi prendo i valori degli input dei filtri
         flagFiltri.valutazione = valutazioneRef.current.querySelector('input[type=radio]:checked')?.value; //Input radio valutazione
@@ -151,6 +168,25 @@ const Sidebar = ({className = '', ref, gridRef, divTestualeTitleRef}) => {
         
         //Ordino l'array;
         filteredCatalog.sortProducts(flagFiltri.ordine);
+
+        //Se sono attivi dei filtri, aggiungo un badge al bottone dei filtri
+        //Migliora la UX
+        //Se attivo un solo filtro uscirà 1, se attivi 2 uscirà 2, mentre se nessun filtri è attivo allora il badge sarà nascosto
+
+        let contatore = 0;//Mi creo il contatore, che sarà incrementato ogni volta che un filtro è attivo
+
+        if(flagFiltri.valutazione) contatore++;
+
+        if(flagFiltri.categoria) contatore++;
+
+        if(flagFiltri.prezzo) contatore++;
+
+        if(contatore === 0) {
+            badge.classList.add('hidden')
+        } else {
+            badge.textContent = `${contatore}`
+            badge.classList.remove('hidden');
+        }
 
         //Imposto il numero di prodotti trovati, dopo aver impostato i filtri
         divTestualeTitleRef.current.textContent = filteredCatalog.products.length !== 1 ? `${filteredCatalog.products.length} risultati trovati` : `${filteredCatalog.products.length} risultato trovato`;

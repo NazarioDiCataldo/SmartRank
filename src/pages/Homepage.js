@@ -9,6 +9,7 @@ import Review from '../components/Review';
 import Modal from '../components/ui/Modal';
 import Catalog from '../classes/catalog';
 import { getReviews } from './Dettaglio';
+import ReviewsStore from '../classes/reviews_store';
 
 
 const Homepage = async () => {
@@ -17,13 +18,16 @@ const Homepage = async () => {
     await catalog.loadProducts();
     catalog.higerValutations();
 
+    //Mi creo l'oggetto reviewStore
+    const reviewsStore = new ReviewsStore();
+
     //Mi prendo l'iPhone 16 Pro Max
     const iphone16ProMax = catalog.getProductBySlug('iphone-16-pro-max')
 
     //Mi prendo tutte le recensioni
-    const reviews = await getReviews();
+    reviewsStore.reviews = await getReviews();
     //Mi prendo le ultime 3 recensioni
-    const lastThreeRev = reviews.splice(-3).reverse();
+    const lastThreeRev = reviewsStore.reviews.splice(-3).reverse();
 
     //Mi creo le ref
     const navigationWrapperRef = createRef(); //Ref per il titolo della bento 2, per appendere la navigazione al titolo della sezione
